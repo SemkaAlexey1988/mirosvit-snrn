@@ -13,7 +13,7 @@ const refInput = useRef();
 const [data, setData] = useState({ posts: posts }) 
 
 useEffect(async () => {
-const result = await axios('http://mirosvit-shop.herokuapp.com/categories',);
+const result = await axios('https://mirosvit-shop.herokuapp.com/categories',);
 setData({posts: result.data }); 
 
 },[]);
@@ -61,7 +61,7 @@ const result = await fetch('http://mirosvit-shop.herokuapp.com/categories');
 const posts = await result.json()  
 */      
 
-const result = await axios('http://mirosvit-shop.herokuapp.com/categories');
+const result = await axios('https://mirosvit-shop.herokuapp.com/categories');
 const posts = await result.data 
 
 return { posts }
