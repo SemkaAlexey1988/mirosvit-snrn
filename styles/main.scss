@@ -1,5 +1,146 @@
-$color: red;
+@import '_config';
+@import 'templates/header/header';
 
+/* Basic */
 body {
-    font-family: 'Newsreader', serif;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    
+    html {
+    height: 100%;
+    }
+    
+    header, nav, section, main, article, aside, footer {
+    display: block;
+    }
+    
+    body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    //color: $blackColor;
+    margin: 0;
+    padding: 0;
+    }
+    #root {
+    height: 100%;
+    }
+    img{
+    max-width:100%;
+    height:auto;
+    }
+    code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+    }
+    .container {
+        margin: 0 auto; 
+        max-width: $container; 
+        width: 100%;  
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* END Basic */
+
+.column_1-2 {
+    flex-basis: 50%;
+    display: flex;
+}
+.column_1-3 {
+    flex-basis: 33%; 
+    display: flex;
+}
+.column_1-4 {
+    flex-basis: 25%; 
+    display: flex;  
+}
+
+.button {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    color: $black;
+    border: 2px solid $black;
+    box-sizing: border-box;
+    background: $white;    
+}
+.button_black {
+    color: $white;
+    background: $black; 
+}
+body ul {
+    list-style-type: none;  
+    margin-bottom: 0;
+}
+.fa.fa-phone {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg); 
+    transform: rotate(90deg);
+}
+
+/* Bootstrap emulation */
+.error {
+    color: $redCalor;	
+    }
+.success {
+    color: $greenCalor;		
+    }
+    
+.input-error {
+        border: 1px solid $redCalor;
+    }
+    .site {
+position: relative;
+min-height: 100%;
+    }
+.content {
+padding-bottom: 90px;
+    }
+    
+footer.site-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+//  background: $blackColor;
+//  color: $whiteColor; 
+    } 
+.container-block{
+    max-width: 970px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}   
+.flex-block{
+    display: flex;
+}    
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0 40px;     
+}
+.left-block {
+    flex-basis: 25%;
+}
+.right-block {
+flex-basis: 25%;
+}
+.content-block {
+flex-basis: 75%;
+}
+/* End bootstrap emulation */    

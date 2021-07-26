@@ -1,0 +1,22 @@
+/* Variables */
+
+// Colors
+$black: #333;
+$gray: #656363;
+$lightGray: #efecec;
+$white: #FFF;
+$redCalor: red;
+$greenCalor: green;
+
+// Containers
+$container: 1200px;
+$medium-container: 900px;
+
+// Buttons 
+@mixin buttonSize {
+width: 100%;
+max-width: 200px;
+height: 40px;
+    }
+
+/* END Variables */

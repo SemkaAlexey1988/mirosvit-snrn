@@ -1,0 +1,228 @@
+header.site-header {
+    height: 150px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    }
+    .header-wrapper {
+    width: 100%;    
+    }
+    .header-popup {
+    width: 100%; 
+    text-align: right;   
+    }
+    .header__contacts {
+    ul { 
+    li {
+    a {
+    color: $gray;
+    }
+    }
+    }
+    }
+    .site-header .container {
+    align-items: center;
+    }
+    .site-header .column_1-3 {
+    
+    &:nth-child(1) {
+    justify-content: left;
+    }
+    &:nth-child(2) {
+    justify-content: center;
+    }
+    &:nth-child(3) {
+    justify-content: right;
+    }
+    }
+    .menu-wrapper {
+    width: 100%;
+    padding-top: 10px;
+    }
+    .main-menu {    
+    li {
+    &:nth-child(1) {
+    padding-left: 0px;    
+    } 
+    &:nth-child(1) a {
+    padding-left: 0px;    
+    }   
+    display: inline-block;  
+    vertical-align: top;
+    padding-left: 10px;
+    a {
+    color: $gray; 
+    text-transform: uppercase;
+    font-weight: bold;   
+    }
+    }  
+    }
+    
+    /* Header modal */
+    .modal-wrapper
+     {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.65);
+        display: none;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        /*	opacity: 0; */
+        opacity: 1;
+    }
+    .modal-wrapper.show {
+        display: block;
+    }
+    .modal-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-table__cell {
+        display: table-cell;
+        padding: 0 1em;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .modal-block
+     {
+    display: inline-block;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    color: #0C0B0B;
+    text-align: left;
+    font-size: 13px;
+    z-index: 9999;
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    }
+    
+    .close-modal {
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #f26341;
+    border-radius: 50%;
+    color: #FFF;
+    line-height: 25px;
+    }
+    
+    .modal-block h3 {
+    text-align: center;
+    color: #296976;
+    font-size: 30px;
+    font-family: Open Sans Bold;
+    line-height: 40px;
+    margin: 10px 0;
+    }
+    
+    .modal-block input {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 10px;	
+    }
+    .modal-block textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 80px;
+    padding: 10px;	
+    }
+    .modal-block input[type="submit"] {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+    padding: 0;
+    background: #f36341;
+    color: #FFF;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    }
+    .modal-block .ajax-loader {
+    display: none !important;	
+    }
+    
+     @media screen and (min-width:300px) and (max-width:550px) {
+    .modal-block h3 {	 
+    font-size: 20px;
+    line-height: 25px;
+    }
+    }
+    
+    /* End Header modal */
+    
+    /* Top menu */
+    .main-menu li {
+    position: relative;
+    line-height: 50px;
+    height: 50px;
+    padding-right: 10px;
+    }
+    .main-menu li a {
+    margin-top: 10px;
+    }
+    
+    .main-menu .sub-menu {
+        display: none;
+        position: absolute;
+        width: 200px;
+        left: 0;
+        top: 50px;
+        z-index: 9;
+        margin-top: 0 !important;
+        background: #FFF;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
+        box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
+        padding-bottom: 20px;
+    }
+    .main-menu .sub-menu.show {
+        display: block;
+      }
+    .sub-menu .sub-menu {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    z-index: 9;
+    margin-top: 0 !important;
+    background: #FFF;
+    padding-bottom: 10px;
+    }  
+    .main-menu .sub-menu li {
+        display: block;
+        padding-left: 25px;
+    }
+    .main-menu .sub-menu li {
+        line-height: 30px;
+        height: 30px;
+    }
+    .main-menu .sub-menu li a {
+        padding: 0 5px;
+        margin-top: 0px;
+        padding-top: 10px;
+    }
+    .main-menu .sub-menu .sub-menu li a {
+        margin-top: 10px;
+        padding-top: 0;
+    }
+      /* End top menu */
