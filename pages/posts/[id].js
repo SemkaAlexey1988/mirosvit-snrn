@@ -14,7 +14,7 @@ const Post = ({ post }) => {
 const router = useRouter() 
 
 useEffect(async () => {
-  const result = await axios(`https://mirosvit-shop.herokuapp.com/category/${router.query.id}`,);
+  const result = await axios(`http://mirosvit-shop.herokuapp.com/category/${router.query.id}`,);
   setData({post: result.data }); 
   
   },[]);
@@ -52,7 +52,7 @@ export async function getServerSideProps ({query, req}) {
 
         Post.getInitialProps = async ({query}) => {   
 
-            const result = await axios(`https://mirosvit-shop.herokuapp.com/category/${query.id}`);
+            const result = await axios(`http://mirosvit-shop.herokuapp.com/category/${query.id}`);
             const post = await result.data 
       
             return { post }
