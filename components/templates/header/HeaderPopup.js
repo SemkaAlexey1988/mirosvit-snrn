@@ -14,6 +14,7 @@ const HeaderPopup = ({}) => {
   }
 
   const controlClick = (e) => {
+    console.log(data.modalStatus)
     if(data.modalStatus){
     if(formStatus.current.contains(e.target)){
     return;
@@ -23,7 +24,10 @@ const HeaderPopup = ({}) => {
   } 
 
   useEffect(() => {
-    document.addEventListener('mousedown', controlClick, false);
+      document.addEventListener('mousedown', controlClick, false)
+    return () => {
+      document.removeEventListener('mousedown', controlClick, false)
+    }
   });
 
   return(
