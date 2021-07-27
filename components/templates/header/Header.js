@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Link from 'next/link'
 import HeaderContacts from './HeaderContacts'
+import HeaderLogo from './HeaderLogo'
+import HeaderPopup from './HeaderPopup'
 
 const Header = ({}) => {
   return(
@@ -10,13 +12,12 @@ const Header = ({}) => {
           <HeaderContacts/> 
         </div>      
         <div className="column_1-3">
-         {/*<HeaderLogo/>*/}
+          <HeaderLogo/>
         </div>  
         <div className="column_1-3">
-         {/* <HeaderPopup/> */} 
+         <HeaderPopup/> 
         </div> 
         <div className="menu-wrapper">
-        <p>Test</p> 
 <ul className="menu-main">
 <li><Link href={'/'}><a>Main</a></Link></li>
 <li><Link href={'/about'}><a>About</a></Link></li>

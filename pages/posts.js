@@ -4,6 +4,7 @@ import React from 'react'
 import Router from 'next/router'
 import {MainLayout} from '../components/MainLayout'
 import Link from 'next/link'
+import Config from '../config.json'
 
 
 const Posts = ({ posts }) => {
@@ -11,9 +12,8 @@ const Posts = ({ posts }) => {
 const refInput = useRef();    
 
 const [data, setData] = useState({ posts: posts }) 
-
 useEffect(async () => {
-const result = await axios('https://mirosvit-shop.herokuapp.com/categories',);
+const result = await axios(`${Config.api}/categories`,);
 setData({posts: result.data }); 
 
 },[]);
@@ -61,7 +61,7 @@ const result = await fetch('http://mirosvit-shop.herokuapp.com/categories');
 const posts = await result.json()  
 */      
 
-const result = await axios('https://mirosvit-shop.herokuapp.com/categories');
+const result = await axios(`${Config.api}/categories`);
 const posts = await result.data 
 
 return { posts }
