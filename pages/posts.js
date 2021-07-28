@@ -16,13 +16,9 @@ const refInput = useRef();
 
 const dispatch = useDispatch();
 const {posts} = useSelector(state => state.posts) 
-const [data, setData] = useState({ posts: posts }) 
 
 useEffect(async () => {
-dispatch(fetchPosts());    
-//const result = await axios('http://mirosvit-shop.herokuapp.com/categories',);
-setData({posts: posts }); 
-
+  dispatch(fetchPosts());    
 },[]);
 
 
@@ -41,18 +37,14 @@ const onInputchange = (event) => {
     return <MainLayout title={'List of articles'}>
         <React.Fragment>
     <h1>List of posts</h1> 
+    <ul>
     {  posts.map((item, index) => (
     <li key={index}>
     <Link href={`/posts/[id]`} as={`/posts/${item.link}`}><a>{item.title}</a></Link>
   </li>
     ))   }
-<ul>
-{ /* posts.map((item, index) => (
-        <li key={index}>
-          <Link href={`/posts/[id]`} as={`/posts/${item.link}`}><a>{item.title}</a></Link>
-        </li>
-    ))  */ }
-</ul>
+    </ul>
+
 <form onSubmit={handleClick}>
 <p>
 <input type="text" ref={refInput} onChange={onInputchange} defaultValue="Focus me"/>
