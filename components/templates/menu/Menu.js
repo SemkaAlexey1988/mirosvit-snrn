@@ -7,10 +7,7 @@
     import Link from 'next/link'
     
     class Menu extends React.Component {
-    
-            static getInitialProps({store}) {
-              store.dispatch(fetchMenus())
-            }
+  
     
         constructor(props) {
             super(props);
