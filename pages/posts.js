@@ -6,32 +6,29 @@ import Router from 'next/router'
 import {MainLayout} from '../components/MainLayout'
 import Link from 'next/link'
 import {fetchPosts} from '../store/actions/postsActions'
+import { fetchMenus } from '../store/actions/menus/menus';
 
 
 const Posts = ({  }) => {
 
-const refInput = useRef();    
+  const refInput = useRef();    
+  const dispatch = useDispatch();
+  const {posts} = useSelector(state => state.posts) 
+
+  useEffect(async () => {
+    dispatch(fetchPosts());    
+  },[]);
 
 
 
-const dispatch = useDispatch();
-const {posts} = useSelector(state => state.posts) 
-
-useEffect(async () => {
-  dispatch(fetchPosts());    
-},[]);
-
-
-
-const handleClick = (event) => {
+  const handleClick = (event) => {
     event.preventDefault();
     console.log(refInput);
     alert('50');
 };
 
-const onInputchange = (event) => {
+  const onInputchange = (event) => {
     console.log(event.target.value)
- 
   }
 
     return <MainLayout title={'List of articles'}>
@@ -57,6 +54,7 @@ const onInputchange = (event) => {
 
 
     Posts.getInitialProps = async ({store}) => {
+await store.dispatch(fetchMenus())
 await store.dispatch(fetchPosts())
     }
     

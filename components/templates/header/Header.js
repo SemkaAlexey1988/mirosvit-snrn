@@ -3,6 +3,7 @@ import Link from 'next/link'
 import HeaderContacts from './HeaderContacts'
 import HeaderLogo from './HeaderLogo'
 import HeaderPopup from './HeaderPopup'
+import Menu from '../menu'
 
 const Header = ({}) => {
   return(
@@ -17,13 +18,7 @@ const Header = ({}) => {
         <div className="column_1-3">
          <HeaderPopup/> 
         </div> 
-        <div className="menu-wrapper">
-<ul className="menu-main">
-<li><Link href={'/'}><a>Main</a></Link></li>
-<li><Link href={'/about'}><a>About</a></Link></li>
-<li><Link href={'/posts'}><a>Posts</a></Link></li>
-</ul> 
-        </div>
+        <Menu/>
       </div>
     </header>	
   )

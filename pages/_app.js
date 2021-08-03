@@ -36,4 +36,5 @@ return (
 }
 
 const makeStore = () => store;
+const wrapper = createWrapper(makeStore);
 export default withRedux(makeStore)(MyApp); 

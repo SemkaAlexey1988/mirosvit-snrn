@@ -1,4 +1,4 @@
-import * as types from '../types'
+import constants from '../keymirror'
 const initialState = {
  posts: [],
  post: {},
@@ -8,7 +8,7 @@ const initialState = {
 
 export const postsReducer = (state = initialState, action) => {
 switch(action.type){
-case types.GET_POSTS:
+case constants.GET_POSTS:
 console.log(action.payload)    
 return {
 ...state,
