@@ -3,6 +3,7 @@ import Head from 'next/head'
 import {MainLayout} from '../components/MainLayout'
 import Link from 'next/link'
 import Image from 'next/image'
+import { fetchMenus } from '../store/actions/menus/menus';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -32,5 +33,9 @@ return <MainLayout title={'Main page'}>
 </React.Fragment> 
 </MainLayout>  
 }
+
+Index.getInitialProps = async ({store}) => {
+    await store.dispatch(fetchMenus())
+        }
 
 export default Index
