@@ -1,0 +1,13 @@
+.productsSpecialsWrap {
+    display: flex;
+    flex-wrap: wrap;   
+}
+.productsSpecials {
+    flex-basis: 25%;
+}
+.productsSpecials__img {
+    cursor: pointer;
+}
+.productsSpecials__name{
+    cursor: pointer;
+}

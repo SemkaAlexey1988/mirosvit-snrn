@@ -4,6 +4,8 @@ import {MainLayout} from '../components/MainLayout'
 import Link from 'next/link'
 import Image from 'next/image'
 import { fetchMenus } from '../store/actions/menus/menus';
+import { fetchSpecials } from '../store/actions/main/specials';
+import SpecialsInfo from '../components/main/SpecialsInfo';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -30,12 +32,14 @@ return <MainLayout title={'Main page'}>
             <p className="legend">Legend 3</p>
         </div>
     </Carousel>
+    <SpecialsInfo/>
 </React.Fragment> 
 </MainLayout>  
 }
 
 Index.getInitialProps = async ({store}) => {
     await store.dispatch(fetchMenus())
+    await store.dispatch(fetchSpecials())
         }
 
 export default Index

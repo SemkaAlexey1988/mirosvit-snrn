@@ -1,8 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux'  
-import axios from 'axios';
 import React from 'react'
-import Router from 'next/router'
 import {MainLayout} from '../components/MainLayout'
 import Link from 'next/link'
 import {fetchPosts} from '../store/actions/postsActions'
@@ -14,7 +12,6 @@ const Posts = ({  }) => {
   const refInput = useRef();    
   const dispatch = useDispatch();
   const {posts} = useSelector(state => state.posts) 
-
   useEffect(async () => {
     dispatch(fetchPosts());    
   },[]);

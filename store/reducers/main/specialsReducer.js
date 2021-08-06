@@ -1,24 +1,24 @@
-import constants from '../../keymirror/index.js'
+import constants from '../../keymirror'
 
 const initialState = {
-  data: [],
+  specials: [],
   load: true,
   error: false  
 };
 
-const specials = (state = initialState, action) => {
+export const specialsReducer = (state = initialState, action) => {
   switch(action.type){
   case constants.FETCH_SPECIALS_SUCCESS:
   return {
   ...state,  
-  data: action.payload,   
+  specials: action.payload,   
   load: false,
   error: false 
   }
   case constants.FETCH_SPECIALS_ERROR:
   return {
   ...state,  
-  data: [],   
+  specials: [],   
   load: false,
   error: true
   }
@@ -26,4 +26,3 @@ const specials = (state = initialState, action) => {
 }	
 }
 
-export default specials

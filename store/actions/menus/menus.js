@@ -4,9 +4,15 @@ import routes from '../../../api/routes.json'
 
 export const fetchMenus = () => async dispatch =>  {
    const id = '1'
-   const result = await axios(`${config.api}${routes.menus}/${id}`);
-   dispatch({
-      type: 'FETCH_MENUS_SUCCESS',
-      payload: result.data  
-   })
+   await axios(`${config.api}${routes.menus}/${id}`).then(result=>{
+         dispatch({
+            type: 'FETCH_MENUS_SUCCESS',
+            payload: result.data  
+      })
+      }).catch((err)=>{
+         dispatch({
+            type: 'FETCH_MENUS_ERROR'
+         }); 
+   });
+
 }
