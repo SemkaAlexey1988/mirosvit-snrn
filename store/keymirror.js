@@ -7,4 +7,6 @@ export default keyMirror({
     FETCH_MENUS_ERROR: null,
     FETCH_SPECIALS_SUCCESS: null,
     FETCH_SPECIALS_ERROR: null,
+    FETCH_CONTACTS_SUCCESS: null,
+    FETCH_CONTACTS_ERROR: null,
 })     
