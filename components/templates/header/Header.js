@@ -3,7 +3,7 @@ import Link from 'next/link'
 import HeaderContacts from './HeaderContacts'
 import HeaderLogo from './HeaderLogo'
 import HeaderPopup from './HeaderPopup'
-import Menu from '../menu'
+import Menu from '../../../containers/templates/menu'
 
 const Header = ({}) => {
   return(

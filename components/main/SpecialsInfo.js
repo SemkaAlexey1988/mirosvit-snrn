@@ -1,24 +1,10 @@
-import {useEffect, useRef} from 'react';
-import { useDispatch, useSelector } from 'react-redux'  
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import {fetchSpecials} from '../../store/actions/main/specials'
 
 import classes from '../../styles/main/specials.module.scss'
 
-const SpecialsInfo = () => {
-
-  const refInput = useRef();    
-  const dispatch = useDispatch();
-  const {specials} = useSelector(state => state.specials) 
-
-  console.log(specials)
-
-  useEffect(async () => {
-    dispatch(fetchSpecials());    
-  },[]);
-
+const SpecialsInfo = ({specials}) => {
 
     return <div className={classes.productsSpecialsWrap}>
         { specials.map(special => {
@@ -29,10 +15,10 @@ const SpecialsInfo = () => {
                 <p>{special.description}</p>
                 <p>{special.sku}</p>
             </div>
-    })
-  }
-    </div>
+         })
+        }
+           </div>
    
 }
     
-    export default SpecialsInfo
+export default SpecialsInfo

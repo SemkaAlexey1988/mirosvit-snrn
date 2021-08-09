@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { fetchMenus } from '../store/actions/menus/menus';
 import { fetchSpecials } from '../store/actions/main/specials';
-import SpecialsInfo from '../components/main/SpecialsInfo';
+import Specials from '../containers/main/Specials';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -32,7 +32,7 @@ return <MainLayout title={'Main page'}>
             <p className="legend">Legend 3</p>
         </div>
     </Carousel>
-    <SpecialsInfo/>
+    <Specials/>
 </React.Fragment> 
 </MainLayout>  
 }
