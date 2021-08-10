@@ -1,7 +1,7 @@
 import constants from '../../keymirror'
 
 const initialState = {
-  contacts: [],
+  data: [],
   load: true,
   error: false    
 }
@@ -11,14 +11,14 @@ export const contactsReducer = (state = initialState, action) => {
   case constants.FETCH_CONTACTS_SUCCESS:
   return {
   ...state,  
-  contacts: action.payload,   
+  data: action.payload,   
   load: false,
   error: false 
   }
   case constants.FETCH_CONTACTS_ERROR:
   return {
   ...state,  
-  contacts: [],   
+  data: [],   
   load: false,
   error: true
   }

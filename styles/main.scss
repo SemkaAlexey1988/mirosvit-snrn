@@ -1,6 +1,8 @@
 @import '_config';
 @import 'templates/header/header';
 @import 'templates/footer/footer';
+@import 'templates/error/error';
+@import 'templates/loader/loader';
 
 /* Basic */
 body {

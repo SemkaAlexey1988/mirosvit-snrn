@@ -11,14 +11,16 @@ const Contacts = () => {
 
   const refInput = useRef();    
   const dispatch = useDispatch();
-  const {contacts} = useSelector(state => state.contacts) 
+  const contacts = useSelector(state => state.contacts) 
   useEffect(async () => {
     dispatch(fetchContacts());    
   },[]);
 
+  const successData = !(contacts.load || contacts.error)
+
     return <MainLayout title={'List of articles'}>
         <React.Fragment> 
-    <ContactsInfo contacts={contacts} />
+    <ContactsInfo contacts={contacts.data} />
     </React.Fragment>
     </MainLayout>
     }
