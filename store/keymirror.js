@@ -9,4 +9,6 @@ export default keyMirror({
     FETCH_SPECIALS_ERROR: null,
     FETCH_CONTACTS_SUCCESS: null,
     FETCH_CONTACTS_ERROR: null,
+    FETCH_CATEGORIES_INFO_SUCCESS: null,
+    FETCH_CATEGORIES_INFO_ERROR: null,
 })     

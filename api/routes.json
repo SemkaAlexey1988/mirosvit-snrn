@@ -2,5 +2,6 @@
 "categories": "/categories",
 "menus": "/menus",
 "specials": "/specials",
-"contacts": "/contacts"
+"contacts": "/contacts",
+"category": "/category"
 }

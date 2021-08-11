@@ -5,6 +5,8 @@ import {MainLayout} from '../components/MainLayout'
 import {fetchContacts} from '../store/actions/contacts/contacts'
 import { fetchMenus } from '../store/actions/menus/menus';
 import ContactsInfo from '../components/contacts/ContactsInfo'
+import Error from '../components/templates/error'
+import Loader from '../components/templates/loader'
 
 
 const Contacts = () => {
@@ -17,12 +19,17 @@ const Contacts = () => {
   },[]);
 
   const successData = !(contacts.load || contacts.error)
+  const errorBlock = contacts.error ? <Error/> : null
+  const loader = contacts.load ? <Loader/> : null
+  const content = <ContactsInfo contacts={contacts.data} />
 
     return <MainLayout title={'List of articles'}>
         <React.Fragment> 
-    <ContactsInfo contacts={contacts.data} />
-    </React.Fragment>
-    </MainLayout>
+        {errorBlock}  
+        {loader}
+        {content} 
+        </React.Fragment>
+        </MainLayout>
     }
 
 
