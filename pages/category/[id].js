@@ -32,11 +32,17 @@ content = <CategoryInfo category={categoryInfo} />
 content = ''  
 }
 return <MainLayout>
-  <React.Fragment> 
+  <div className="category full-width flex-block">
+    <div className="left-block">             
+      <div className="categories-list"> 
+      </div>
+      </div>
+      <div className="content-block"> 
     {errorBlock}  
     {loader}
     {content} 
-  </React.Fragment>
+    </div>
+  </div>
 </MainLayout>
 
 }

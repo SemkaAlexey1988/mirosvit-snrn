@@ -4,8 +4,6 @@
 
     import {fetchMenus} from '../../../store/actions/menus/menus'
     import MenuInfo from '../../../components/templates/menu/MenuInfo'
-    import Error from '../../../components/templates/error'
-    import Loader from '../../../components/templates/loader'
     
     class Menu extends React.Component {
 
@@ -16,8 +14,8 @@
         render() {
           const stateValue = this.props.reduxData
           const successData = !(stateValue.load || stateValue.error)
-          const errorBlock = stateValue.error ? <Error/> : null
-          const loader = stateValue.load ? <Loader/> : null
+          const errorBlock = stateValue.error ? <div className="error"></div> : null
+          const loader = stateValue.load ? <div className="load"></div> : null
           const content = <MenuInfo menus={this.props.reduxData.data} />
           return(
             <React.Fragment>
