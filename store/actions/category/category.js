@@ -14,3 +14,16 @@ export const fetchCategory = (id) => async dispatch =>  {
       })
    });   
 }
+
+export const fetchCategories = () => async dispatch =>  {
+   await axios(`${config.api}${routes.categories}`).then(result =>{
+      dispatch({
+         type: 'FETCH_CATEGORIES_LIST_SUCCESS',
+         payload: result.data  
+      })
+   }).catch((err)=>{
+      dispatch({
+         type: 'FETCH_CATEGORIES_LIST_ERROR'
+      })
+   });   
+}

@@ -11,4 +11,6 @@ export default keyMirror({
     FETCH_CONTACTS_ERROR: null,
     FETCH_CATEGORIES_INFO_SUCCESS: null,
     FETCH_CATEGORIES_INFO_ERROR: null,
+    FETCH_CATEGORIES_LIST_SUCCESS: null,
+    FETCH_CATEGORIES_LIST_ERROR: null,
 })     
