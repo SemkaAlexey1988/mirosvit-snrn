@@ -1,0 +1,44 @@
+.categoriesMenu {
+    list-style-type: none;
+    }
+    .categoriesMenu li {
+    position: relative;
+    }  
+    .categoriesMenu ul {
+      list-style-type: none;
+      padding-left: 15px;
+      }
+    .toggleButton{
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }   
+    .toggleButton::after{
+      display: inline-block;
+      vertical-align: top;
+      content: '+';
+      font-size: 20px;
+      cursor: pointer;
+    }  
+    .toggleButton.show::after{
+      content: '';
+    }  
+    .subMenu {
+      display: none;
+    }
+    .subMenu.show {
+      display: block;
+    }
+    
+    .pagination__ul {
+      list-style-type: none;
+    }
+    .pagination__ul li {
+    display:inline-block;
+    vertical-align: top;
+    padding-right: 10px;
+    }
+    .pagination__ul li a.active {
+    text-decoration: underline;
+    }    

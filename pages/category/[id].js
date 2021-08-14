@@ -4,10 +4,11 @@ import React from 'react'
 import {MainLayout} from '../../components/MainLayout'
 import Link from 'next/link'
 import { fetchMenus } from '../../store/actions/menus/menus';
-import { fetchCategory } from '../../store/actions/category/category';
+import { fetchCategory, fetchCategories } from '../../store/actions/category/category';
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
 import CategoryInfo from '../../components/category/CategoryInfo'
+import CategoriesList from '../../containers/categories/CategoriesList'
 
 import {useRouter} from 'next/router'
 import Router from 'next/router'
@@ -35,6 +36,7 @@ return <MainLayout>
   <div className="category full-width flex-block">
     <div className="left-block">             
       <div className="categories-list"> 
+      <CategoriesList/>
       </div>
       </div>
       <div className="content-block"> 
@@ -50,6 +52,7 @@ return <MainLayout>
 
 Category.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchCategory(query.id))
+  await store.dispatch(fetchCategories())
   await store.dispatch(fetchMenus())
       }
       

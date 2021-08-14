@@ -8,7 +8,6 @@ const About = () => {
     const linkToHome = () => {
 Router.push('/')
     }
-console.log(classes)
     return <MainLayout title={'About page'}>
         <React.Fragment>
     <h1 className={classes.about}>About page</h1> 
