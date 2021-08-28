@@ -18,13 +18,13 @@ const CategoriesListInfo = ({categoriesList}) => {
     if(category.child[0]){
    
     return <li key={category.id}>
-    <Link href={`${partUrl}${category.link}`} as={`${partUrl}${category.link}`}>{category.title}</Link>
+    <Link href={`${partUrl}${category.link}`} as={`${partUrl}${category.link}`}><a>{category.title}</a></Link>
     <span className={data === category.id  ? 'toggleButton show' : 'toggleButton' } onClick={() => toggleClick(category.id)}></span>
 
     <ul className={data === category.id  ? 'subMenu show' : 'subMenu' }>
     {category.child.map(categoryChild => { 
     return <li key={categoryChild.id}>
-    <Link href={`${partUrl}${categoryChild.link}`} as={`${partUrl}${categoryChild.link}`}>{categoryChild.title}</Link>
+    <Link href={`${partUrl}${categoryChild.link}`} as={`${partUrl}${categoryChild.link}`}><a>{categoryChild.title}</a></Link>
     </li>
     })  
     }
@@ -34,7 +34,7 @@ const CategoriesListInfo = ({categoriesList}) => {
 
     }else{
     return <li key={category.id}>
-    <Link href={`${partUrl}${category.link}`} as={`${partUrl}${category.link}`}>{category.title}</Link>
+    <Link href={`${partUrl}${category.link}`} as={`${partUrl}${category.link}`}><a>{category.title}</a></Link>
     </li>    
     }
     

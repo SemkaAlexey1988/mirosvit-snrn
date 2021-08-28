@@ -58,15 +58,12 @@ body {
 
 .column_1-2 {
     flex-basis: 50%;
-    display: flex;
 }
 .column_1-3 {
     flex-basis: 33%; 
-    display: flex;
 }
 .column_1-4 {
-    flex-basis: 25%; 
-    display: flex;  
+    flex-basis: 25%;  
 }
 
 .button {
@@ -147,4 +144,5 @@ flex-basis: 25%;
 .content-block {
 flex-basis: 75%;
 }
+
 /* End bootstrap emulation */    

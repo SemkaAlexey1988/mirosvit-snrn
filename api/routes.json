@@ -3,5 +3,7 @@
 "menus": "/menus",
 "specials": "/specials",
 "contacts": "/contacts",
-"category": "/category"
+"category": "/category",
+"productsCount": "/products-count",
+"productsList": "/products-list"
 }
