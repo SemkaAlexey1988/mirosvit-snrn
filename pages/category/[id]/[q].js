@@ -25,9 +25,14 @@ useEffect(async () => {
   dispatch(fetchProductsList(router.query.id));    
 },[]);  
 
-console.log('D')
-console.log(router.query.q)
-console.log('D')
+let queryParams = router.query.q 
+let queryParamPage
+if(queryParams.indexOf('page=') > -1){
+  queryParamPage = queryParams.replace(/page=/g, "");
+  console.log(queryParamPage)
+}else{
+  queryParamPage = 1
+}
 
 let categoryInfo = category.categoryInfo[0]
 const successData = !(category.load || category.error)
@@ -40,7 +45,6 @@ content = <CategoryInfo category={categoryInfo} />
 content = ''  
 }
 return <MainLayout>
-  {router.query.q}
   <div className="category full-width flex-block">
     <div className="left-block">             
       <div className="categories-list"> 
@@ -48,7 +52,7 @@ return <MainLayout>
       </div>
       </div>
       <div className="content-block"> 
-      <ProductsList id={router.query.id}/>
+      <ProductsList id={router.query.id} page={queryParamPage} />
     {errorBlock}  
     {loader}
     {content} 

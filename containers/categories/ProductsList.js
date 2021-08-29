@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import React from 'react'
 import { fetchProductsList, fetchProductsCount } from '../../store/actions/category/ProductsList';
 import ProductsListInfo from '../../components/category/ProductsListInfo';
+import Pagination from '../../components/category/Pagination';
+import settings from '../../settings';
 
 
-const ProductsList = ({id}) => {
+const ProductsList = ({id, page}) => {
    
   const dispatch = useDispatch();
   const productsList = useSelector(state => state.productsList) 
@@ -14,11 +16,14 @@ const ProductsList = ({id}) => {
     dispatch(fetchProductsList(id)); 
     dispatch(fetchProductsCount(id));   
   },[]);
-
+console.log(productsList.productCount.count)
   const successData = !(productsList.load || productsList.error)
   const errorBlock = productsList.error ? <div className="error"></div> : null
   const loader = productsList.load ? <div className="load"></div> : null
-  const content = <ProductsListInfo productsList={productsList.data} />
+  const content = <React.Fragment>
+    <ProductsListInfo productsList={productsList.data} />
+    <Pagination limit={settings.limit} page={page} path={id} count={productsList.productCount.count} />
+    </React.Fragment>
 
     return <React.Fragment>
        {errorBlock}  
