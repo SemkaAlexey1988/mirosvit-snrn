@@ -8,22 +8,24 @@ import settings from '../../settings';
 
 
 const ProductsList = ({id, page}) => {
-   
+
+  console.log(id)
+  console.log(page) 
   const dispatch = useDispatch();
   const productsList = useSelector(state => state.productsList) 
 
   useEffect(async () => {
-    dispatch(fetchProductsList(id)); 
+    dispatch(fetchProductsList(id, page)); 
     dispatch(fetchProductsCount(id));   
   },[]);
-console.log(productsList.productCount.count)
+  
   const successData = !(productsList.load || productsList.error)
   const errorBlock = productsList.error ? <div className="error"></div> : null
   const loader = productsList.load ? <div className="load"></div> : null
-  const content = <React.Fragment>
+  const content = <div className="products">
     <ProductsListInfo productsList={productsList.data} />
     <Pagination limit={settings.limit} page={page} path={id} count={productsList.productCount.count} />
-    </React.Fragment>
+    </div>
 
     return <React.Fragment>
        {errorBlock}  

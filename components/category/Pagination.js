@@ -13,7 +13,7 @@ const Pagination = ({limit, page, path, count, filter}) => {
     const items = []
     for (let i = 0; i < pages; i++) {
     let link = i+1
-    items.push(<li key={i}><Link href={`/category/${path}/page=${link}${filterPath}`} as={`/category/${path}/page=${link}${filterPath}`} className={pageVal == link ? `active` : ``}><a>{link}</a></Link></li>)
+    items.push(<li key={i} className={pageVal == link ? `page active` : `page`}><Link href={`/category/${path}/page=${link}${filterPath}`} as={`/category/${path}/page=${link}${filterPath}`}><a>{link}</a></Link></li>)
 }
     return  <React.Fragment> 
       <div className="pagination">

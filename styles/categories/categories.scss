@@ -39,6 +39,9 @@
     vertical-align: top;
     padding-right: 10px;
     }
-    .pagination__ul li a.active {
+    .pagination__ul li a {
     text-decoration: underline;
-    }    
+    } 
+    .pagination__ul li.active a {
+      text-decoration: none;
+      }     
