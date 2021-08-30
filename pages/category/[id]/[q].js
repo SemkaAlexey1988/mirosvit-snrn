@@ -22,31 +22,19 @@ const router = useRouter()
 let queryParams = router.query.q 
 let queryParamPage
 
-const mounted = useRef();
-
 const dispatch = useDispatch();
 const category = useSelector(state => state.category) 
-useEffect(async () => {
-  if (!mounted.current) {
-    if(queryParams.indexOf('page=') > -1){
-      queryParamPage = parseInt(queryParams.replace(/page=/g, ""))
-    }else{
-      queryParamPage = 1
-    }
+useEffect(async () => { 
   dispatch(fetchCategory(router.query.id)); 
   dispatch(fetchProductsList(router.query.id, queryParamPage)); 
   dispatch(fetchProductsCount(router.query.id)); 
-} else { 
-  if(queryParams.indexOf('page=') > -1){
-    queryParamPage = parseInt(queryParams.replace(/page=/g, ""))
-  }else{
-    queryParamPage = 1
-  }
-  dispatch(fetchCategory(router.query.id)); 
-  dispatch(fetchProductsList(router.query.id, queryParamPage)); 
-  dispatch(fetchProductsCount(router.query.id)); 
+},[router.query.q]); 
+
+if(router.query.q.indexOf('page=') > -1){
+  queryParamPage = parseInt(router.query.q.replace(/page=/g, ""))
+}else{
+  queryParamPage = 1
 }
-},[]);  
 
 let categoryInfo = category.categoryInfo[0]
 const successData = !(category.load || category.error)
@@ -86,6 +74,7 @@ Category.getInitialProps = async ({store, query}) => {
   }else{
   queryParamPage = 1
   }
+  console.log(queryParamPage)
   await store.dispatch(fetchCategory(query.id))
   await store.dispatch(fetchCategories())
   await store.dispatch(fetchMenus())

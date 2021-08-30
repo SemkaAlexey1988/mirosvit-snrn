@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Link from 'next/link'
 
 const Pagination = ({limit, page, path, count, filter}) => {
+  console.log('a')
+  console.log(page)
     let filterPath
     if(filter){
     filterPath = `&filter=${filter}` 
