@@ -74,12 +74,12 @@ Category.getInitialProps = async ({store, query}) => {
   }else{
   queryParamPage = 1
   }
-  console.log(queryParamPage)
   await store.dispatch(fetchCategory(query.id))
   await store.dispatch(fetchCategories())
   await store.dispatch(fetchMenus())
-  await store.dispatch(fetchProductsList(query.id))
+  await store.dispatch(fetchProductsList(query.id, queryParamPage))
   await store.dispatch(fetchProductsCount(query.id))
+
       }
       
 export default Category

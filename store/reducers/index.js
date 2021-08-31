@@ -5,11 +5,13 @@ import {specialsReducer} from './main/specialsReducer';
 import {contactsReducer} from './contacts/contactsReducer';
 import {categoryReducer} from './category/categoryReducer';
 import {productsListReducer} from './category/productsListReducer';
+import {productReducer} from './product/productReducer';
 export default combineReducers ({
 posts: postsReducer,
 menus: menusReducer,
 specials: specialsReducer,
 contacts: contactsReducer,
 category: categoryReducer,
-productsList: productsListReducer 
+productsList: productsListReducer,
+product: productReducer 
 });

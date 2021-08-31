@@ -4,6 +4,7 @@
 "specials": "/specials",
 "contacts": "/contacts",
 "category": "/category",
+"product": "/product",
 "productsCount": "/products-count",
 "productsList": "/products-list"
 }
