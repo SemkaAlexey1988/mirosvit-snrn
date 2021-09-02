@@ -4,6 +4,7 @@ import React from 'react'
 import {MainLayout} from '../../components/MainLayout'
 import { fetchProduct } from '../../store/actions/product/product';
 import ProductInfo from '../../components/product/ProductInfo'
+import ProductImages from '../../components/product/ProductImages'
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
 import Link from 'next/link'
@@ -25,16 +26,28 @@ const successData = !(product.load || product.error)
 const errorBlock = product.error ? <Error/> : null
 const loader = product.load ? <Loader/> : null
 let content
+let productImage
 if(productInfo){
+productImage = <ProductImages product={productInfo}/>
 content = <ProductInfo product={productInfo} /> 
 }else{
 content = ''
+productImage = ''
 }
 return <MainLayout>
   <div className="product full-width flex-block">
+  <div className="product__first"> 
+  <div className="product-cart container">
+  <div className="product-cart__left column_1-2"> 
+  {productImage}
+  </div>
+  <div className="product-cart__right column_1-2"> 
       {errorBlock}
       {loader}
       {content}
+  </div>
+      </div>
+      </div>
   </div>
 </MainLayout>
 
