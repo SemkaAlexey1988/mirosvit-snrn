@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import React from 'react' 
 import {MainLayout} from '../../components/MainLayout'
 import { fetchProduct } from '../../store/actions/product/product';
+import { fetchOptions } from '../../store/actions/product/options';
 import ProductInfo from '../../components/product/ProductInfo'
 import ProductImages from '../../components/product/ProductImages'
 import Error from '../../components/templates/error'
@@ -19,6 +20,7 @@ const dispatch = useDispatch();
 const product = useSelector(state => state.product) 
 useEffect(async () => {
   dispatch(fetchProduct(router.query.id));
+  dispatch(fetchOptions(router.query.id));
 },[]);  
 
 let productInfo = product.data[0]
@@ -56,6 +58,7 @@ return <MainLayout>
 
 Product.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchProduct(query.id))
+  await store.dispatch(fetchOptions(query.id))
       }
       
 export default Product

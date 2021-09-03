@@ -2,7 +2,6 @@
 import Link from 'next/link'
 
 const ProductInfo = ({product}) => {
-    console.log(product)
     return  <React.Fragment> 
     <div className="product-info">
     <h2>{product.name}</h2>

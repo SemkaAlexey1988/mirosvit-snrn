@@ -6,5 +6,6 @@
 "category": "/category",
 "product": "/product",
 "productsCount": "/products-count",
-"productsList": "/products-list"
+"productsList": "/products-list",
+"productOptions": "/product-options"
 }
