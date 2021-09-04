@@ -6,6 +6,7 @@ import { fetchProduct } from '../../store/actions/product/product';
 import { fetchOptions } from '../../store/actions/product/options';
 import ProductInfo from '../../components/product/ProductInfo'
 import ProductImages from '../../components/product/ProductImages'
+import ProductOptions from '../../components/product/ProductOptions'
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
 import Link from 'next/link'
@@ -18,6 +19,7 @@ const Product = () => {
 const router = useRouter() 
 const dispatch = useDispatch();
 const product = useSelector(state => state.product) 
+const options = useSelector(state => state.options) 
 useEffect(async () => {
   dispatch(fetchProduct(router.query.id));
   dispatch(fetchOptions(router.query.id));
@@ -47,6 +49,7 @@ return <MainLayout>
       {errorBlock}
       {loader}
       {content}
+      <ProductOptions options={options.data} />
   </div>
       </div>
       </div>
