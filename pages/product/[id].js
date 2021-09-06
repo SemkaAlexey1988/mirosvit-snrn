@@ -9,6 +9,7 @@ import ProductInfo from '../../components/product/ProductInfo'
 import ProductImages from '../../components/product/ProductImages'
 import ProductOptions from '../../components/product/ProductOptions'
 import CommentsInfo from '../../components/product/CommentsInfo'
+import CommentsForm from '../../components/product/CommentsForm'
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
 import Link from 'next/link'
@@ -55,6 +56,7 @@ return <MainLayout>
       {content}
       <ProductOptions options={options.data} />
       <CommentsInfo comments={comments.data} />
+      <CommentsForm/>
   </div>
       </div>
       </div>
