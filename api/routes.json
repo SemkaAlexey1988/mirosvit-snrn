@@ -7,5 +7,7 @@
 "product": "/product",
 "productsCount": "/products-count",
 "productsList": "/products-list",
-"productOptions": "/product-options"
+"productOptions": "/product-options",
+"comments": "/comments", 
+"commentAdd": "/comment"
 }
