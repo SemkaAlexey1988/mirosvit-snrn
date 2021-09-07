@@ -12,11 +12,10 @@ export default class CommentsForm extends Component {
         this.state = {
           name: '',
           email: '',  
-          phone: '', 
           comment: '',
           nameError: '',
           emailError: '',
-          phoneError: '',
+          commentError: '',
           submitedForm: false
           } 
       }
@@ -24,9 +23,8 @@ export default class CommentsForm extends Component {
       validateForm = (inputName) => {
         this.validator.message('name', this.state.name, 'required')
         this.validator.message('email', this.state.email, 'required|email')
-        this.validator.message('phone', this.state.phone, 'required')
+        this.validator.message('comment', this.state.comment, 'required')
         /* 'required|numeric' */ 
-        console.log(this.validator)
         if(inputName == 'Name' || inputName == 'Submited'){
         if (this.validator.fieldValid('name')) {
           this.setState({nameError: ''})
@@ -34,23 +32,21 @@ export default class CommentsForm extends Component {
           this.setState({nameError: `The name field ${this.validator.errorMessages.name}`})
         }
         }
-        if(inputName == 'Email' || inputName == 'Submited'){    
-        console.log(this.validator.rules.email.message)  
+        if(inputName == 'Email' || inputName == 'Submited'){     
         if (this.validator.fieldValid('email')) {
           this.setState({emailError: ''})
         }else{
-    
           this.setState({emailError: `The email field ${this.validator.errorMessages.email}`})
         } 
         }
-        
-        if(inputName == 'Phone' || inputName == 'Submited'){
-        if (this.validator.fieldValid('phone')) {
-          this.setState({phoneError: ''})
-        }else{
-          this.setState({phoneError: `The phone field ${this.validator.errorMessages.phone}`})
-        }
-        } 
+
+        if(inputName == 'Comment' || inputName == 'Submited'){
+          if (this.validator.fieldValid('comment')) {
+            this.setState({commentError: ''})
+          }else{
+            this.setState({commentError: `The comment field ${this.validator.errorMessages.comment}`})
+          }
+          }
         
       }
     
@@ -59,17 +55,16 @@ export default class CommentsForm extends Component {
       let submitedForm = 'Submited'; 
       this.validateForm(submitedForm);
       if (this.validator.allValid()) {
-      let orderObject = {
+      let commentObject = {
+      id: this.props.id,  
       name: this.name.value,
       email: this.email.value,
-      phone: this.phone.value,
       comment: this.comment.value  
       }
-      this.props.addOrderValues(orderObject);
+      this.props.addComment(commentObject);
       this.setState({
         name: '',
         email: '',
-        phone: '',
         comment: ''
     });
       } else {
@@ -81,7 +76,6 @@ export default class CommentsForm extends Component {
       this.setState({
         name: this.name.value,
         email: this.email.value,
-        phone: this.phone.value,
         comment: this.comment.value
     });
       }
@@ -94,12 +88,9 @@ export default class CommentsForm extends Component {
         this.validateForm(email);
       }
     
-      blurValuePhone = (phone) => {
-        this.validateForm(phone);
+      blurValueComment = (comment) => {
+        this.validateForm(comment);
       }
-    
-    
-    
     
       stateValueName = (name) => {
         if(this.state.submitedForm){
@@ -111,20 +102,19 @@ export default class CommentsForm extends Component {
         if(this.state.submitedForm){
         this.validateForm(email);
         }
-      } 
-    
-      stateValuePhone = (phone) => {
+      }
+      
+      stateValueComment = (comment) => {
         if(this.state.submitedForm){
-        this.validateForm(phone);
+        this.validateForm(comment);
         }
-      } 
+      }  
     
       render() {
         let name = "Name";
         let email = "Email";
-        let phone = "Phone";
         let comment = "Comment";
-        let { nameError, emailError, phoneError, ...values } = this.state
+        let { nameError, emailError, commentError, ...values } = this.state
         return (
 <React.Fragment>
             <h1>Write a Review</h1>
@@ -133,7 +123,7 @@ export default class CommentsForm extends Component {
     <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 
     onKeyUp={this.stateValueName.bind(this, name)} onBlur={this.blurValueName.bind(this, name)} type="text" value={this.state.name} />
     <p className="error">{nameError}</p>
-    {/* this.validator.message('name', this.state.name, 'required') */}
+    { this.validator.message('name', this.state.name, 'required') }
     </div>
     <div className="form-group">
     <label>{email}</label>
@@ -144,10 +134,10 @@ export default class CommentsForm extends Component {
     <div className="form-group">
     <label>{comment}</label>
     <textarea ref={(comment) => this.comment = comment }  className="form-control" placeholder="comment" onChange={this.changeValue.bind(this, comment)} 
-    type="text" value={this.state.comment}/>
+    onBlur={this.blurValueComment.bind(this, comment)} type="text" value={this.state.comment}/>
+    <p className="error">{commentError}</p>
     </div>
-    <br/>
-          <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Order</button>
+      <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Order</button>
         </React.Fragment>
         );
       } 

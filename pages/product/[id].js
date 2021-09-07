@@ -4,7 +4,7 @@ import React from 'react'
 import {MainLayout} from '../../components/MainLayout'
 import { fetchProduct } from '../../store/actions/product/product';
 import { fetchOptions } from '../../store/actions/product/options';
-import { fetchComments } from '../../store/actions/product/comments';
+import { fetchComments, commentAdd } from '../../store/actions/product/comments';
 import ProductInfo from '../../components/product/ProductInfo'
 import ProductImages from '../../components/product/ProductImages'
 import ProductOptions from '../../components/product/ProductOptions'
@@ -29,6 +29,10 @@ useEffect(async () => {
   dispatch(fetchOptions(router.query.id));
   dispatch(fetchComments(router.query.id));
 },[]);  
+
+const commentValues = (data) => {
+  dispatch(commentAdd(data));
+}
 
 let productInfo = product.data[0]
 const successData = !(product.load || product.error)
@@ -56,7 +60,7 @@ return <MainLayout>
       {content}
       <ProductOptions options={options.data} />
       <CommentsInfo comments={comments.data} />
-      <CommentsForm/>
+    <CommentsForm addComment={commentValues} id={router.query.id}/>
   </div>
       </div>
       </div>

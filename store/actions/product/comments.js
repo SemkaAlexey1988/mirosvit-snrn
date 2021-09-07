@@ -16,13 +16,16 @@ export const fetchComments = (id) => async dispatch =>  {
 }
 
 export const commentAdd = (data) => async dispatch => {
+   console.log('action')
+   console.log(data)
    let info = {
        "product_id": data.productId,
        "author": data.name,
        "email": data.email,
        "message": data.comment
    }
-   await axios.post(paths.commentsAddData, info).then((response) => {  
+   
+   await axios.post(`${config.api}${routes.commentAdd}`, info).then((response) => {  
       dispatch({
          type: 'FETCH_COMMENT_ADD',
          payload: info 
@@ -30,5 +33,6 @@ export const commentAdd = (data) => async dispatch => {
    }).catch((error) => {
    console.log(error)    
    });
+   
 
 };
