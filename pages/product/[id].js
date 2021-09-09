@@ -6,6 +6,7 @@ import { fetchProduct } from '../../store/actions/product/product';
 import { fetchOptions } from '../../store/actions/product/options';
 import { fetchComments, commentAdd } from '../../store/actions/product/comments';
 import ProductInfo from '../../components/product/ProductInfo'
+import ProductContent from '../../components/product/ProductContent'
 import ProductImages from '../../components/product/ProductImages'
 import ProductOptions from '../../components/product/ProductOptions'
 import CommentsInfo from '../../components/product/CommentsInfo'
@@ -31,6 +32,7 @@ useEffect(async () => {
 },[]);  
 
 const commentValues = (data) => {
+  data.product_id = product.data[0].product_id
   dispatch(commentAdd(data));
 }
 
@@ -38,18 +40,21 @@ let productInfo = product.data[0]
 const successData = !(product.load || product.error)
 const errorBlock = product.error ? <Error/> : null
 const loader = product.load ? <Loader/> : null
-let content
+let productInformation
 let productImage
+let productContent
 if(productInfo){
 productImage = <ProductImages product={productInfo}/>
-content = <ProductInfo product={productInfo} /> 
+productInformation = <ProductInfo product={productInfo} /> 
+productContent = <ProductContent product={productInfo} />
 }else{
-content = ''
+productInformation = ''
 productImage = ''
+productContent = ''
 }
 return <MainLayout>
-  <div className="product full-width flex-block">
-  <div className="product__first"> 
+  <div className="product full-width">
+  <div className="product__first flex-block"> 
   <div className="product-cart container">
   <div className="product-cart__left column_1-2"> 
   {productImage}
@@ -57,11 +62,21 @@ return <MainLayout>
   <div className="product-cart__right column_1-2"> 
       {errorBlock}
       {loader}
-      {content}
+      {productInformation}
       <ProductOptions options={options.data} />
-      <CommentsInfo comments={comments.data} />
-    <CommentsForm addComment={commentValues} id={router.query.id}/>
   </div>
+      </div>
+      </div>
+      <div className="product__second">
+      <div className="product__name">
+      {productContent}
+      </div>
+      <div className="product__attributes">
+        
+      </div>
+      <div className="product__comments">
+      <CommentsInfo comments={comments.data} />
+      <CommentsForm addComment={commentValues} />
       </div>
       </div>
   </div>

@@ -56,7 +56,6 @@ export default class CommentsForm extends Component {
       this.validateForm(submitedForm);
       if (this.validator.allValid()) {
       let commentObject = {
-      id: this.props.id,  
       name: this.name.value,
       email: this.email.value,
       comment: this.comment.value  

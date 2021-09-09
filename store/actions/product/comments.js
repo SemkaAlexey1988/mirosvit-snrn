@@ -15,17 +15,15 @@ export const fetchComments = (id) => async dispatch =>  {
    });   
 }
 
-export const commentAdd = (data) => async dispatch => {
-   console.log('action')
-   console.log(data)
+export const commentAdd = (data) => dispatch => {
    let info = {
-       "product_id": data.productId,
+       "product_id": data.product_id,
        "author": data.name,
        "email": data.email,
        "message": data.comment
    }
    
-   await axios.post(`${config.api}${routes.commentAdd}`, info).then((response) => {  
+   axios.post(`${config.api}${routes.commentAdd}`, info).then((response) => {  
       dispatch({
          type: 'FETCH_COMMENT_ADD',
          payload: info 
