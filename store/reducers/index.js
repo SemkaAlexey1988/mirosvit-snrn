@@ -7,6 +7,7 @@ import {categoryReducer} from './category/categoryReducer';
 import {productsListReducer} from './category/productsListReducer';
 import {productReducer} from './product/productReducer';
 import {optionsReducer} from './product/optionsReducer';
+import {attributesReducer} from './product/attributesReducer';
 import {commentsReducer} from './product/commentsReducer';
 export default combineReducers ({
 posts: postsReducer,
@@ -16,6 +17,7 @@ contacts: contactsReducer,
 category: categoryReducer,
 productsList: productsListReducer,
 product: productReducer,
-options: optionsReducer,  
+options: optionsReducer, 
+attributes: attributesReducer, 
 comments: commentsReducer
 });

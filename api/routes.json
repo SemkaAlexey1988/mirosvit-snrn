@@ -8,6 +8,7 @@
 "productsCount": "/products-count",
 "productsList": "/products-list",
 "productOptions": "/product-options",
+"productAttributes": "/product-attributes",
 "comments": "/comments", 
 "commentAdd": "/comment"
 }

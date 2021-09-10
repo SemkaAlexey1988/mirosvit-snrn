@@ -4,11 +4,13 @@ import React from 'react'
 import {MainLayout} from '../../components/MainLayout'
 import { fetchProduct } from '../../store/actions/product/product';
 import { fetchOptions } from '../../store/actions/product/options';
+import { fetchAttributes } from '../../store/actions/product/attributes';
 import { fetchComments, commentAdd } from '../../store/actions/product/comments';
 import ProductInfo from '../../components/product/ProductInfo'
 import ProductContent from '../../components/product/ProductContent'
 import ProductImages from '../../components/product/ProductImages'
 import ProductOptions from '../../components/product/ProductOptions'
+import ProductAttributes from '../../components/product/ProductAttributes'
 import CommentsInfo from '../../components/product/CommentsInfo'
 import CommentsForm from '../../components/product/CommentsForm'
 import Error from '../../components/templates/error'
@@ -24,10 +26,12 @@ const router = useRouter()
 const dispatch = useDispatch();
 const product = useSelector(state => state.product) 
 const options = useSelector(state => state.options) 
+const attributes = useSelector(state => state.attributes) 
 const comments = useSelector(state => state.comments) 
 useEffect(async () => {
   dispatch(fetchProduct(router.query.id));
   dispatch(fetchOptions(router.query.id));
+  dispatch(fetchAttributes(router.query.id));
   dispatch(fetchComments(router.query.id));
 },[]);  
 
@@ -72,7 +76,7 @@ return <MainLayout>
       {productContent}
       </div>
       <div className="product__attributes">
-        
+      <ProductAttributes attributes={attributes.data} /> 
       </div>
       <div className="product__comments">
       <CommentsInfo comments={comments.data} />
@@ -88,6 +92,7 @@ return <MainLayout>
 Product.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchProduct(query.id))
   await store.dispatch(fetchOptions(query.id))
+  await store.dispatch(fetchAttributes(query.id))
   await store.dispatch(fetchComments(query.id))
       }
       
