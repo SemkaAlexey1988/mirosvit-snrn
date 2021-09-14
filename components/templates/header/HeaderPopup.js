@@ -14,7 +14,6 @@ const HeaderPopup = ({}) => {
   }
 
   const controlClick = (e) => {
-    console.log(data.modalStatus)
     if(data.modalStatus){
     if(formStatus.current.contains(e.target)){
     return;
