@@ -2,11 +2,6 @@ import {useState, useEffect, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import React from 'react' 
 import {MainLayout} from '../../components/MainLayout'
-import { fetchProduct } from '../../store/actions/product/product';
-import { fetchOptions } from '../../store/actions/product/options';
-import { fetchAttributes } from '../../store/actions/product/attributes';
-import { fetchComments, commentAdd } from '../../store/actions/product/comments';
-import { fetchRating, ratingAdd } from '../../store/actions/product/rating';
 import { fetchCartAll, fetchCartMax, addToCart, updateCartQuantity, deleteCartProduct } from '../../store/actions/product/cart';
 import ProductInfo from '../../components/product/ProductInfo'
 import ProductContent from '../../components/product/ProductContent'
@@ -23,14 +18,12 @@ import Loader from '../../components/templates/loader'
 
 import reduceProducts from '../../utils/reduceProducts';
 import dateFormat from '../../utils/dateFormat';
-import cartTransformer from '../../utils/cartTransformer';
-import updateCartTransformer from '../../utils/updateCartTransformer';
 
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Router from 'next/router'
 
-const Product = () => {
+const Order = () => {
    
 const router = useRouter() 
 const dispatch = useDispatch();
@@ -188,10 +181,7 @@ return <MainLayout>
 
 Product.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchProduct(query.id))
-  await store.dispatch(fetchOptions(query.id))
-  await store.dispatch(fetchAttributes(query.id))
-  await store.dispatch(fetchComments(query.id))
-  await store.dispatch(fetchRating(query.id))
+
       }
       
-export default Product
+export default Order

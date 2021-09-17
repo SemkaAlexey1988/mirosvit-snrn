@@ -8,6 +8,7 @@ import {productsListReducer} from './category/productsListReducer';
 import {productReducer} from './product/productReducer';
 import {optionsReducer} from './product/optionsReducer';
 import {attributesReducer} from './product/attributesReducer';
+import {ratingReducer} from './product/ratingReducer';
 import {commentsReducer} from './product/commentsReducer';
 export default combineReducers ({
 posts: postsReducer,
@@ -19,5 +20,6 @@ productsList: productsListReducer,
 product: productReducer,
 options: optionsReducer, 
 attributes: attributesReducer, 
+rating: ratingReducer, 
 comments: commentsReducer
 });

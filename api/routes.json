@@ -9,6 +9,13 @@
 "productsList": "/products-list",
 "productOptions": "/product-options",
 "productAttributes": "/product-attributes",
+"cartMax": "/cartmax",
+"cartAddToCart": "/cart",
+"cartAll": "/cartlist",
+"cartUpdateQuantity": "/product-quantity", 
+"cartDeleteProduct": "/product-cart-delete",
 "comments": "/comments", 
-"commentAdd": "/comment"
+"commentAdd": "/comment",
+"productRating": "/rating", 
+"productRatingAdd": "/ratings"
 }

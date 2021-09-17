@@ -28,15 +28,15 @@ export const productReducer = (state = initialState, action) => {
     case constants.FETCH_CART_SUCCESS:
         return {
         ...state,   
-        cartItem: action.payload,   
+        cartItems: action.payload,   
         load: false,
         error: false
         } 
     case constants.FETCH_CART_ADD:
-        let cartAdd = state.cartItem.concat(action.payload)
+        let cartAdd = state.cartItems.concat(action.payload)
         return {
         ...state,   
-        cartItem: cartAdd,   
+        cartItems: cartAdd,   
         load: false,
         error: false 
         }         
@@ -54,7 +54,8 @@ export const productReducer = (state = initialState, action) => {
         elementIndexArray[elementIndex].totalprice = elementIndexArray[elementIndex].price * action.payload.quantity
         let arrayBefore = elementIndexArray.slice(0, elementIndex)
         let unitedArray = arrayBefore.concat([elementIndexArray[elementIndex]], elementIndexArray.slice(elementIndex + 1)) 
-      
+        console.log('www')
+        console.log(unitedArray)
         return {
         ...state,   
         cartItems: unitedArray,
