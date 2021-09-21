@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux'  
 import React from 'react'
-import { fetchProductsList, fetchProductsCount } from '../../store/actions/category/ProductsList';
+import { fetchProductsList, fetchProductsCount } from '../../store/actions/category/productsList';
 import ProductsListInfo from '../../components/category/ProductsListInfo';
 import Pagination from '../../components/category/Pagination';
 import settings from '../../settings';
