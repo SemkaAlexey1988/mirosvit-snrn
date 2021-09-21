@@ -1,107 +1,50 @@
 import {useState, useEffect, useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import React from 'react' 
-import {MainLayout} from '../../components/MainLayout'
-import { fetchCartAll, fetchCartMax, addToCart, updateCartQuantity, deleteCartProduct } from '../../store/actions/product/cart';
-import ProductInfo from '../../components/product/ProductInfo'
-import ProductContent from '../../components/product/ProductContent'
-import ProductImages from '../../components/product/ProductImages'
-import ProductOptions from '../../components/product/ProductOptions'
-import ProductAttributes from '../../components/product/ProductAttributes'
-import CommentsInfo from '../../components/product/CommentsInfo'
-import CommentsForm from '../../components/product/CommentsForm'
-import RatingInfo from '../../components/product/RatingInfo'
-import RatingAdd from '../../components/product/RatingAdd'
-import CartInfo from '../../components/product/CartInfo'
-import Error from '../../components/templates/error'
-import Loader from '../../components/templates/loader'
+import {MainLayout} from '../components/MainLayout'
+import { fetchCartAll, fetchCartMax, updateCartQuantity, deleteCartProduct } from '../store/actions/product/cart';
+import { addOrder } from '../store/actions/order/order';
 
-import reduceProducts from '../../utils/reduceProducts';
-import dateFormat from '../../utils/dateFormat';
+import reduceProducts from '../utils/reduceProducts';
+import dateFormat from '../utils/dateFormat';
 
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Router from 'next/router'
 
+import CartInfo from '../components/order/CartInfo'
+import OrderForm from '../components/order/OrderForm';
+
 const Order = () => {
+
+const [data, setData] = useState({ 
+  productId: 0,
+  custumerId: 0,
+  balance: 0    
+})   
    
 const router = useRouter() 
 const dispatch = useDispatch();
 const product = useSelector(state => state.product) 
-const options = useSelector(state => state.options) 
-const attributes = useSelector(state => state.attributes) 
-const comments = useSelector(state => state.comments) 
-const rating = useSelector(state => state.rating) 
+
+const orderValues = (value) => {
+  let formatDate = dateFormat(); 
+  let cartId = localStorage.getItem('cart');
+  let data = {
+  cartId: cartId,
+  name: value.name,
+  email: value.email,
+  phone: value.phone,
+  comment: value.comment,
+  date_added: formatDate   
+  }
+  dispatch(addOrder(data));
+  }
 
 useEffect(async () => {
-  dispatch(fetchProduct(router.query.id));
-  dispatch(fetchOptions(router.query.id));
-  dispatch(fetchAttributes(router.query.id));
-  dispatch(fetchComments(router.query.id));
-  dispatch(fetchRating(router.query.id));
   dispatch(fetchCartMax());
   dispatch(fetchCartAll());
 },[]);  
-
-const commentValues = (data) => {
-  data.product_id = product.data[0].product_id
-  dispatch(commentAdd(data));
-}
-
-const valueRating = (value) => {
-
-  let productId = product.data[0].product_id
-  let storageValue = `ratingStatus-${productId}`; 
-  let currentStorage = localStorage.getItem(storageValue);
-  let currentStorageId =  parseInt(currentStorage) 
-  if(currentStorageId !== productId){
-  let data = {
-  productId: productId,  
-  value: value   
-  }
-  dispatch(ratingAdd(data));
-  localStorage.setItem(storageValue, productId);  
-} 
-}
-
-const sendData = (value) => {
-  if(value.add){ 
-    let formatDate = dateFormat();
-    let productId = product.data[0].product_id;
-    let newMaxId
-    let currentStorage = localStorage.getItem('cart');
-    if(currentStorage){
-      newMaxId = currentStorage
-      }else{
-      let maxId = product.cartMax[0].maxid; 
-      newMaxId = maxId + 1  
-      localStorage.setItem('cart', newMaxId); 
-      }
-      dispatch(fetchCartAll(newMaxId)) 
-
-    let actionSelector = cartTransformer(product.cartItems, productId)  
-    if(!actionSelector.productsQuantity || !actionSelector.finalStatus){
-    //  Add
-    let data = {
-      custumer_id: newMaxId, 
-      product_id: productId, 
-      quantity: 1, 
-      date_added: formatDate   
-    }
-    dispatch(addToCart(data))  
-    }else if(actionSelector.finalStatus){
-    //  Update
-   let newQuantity = updateCartTransformer(product.cartItems, productId)
-      let custumerId = localStorage.getItem('cart');
-      let data = {
-        quantity: newQuantity,
-        custumer_id: custumerId,
-        product_id: productId     
-        } 
-        dispatch(updateCartQuantity(data))   
-  } 
-    }
-}
 
 const changeQuantity = ({quantity, productId}) => {
     let quantytyValue  
@@ -124,63 +67,27 @@ const targetDelProduct = ({productId}) => {
   dispatch(deleteCartProduct(data))
 }
 
-let productInfo = product.data[0]
-const successData = !(product.load || product.error)
-const errorBlock = product.error ? <Error/> : null
-const loader = product.load ? <Loader/> : null
-let productInformation
-let productImage
-let productContent
-if(productInfo){
-  productImage = <ProductImages product={productInfo}/>
-  productInformation = <ProductInfo product={productInfo} /> 
-  productContent = <ProductContent product={productInfo} />
+let cartItems = product.cartItems
+let totalPrice = reduceProducts(product.cartItems)
+
+if(cartItems){
+  cartItems = <CartInfo cart={product.cartItems} totalPrice={totalPrice} newQuantity={changeQuantity}
+  delProduct={targetDelProduct}/>
 }else{
-  productInformation = ''
-  productImage = ''
-  productContent = ''
+  cartItems = ''
 }
 
-let totalPrice = reduceProducts(product.cartItems)
 return <MainLayout>
-  <div className="product full-width">
-  <div className="product__first flex-block"> 
-  <div className="product-cart container">
-  <div className="product-cart__left column_1-2"> 
-  {productImage}
-  </div>
-  <div className="product-cart__right column_1-2"> 
-      {errorBlock}
-      {loader}
-      {productInformation}
-      <ProductOptions options={options.data} />
-      <CartInfo addCart={sendData} cart={product.cartItems} totalPrice={totalPrice} newQuantity={changeQuantity}
-            delProduct={targetDelProduct}/>
-  </div>
-      </div>
-      </div>
-      <div className="product__second">
-      <div className="product__name">
-      {productContent}
-      </div>
-      <div className="product__attributes">
-      <ProductAttributes attributes={attributes.data} /> 
-      </div>
-      <div className="product__comments">
-      <CommentsInfo comments={comments.data} />
-      <RatingInfo rating={rating.data} /> 
-      <RatingAdd star={valueRating} /> 
-      <CommentsForm addComment={commentValues} />
-      </div>
-      </div>
-  </div>
+   <div className="order">
+   {cartItems}
+   <OrderForm addOrderValues={orderValues} /> 
+   </div>
 </MainLayout>
 
 }
     
 
-Product.getInitialProps = async ({store, query}) => {
-  await store.dispatch(fetchProduct(query.id))
+Order.getInitialProps = async ({store, query}) => {
 
       }
       

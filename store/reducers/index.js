@@ -10,6 +10,8 @@ import {optionsReducer} from './product/optionsReducer';
 import {attributesReducer} from './product/attributesReducer';
 import {ratingReducer} from './product/ratingReducer';
 import {commentsReducer} from './product/commentsReducer';
+import {orderReducer} from './order/orderReducer';
+import {wordsReducer} from './common/wordsReducer';
 export default combineReducers ({
 posts: postsReducer,
 menus: menusReducer,
@@ -21,5 +23,7 @@ product: productReducer,
 options: optionsReducer, 
 attributes: attributesReducer, 
 rating: ratingReducer, 
-comments: commentsReducer
+comments: commentsReducer,
+words: wordsReducer,
+order: orderReducer
 });
