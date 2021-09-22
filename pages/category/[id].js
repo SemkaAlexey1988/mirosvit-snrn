@@ -6,11 +6,13 @@ import Link from 'next/link'
 import { fetchMenus } from '../../store/actions/menus/menus';
 import { fetchCategory, fetchCategories } from '../../store/actions/category/category';
 import { fetchProductsList } from '../../store/actions/category/productsList';
+import { fetchManufacturerFilter, fetchAttributesFilter, fetchMinMax } from '../../store/actions/common/filter';
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
 import CategoryInfo from '../../components/category/CategoryInfo'
 import CategoriesList from '../../containers/categories/CategoriesList'
 import ProductsList from '../../containers/categories/ProductsList'
+import Filter from '../../containers/templates/filter/Filter';
 
 import {useRouter} from 'next/router'
 import Router from 'next/router'
@@ -20,9 +22,13 @@ const Category = () => {
 const router = useRouter() 
 const dispatch = useDispatch();
 const category = useSelector(state => state.category) 
+const filter = useSelector(state => state.filter) 
 useEffect(async () => {
   dispatch(fetchCategory(router.query.id)); 
-  dispatch(fetchProductsList(router.query.id));    
+  dispatch(fetchProductsList(router.query.id));  
+  dispatch(fetchManufacturerFilter());
+  dispatch(fetchAttributesFilter()); 
+  dispatch(fetchMinMax(router.query.id));  
 },[]);  
 
 let categoryInfo = category.categoryInfo[0]
@@ -40,6 +46,8 @@ return <MainLayout>
     <div className="left-block">             
       <div className="categories-list"> 
       <CategoriesList/>
+      <Filter price={filter.minmax} id={router.query.id} filter={router.query.filter} 
+    manufacturers={filter.manufacturers} attributes={filter.attributes} />
       </div>
       </div>
       <div className="content-block"> 

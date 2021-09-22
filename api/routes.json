@@ -20,5 +20,8 @@
 "comments": "/comments", 
 "commentAdd": "/comment",
 "productRating": "/rating", 
-"productRatingAdd": "/ratings"
+"productRatingAdd": "/ratings",
+"minmaxpriceFilter": "/maxmin-price",
+"manufacturerFilter": "/product-manufacturers-filter",
+"attributesFilter": "/product-attributes-filter"
 }

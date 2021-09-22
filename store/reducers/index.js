@@ -4,6 +4,7 @@ import {menusReducer} from './menus/menusReducer';
 import {specialsReducer} from './main/specialsReducer';
 import {contactsReducer} from './contacts/contactsReducer';
 import {categoryReducer} from './category/categoryReducer';
+import {filterReducer} from './common/filterReducer';
 import {productsListReducer} from './category/productsListReducer';
 import {productReducer} from './product/productReducer';
 import {optionsReducer} from './product/optionsReducer';
@@ -18,6 +19,7 @@ menus: menusReducer,
 specials: specialsReducer,
 contacts: contactsReducer,
 category: categoryReducer,
+filter: filterReducer,
 productsList: productsListReducer,
 product: productReducer,
 options: optionsReducer, 
