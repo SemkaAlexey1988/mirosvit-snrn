@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { useRouter } from 'next/router'
 
 import pathTransformer from '../../../utils/pathTransformer';
 
@@ -6,20 +7,11 @@ import FilterPrice from './../../../components/templates/filter/FilterPrice';
 import FilterAttributes from './../../../components/templates/filter/FilterAttributes';
 import FilterManufacturers from './../../../components/templates/filter/FilterManufacturers';
 
-class Filter extends Component {
-    constructor(){
-    super();  
-    this.changePath = this.changePath.bind(this); 
-    this.filtredPath = this.filtredPath.bind(this); 
-    this.usedPath = this.usedPath.bind(this); 
-    this.mOptions = this.mOptions.bind(this); 
-    this.aOptions = this.aOptions.bind(this); 
-   
-    }
+const Filter = ({price, id, filter, manufacturers, attributes}) => {
 
-  
+  const router = useRouter()
 
-    usedPath = () => {
+    const usedPath = () => {
     let curentPath = window.location.pathname;
     let filterUsed = curentPath.indexOf('/filter');
     let filtredPathV;
@@ -31,7 +23,7 @@ class Filter extends Component {
     return filtredPathV 
   }
 
-  filtredPath = () => {
+  const filtredPath = () => {
     let curentPath = window.location.pathname;
     let filterUsed = curentPath.indexOf('/filter');
     let filtredPathV;
@@ -44,9 +36,9 @@ class Filter extends Component {
   }
 
 
-    changePath = (value) => {
-     let filtredPathValue = this.filtredPath() 
-     let usedPathValue = this.usedPath()
+  const  changePath = (value) => {
+     let filtredPathValue = filtredPath() 
+     let usedPathValue = usedPath()
 
      let priceFilter = filtredPathValue.indexOf('price');
    
@@ -65,14 +57,15 @@ newPath = `${usedPathValue}${filtredPathValue},price[${value.valueMin},${value.v
      newPath = `${usedPathValue}/filter=price[${value.valueMin},${value.valueMax}]`  
      }
 
-    window.location.pathname = newPath; 
+    //window.location.pathname = newPath; 
+    router.push(newPath)
     
     }
 
   
 
-mOptions = (value) => {
-      let filtredPathValue = this.filtredPath() 
+const mOptions = (value) => {
+      let filtredPathValue = filtredPath() 
       let usedPathValue = this.usedPath() 
       let newPath
       let splitValue = value.join(',')
@@ -121,17 +114,15 @@ newPath = `${usedPathValue}/filter=manufacturers[${splitValue}]`
 
 //localStorage.setItem('filters', newPath);
 //let filterStorage = localStorage.getItem('filters');
-
-window.location.pathname = newPath; 
+router.push(newPath)
+//window.location.pathname = newPath; 
     }
 
 
-aOptions = (value) => { 
-console.log(value)
+const aOptions = (value) => { 
 
-
-let filtredPathValue = this.filtredPath() 
-let usedPathValue = this.usedPath() 
+let filtredPathValue = filtredPath() 
+let usedPathValue = usedPath() 
 let newPath
 let splitValue = value.join(',')
 
@@ -179,26 +170,14 @@ newPath = `${usedPathValue}/filter=attributes[${splitValue}]`
 
 //console.log(newPath)
 
-window.location.pathname = newPath; 
-
-
-
-
+//window.location.pathname = newPath; 
+router.push(newPath)
 
 }   
 
 
 
-
-
-
-
-
-  
-
-      render(){
-
-let filterValue = this.props.filter
+let filterValue = filter
 let filterValueObject
 let filterPrice
 let filterPriceString
@@ -226,16 +205,15 @@ filterMaximumPrice = 0
         <div>
           
 <FilterPrice 
-newValue={this.changePath}
+newValue={changePath}
 filterMin = {filterMinimumPrice} 
 filterMax = {filterMaximumPrice} 
-priceMin={this.props.price.min_price} priceMax={this.props.price.max_price} id={this.props.id} /> 
-   <FilterAttributes filters={this.props.filter} attributes={this.props.attributes} attributesOptions={this.aOptions} />
-   <FilterManufacturers filters={this.props.filter} manufacturers={this.props.manufacturers} manufacturersOptions={this.mOptions} />
+priceMin={price.min_price} priceMax={price.max_price} id={id} /> 
+   <FilterAttributes filters={filter} attributes={attributes} attributesOptions={aOptions} />
+   <FilterManufacturers filters={filter} manufacturers={manufacturers} manufacturersOptions={mOptions} />
    </div> 
             );
 
-      }
 
 }
 

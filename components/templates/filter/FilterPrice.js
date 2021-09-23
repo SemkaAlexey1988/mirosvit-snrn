@@ -60,9 +60,6 @@ fetch(`${api.api}${paths.minmaxpriceFilter}/${this.props.id}`)
       maxPrice: data[0].max_price
     })
 
-    console.log(this.state.thumbMin)
-    console.log(this.state.thumbMax)
-
 
         
     if(this.props.filter != ''){
