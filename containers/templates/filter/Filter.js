@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
- 
-
 
 import pathTransformer from '../../../utils/pathTransformer';
 
 import FilterPrice from './../../../components/templates/filter/FilterPrice';
 import FilterAttributes from './../../../components/templates/filter/FilterAttributes';
 import FilterManufacturers from './../../../components/templates/filter/FilterManufacturers';
-
-//import { fetchMinMax } from './../../../actions/common/filter';
-
 
 class Filter extends Component {
     constructor(){
@@ -29,7 +21,7 @@ class Filter extends Component {
 
     usedPath = () => {
     let curentPath = window.location.pathname;
-    let filterUsed = curentPath.indexOf('&filter');
+    let filterUsed = curentPath.indexOf('/filter');
     let filtredPathV;
     if(filterUsed > 1){
     filtredPathV = curentPath.substring(0, filterUsed)  
@@ -41,7 +33,7 @@ class Filter extends Component {
 
   filtredPath = () => {
     let curentPath = window.location.pathname;
-    let filterUsed = curentPath.indexOf('&filter');
+    let filterUsed = curentPath.indexOf('/filter');
     let filtredPathV;
     if(filterUsed > 1){
     filtredPathV = curentPath.substring(filterUsed, curentPath.length)  
@@ -70,7 +62,7 @@ newPath = `${usedPathValue}${priceClearFilter}price[${value.valueMin},${value.va
 newPath = `${usedPathValue}${filtredPathValue},price[${value.valueMin},${value.valueMax}]`     
 }   
     }else{
-     newPath = `${usedPathValue}&filter=price[${value.valueMin},${value.valueMax}]`  
+     newPath = `${usedPathValue}/filter=price[${value.valueMin},${value.valueMax}]`  
      }
 
     window.location.pathname = newPath; 
@@ -122,7 +114,7 @@ newPath = `${usedPathValue}${filtredPathValue},manufacturers[${splitValue}]`
   if(value == ''){
 newPath = `${usedPathValue}`
   }else{
-newPath = `${usedPathValue}&filter=manufacturers[${splitValue}]`
+newPath = `${usedPathValue}/filter=manufacturers[${splitValue}]`
   }    
 }
 
@@ -180,7 +172,7 @@ newPath = `${usedPathValue}${filtredPathValue},attributes[${splitValue}]`
 if(value == ''){
 newPath = `${usedPathValue}`
 }else{
-newPath = `${usedPathValue}&filter=attributes[${splitValue}]`
+newPath = `${usedPathValue}/filter=attributes[${splitValue}]`
 }    
 }
 
@@ -200,21 +192,7 @@ window.location.pathname = newPath;
 
 
 
-    componentDidMount(){
-    
 
-   // this.props.fetchMinMax(this.props.id)
-    }
-
-    /*
-    componentDidUpdate(prevProps) {
-      if (this.props.match.params.page !== prevProps.match.params.page) {
-        let mpp = this.props.match.params.page;        
-this.props.fetchProductsList(this.props.match.params.id, mpp);      
-      }
-    }
-
-    */
 
   
 
@@ -261,17 +239,7 @@ priceMin={this.props.price.min_price} priceMax={this.props.price.max_price} id={
 
 }
 
-const mapStateToProps = ({filter}) => {
-    return {
- //  reduxFilter: filter 
-    }
-}
-
-const mapDispatchProps = (dispatch) => {
-    return {
-  //  fetchMinMax: bindActionCreators(fetchMinMax, dispatch) 
-    }
-}
 
 
-export default connect(mapStateToProps, mapDispatchProps)(Filter)
+
+export default Filter

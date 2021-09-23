@@ -1,4 +1,4 @@
 {
-"siteURL": "https://mirosvit-snrn.herokuapp.com",
+"siteURL": "http://localhost:3000",
 "api": "https://mirosvit-shop.herokuapp.com" 
 }

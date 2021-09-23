@@ -1,0 +1,75 @@
+
+
+.left-block .slider {
+    border-radius: 5px;
+    background: #E0E0E0;
+    background: -moz-linear-gradient(left top, #E0E0E0, #EEEEEE) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, right bottom, from(#E0E0E0), to(#EEEEEE));
+    background: linear-gradient(left top, #E0E0E0, #EEEEEE);
+    width: 320px;
+    height: 15px;
+    margin: 15px;
+    position: relative;
+  
+  }
+  
+  #sliderValue {
+  margin-left: 15px;
+  }
+  
+  .thumbMin {
+    width: 20px;
+    height: 25px;
+    border-radius: 3px;
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    background: blue;
+    cursor: pointer;
+    scroll-behavior: smooth;
+  }
+  
+  .thumbMax {
+    width: 20px;
+    height: 25px;
+    border-radius: 3px;
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    background: blue;
+    cursor: pointer;
+    scroll-behavior: smooth;
+  }
+  
+  .thumb.second {
+    width: 10px;
+  }
+  
+  .filter-manufacturers label {
+  display: block;
+  }
+  .filter-manufacturers label span {
+    padding: 0 5px;
+    }
+  
+  .filter-attributes label {
+  display: block;
+  }
+  .filter-attributes label span {
+    padding: 0 5px;
+    }  
+  
+  @media screen and (min-width:300px) and (max-width:768px){
+    .flex-block {
+    flex-wrap: wrap;
+    }
+    .left-block {
+      flex-basis: 100%;
+  }
+  .content-block {
+    flex-basis: 100%;
+  }
+  .products-specials {
+    flex-basis: 50%;
+  }
+  }

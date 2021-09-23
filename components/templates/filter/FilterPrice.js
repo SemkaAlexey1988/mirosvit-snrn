@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
-import paths from '../../../paths';
-import api from '../../../../../config.json';
+import paths from '../../../api/routes.json';
+import api from '../../../config.json';
+import axios from 'axios';
 
 class FilterPrice extends Component {
 
@@ -46,7 +47,7 @@ document.addEventListener('mouseup', this.endEventMin, false);
 document.addEventListener('mouseup', this.endEventMax, false);  
 document.addEventListener('mousemove', this.elementMove, false); 
 
-fetch(`${api.api}${paths.minmaxpriceFetchFilter}/${this.props.id}`)
+fetch(`${api.api}${paths.minmaxpriceFilter}/${this.props.id}`)
   .then((response) => {
     return response.json();
   })
@@ -58,6 +59,9 @@ fetch(`${api.api}${paths.minmaxpriceFetchFilter}/${this.props.id}`)
       minPrice: data[0].min_price,
       maxPrice: data[0].max_price
     })
+
+    console.log(this.state.thumbMin)
+    console.log(this.state.thumbMax)
 
 
         

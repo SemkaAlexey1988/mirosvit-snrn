@@ -67,6 +67,9 @@ Category.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchCategories())
   await store.dispatch(fetchMenus())
   await store.dispatch(fetchProductsList(query.id))
+  await store.dispatch(fetchManufacturerFilter())
+  await store.dispatch(fetchAttributesFilter())
+  await store.dispatch(fetchMinMax(query.id))
       }
       
 export default Category
