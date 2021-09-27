@@ -45,6 +45,10 @@ if(router.query.q.indexOf('page=') > -1){
 
 if(router.query.q.indexOf('filter=') > -1){
   queryParamFilter = router.query.q.replace(/filter=/g, "")
+  if(queryParamFilter.indexOf('page=') > -1){
+    let filterClear = queryParamFilter.indexOf('&') 
+    queryParamFilter = queryParamFilter.substring(filterClear+1, queryParamFilter.length) 
+ }
 }else{
   queryParamFilter = ''
 }

@@ -115,7 +115,6 @@ newPath = `${usedPathValue}/filter=manufacturers[${splitValue}]`
 //localStorage.setItem('filters', newPath);
 //let filterStorage = localStorage.getItem('filters');
 router.push(newPath)
-//window.location.pathname = newPath; 
     }
 
 
@@ -167,10 +166,6 @@ newPath = `${usedPathValue}/filter=attributes[${splitValue}]`
 }    
 }
 
-
-//console.log(newPath)
-
-//window.location.pathname = newPath; 
 router.push(newPath)
 
 }   

@@ -5,16 +5,18 @@ import settings from '../../../settings';
 
 
 export const fetchProductsList = (id, page, filter) => async dispatch =>  {
+   
+   let filterValue
+
    if(!page){
    page=1 
    }
-   let filterValue
    if(filter != ''){
    filterValue = `&filter=${filter}` 
    }else{
    filterValue = ``   
    }
-   console.log(filterValue)
+  
    await axios(`${config.api}${routes.productsList}/${id}&page=${page}&limit=${settings.limit}${filterValue}`).then(result =>{ 
       dispatch({
          type: 'FETCH_PRODUCTS_LIST_SUCCESS',

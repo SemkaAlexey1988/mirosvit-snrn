@@ -384,10 +384,6 @@ MoveMax = (ClientX) => {
 const thumbMin = this.thumbMin.current  
 const thumbMinW = thumbMin.offsetWidth
 let newRightVal = newRight
-console.log(newRightVal)
-console.log(sliderRefs.sliderSizeNormal)
-console.log(normal.normalization)
-  console.log(normal.minVal)
   let priceValueNumberMax = Math.round((newRightVal / sliderRefs.sliderSizeNormal)*normal.normalization + normal.minVal);
   let priceValueMax = priceValueNumberMax.toString();
 
