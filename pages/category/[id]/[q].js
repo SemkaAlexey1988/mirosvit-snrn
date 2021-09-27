@@ -23,14 +23,15 @@ const router = useRouter()
 
 let queryParams = router.query.q 
 let queryParamPage
+let queryParamFilter
 
 const dispatch = useDispatch();
 const category = useSelector(state => state.category) 
 const filter = useSelector(state => state.filter) 
 useEffect(async () => { 
   dispatch(fetchCategory(router.query.id)); 
-  dispatch(fetchProductsList(router.query.id, queryParamPage)); 
-  dispatch(fetchProductsCount(router.query.id)); 
+  dispatch(fetchProductsList(router.query.id, queryParamPage, queryParamFilter)); 
+  dispatch(fetchProductsCount(router.query.id, queryParamFilter)); 
   dispatch(fetchManufacturerFilter());
   dispatch(fetchAttributesFilter()); 
   dispatch(fetchMinMax(router.query.id)); 
@@ -40,6 +41,12 @@ if(router.query.q.indexOf('page=') > -1){
   queryParamPage = parseInt(router.query.q.replace(/page=/g, ""))
 }else{
   queryParamPage = 1
+}
+
+if(router.query.q.indexOf('filter=') > -1){
+  queryParamFilter = router.query.q.replace(/filter=/g, "")
+}else{
+  queryParamFilter = ''
 }
 
 let categoryInfo = category.categoryInfo[0]
@@ -57,12 +64,12 @@ return <MainLayout>
     <div className="left-block">             
       <div className="categories-list"> 
       <CategoriesList/>
-      <Filter price={filter.minmax} id={router.query.id} filter={router.query.filter} 
+      <Filter price={filter.minmax} id={router.query.id} filter={queryParamFilter} 
     manufacturers={filter.manufacturers} attributes={filter.attributes} />
       </div>
       </div>
       <div className="content-block"> 
-      <ProductsList id={router.query.id} page={queryParamPage} />
+      <ProductsList id={router.query.id} page={queryParamPage} filter={queryParamFilter} />
     {errorBlock}  
     {loader}
     {content} 
@@ -77,16 +84,23 @@ Category.getInitialProps = async ({store, query}) => {
   
   let queryParams = query.q 
   let queryParamPage
+  let queryParamFilter
   if(queryParams.indexOf('page=') > -1){
   queryParamPage = parseInt(queryParams.replace(/page=/g, ""))
   }else{
   queryParamPage = 1
   }
+  if(queryParams.indexOf('filter=') > -1){
+    queryParamFilter = queryParams.replace(/filter=/g, "")
+  }else{
+    queryParamFilter = ''
+  }
+
   await store.dispatch(fetchCategory(query.id))
   await store.dispatch(fetchCategories())
   await store.dispatch(fetchMenus())
-  await store.dispatch(fetchProductsList(query.id, queryParamPage))
-  await store.dispatch(fetchProductsCount(query.id))
+  await store.dispatch(fetchProductsList(query.id, queryParamPage, queryParamFilter))
+  await store.dispatch(fetchProductsCount(query.id, queryParamFilter))
   await store.dispatch(fetchManufacturerFilter())
   await store.dispatch(fetchAttributesFilter())
   await store.dispatch(fetchMinMax(query.id))

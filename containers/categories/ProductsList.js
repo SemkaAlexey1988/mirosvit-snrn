@@ -7,10 +7,14 @@ import Pagination from '../../components/category/Pagination';
 import settings from '../../settings';
 
 
-const ProductsList = ({id, page}) => {
+const ProductsList = ({id, page, filter}) => {
 
-  console.log(id)
-  console.log(page) 
+  let filterValue
+  if(filter && filter != ''){
+    filterValue = `&filter=${filter}`
+  }else{
+    filterValue = ``
+  }
   const dispatch = useDispatch();
   const productsList = useSelector(state => state.productsList) 
 
@@ -24,7 +28,7 @@ const ProductsList = ({id, page}) => {
   const loader = productsList.load ? <div className="load"></div> : null
   const content = <div className="products">
     <ProductsListInfo productsList={productsList.data} />
-    <Pagination limit={settings.limit} page={page} path={id} count={productsList.productCount.count} />
+    <Pagination limit={settings.limit} page={page} path={id} filter={filterValue} count={productsList.productCount.count} />
     </div>
 
     return <React.Fragment>

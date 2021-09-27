@@ -186,7 +186,10 @@ let filterMinimumPrice
 let filterMaximumPrice
 
 if(filterValue){
-  
+  if(filterValue.indexOf('page=') > -1){
+  let filterValueClear = filterValue.indexOf('&') 
+  filterValue = filterValue.substring(filterValueClear+1, filterValue.length) 
+  }
 filterValueObject = pathTransformer(filterValue);
 if(filterValueObject.price){
 filterPriceString = filterValueObject.price 
