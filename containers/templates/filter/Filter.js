@@ -54,10 +54,14 @@ newPath = `${usedPathValue}${priceClearFilter}price[${value.valueMin},${value.va
 newPath = `${usedPathValue}${filtredPathValue},price[${value.valueMin},${value.valueMax}]`     
 }   
     }else{
-     newPath = `${usedPathValue}/filter=price[${value.valueMin},${value.valueMax}]`  
+      let queryVal = usedPathValue.indexOf('page');
+      if(queryVal > -1){
+        newPath = `${usedPathValue}&filter=price[${value.valueMin},${value.valueMax}]` 
+      }else{
+        newPath = `${usedPathValue}/filter=price[${value.valueMin},${value.valueMax}]` 
+      }  
      }
 
-    //window.location.pathname = newPath; 
     router.push(newPath)
     
     }
