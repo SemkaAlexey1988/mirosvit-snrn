@@ -8,7 +8,6 @@ let getValues
 let getOptions
 
 const onInputchange = (e) => {
-
 let currentValue = e.target.value 
 const checked = e.target.checked;
 let valOptions = data.options
@@ -79,8 +78,6 @@ arrayVal.push(elementValue)
 }
 
 
-
-
 }
 
 
@@ -94,7 +91,8 @@ if(filters){
   let filtersClearThird = filtersClearSecond.substring(filtersClearThirdStart+1, filtersClearThirdFinish)
   let filtersClearArray = filtersClearThird.split(',')
   let valChecked = data.filterChecked
-if(!valChecked){
+  
+
 newAttributes = attributes.map((attribute) => {
   filtersClearArray.map((fl)=>{
   let flAttr = fl.split('-')  
@@ -119,16 +117,13 @@ newAttributes = attributes.map((attribute) => {
   return attribute
 })
 
-}else{
-  newAttributes = data.newAttributes
-}
+
 
 }else{
 newAttributes = attributes
 
 }
 
-console.log(attributes)
   return(
     <div className="filter-attributes">
      
