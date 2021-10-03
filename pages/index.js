@@ -17,7 +17,6 @@ return <MainLayout title={'Main page'}>
 <title>Main page</title>
 <meta name="description" content="This is a main page of next application." />
 </Head>          
-<h1>Main page</h1>
     <Carousel>
         <div>
             <Image src="/images/287.jpg" layout="fill" />
@@ -32,6 +31,7 @@ return <MainLayout title={'Main page'}>
             <p className="legend">Legend 3</p>
         </div>
     </Carousel>
+    <h2>Specials products</h2>
     <Specials/>
 </React.Fragment> 
 </MainLayout>  

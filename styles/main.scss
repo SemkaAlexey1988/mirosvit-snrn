@@ -147,4 +147,24 @@ flex-basis: 25%;
 flex-basis: 75%;
 }
 
-/* End bootstrap emulation */    
+/* End bootstrap emulation */   
+
+/* Main */ 
+body .carousel .slide .legend {
+    position: absolute;
+    top: calc(50% - 33px);
+    background: none;
+    color: #fff;
+    font-size: 34px;
+    text-align: center;
+    opacity: 1;
+    }
+    
+body .carousel .control-dots .dot {
+    width: 16px;
+    height: 16px;
+    }
+    
+   
+
+    /* End main */ 

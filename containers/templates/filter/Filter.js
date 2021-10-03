@@ -55,9 +55,14 @@ newPath = `${usedPathValue}${filtredPathValue},price[${value.valueMin},${value.v
 }   
     }else{
       let queryVal = usedPathValue.indexOf('page');
+      let queryValFilter = usedPathValue.indexOf('filter');
       if(queryVal > -1){
-        newPath = `${usedPathValue}&filter=price[${value.valueMin},${value.valueMax}]` 
-      }else{
+        if(queryValFilter > -1){
+          newPath = `${usedPathValue},price[${value.valueMin},${value.valueMax}]` 
+          }else{
+          newPath = `${usedPathValue}&filter=price[${value.valueMin},${value.valueMax}]` 
+          }
+            }else{
         newPath = `${usedPathValue}/filter=price[${value.valueMin},${value.valueMax}]` 
       }  
      }
@@ -70,7 +75,7 @@ newPath = `${usedPathValue}${filtredPathValue},price[${value.valueMin},${value.v
 
 const mOptions = (value) => {
       let filtredPathValue = filtredPath() 
-      let usedPathValue = this.usedPath() 
+      let usedPathValue = usedPath() 
       let newPath
       let splitValue = value.join(',')
 
@@ -111,7 +116,19 @@ newPath = `${usedPathValue}${filtredPathValue},manufacturers[${splitValue}]`
   if(value == ''){
 newPath = `${usedPathValue}`
   }else{
-newPath = `${usedPathValue}/filter=manufacturers[${splitValue}]`
+
+    let queryVal = usedPathValue.indexOf('page');
+    let queryValFilter = usedPathValue.indexOf('filter');
+    if(queryVal > -1){
+      if(queryValFilter > -1){
+      newPath = `${usedPathValue},manufacturers[${splitValue}]` 
+      }else{
+      newPath = `${usedPathValue}&filter=manufacturers[${splitValue}]` 
+      }
+    }else{
+      newPath = `${usedPathValue}/filter=manufacturers[${splitValue}]` 
+    } 
+
   }    
 }
 
@@ -166,7 +183,19 @@ newPath = `${usedPathValue}${filtredPathValue},attributes[${splitValue}]`
 if(value == ''){
 newPath = `${usedPathValue}`
 }else{
-newPath = `${usedPathValue}/filter=attributes[${splitValue}]`
+
+  let queryVal = usedPathValue.indexOf('page');
+  let queryValFilter = usedPathValue.indexOf('filter');
+  if(queryVal > -1){
+    if(queryValFilter > -1){
+      newPath = `${usedPathValue},attributes[${splitValue}]`
+      }else{
+      newPath = `${usedPathValue}&filter=attributes[${splitValue}]` 
+      }
+  }else{
+    newPath = `${usedPathValue}/filter=attributes[${splitValue}]` 
+  } 
+
 }    
 }
 

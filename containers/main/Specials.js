@@ -11,7 +11,6 @@ const Specials = () => {
   const dispatch = useDispatch();
   const {specials} = useSelector(state => state.specials) 
 
-  console.log(specials)
 
   useEffect(async () => {
     dispatch(fetchSpecials());    
