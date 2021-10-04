@@ -11,6 +11,7 @@ import {optionsReducer} from './product/optionsReducer';
 import {attributesReducer} from './product/attributesReducer';
 import {ratingReducer} from './product/ratingReducer';
 import {commentsReducer} from './product/commentsReducer';
+import {contactReducer} from './form/contactReducer';
 import {orderReducer} from './order/orderReducer';
 import {wordsReducer} from './common/wordsReducer';
 export default combineReducers ({
@@ -27,5 +28,6 @@ attributes: attributesReducer,
 rating: ratingReducer, 
 comments: commentsReducer,
 words: wordsReducer,
-order: orderReducer
+order: orderReducer,
+contact: contactReducer
 });

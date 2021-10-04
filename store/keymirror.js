@@ -44,4 +44,5 @@ export default keyMirror({
     FETCH_COMMENTS_SUCCESS: null,
     FETCH_COMMENTS_ERROR: null,
     FETCH_COMMENT_ADD: null,
+    FETCH_CONTACT_ADD: null
 })     
