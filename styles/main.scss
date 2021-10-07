@@ -45,6 +45,12 @@ body {
     max-width:100%;
     height:auto;
     }
+    ol, ul {
+        padding-left: 0;
+    }
+    .main-menu .sub-menu {
+        padding-left: 0;
+    }
     code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;

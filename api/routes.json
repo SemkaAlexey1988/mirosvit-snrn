@@ -23,5 +23,6 @@
 "productRatingAdd": "/ratings",
 "minmaxpriceFilter": "/maxmin-price",
 "manufacturerFilter": "/product-manufacturers-filter",
-"attributesFilter": "/product-attributes-filter"
+"attributesFilter": "/product-attributes-filter",
+"contactForm": "/contact-form"
 }

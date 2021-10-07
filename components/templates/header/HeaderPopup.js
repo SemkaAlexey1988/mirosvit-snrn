@@ -1,9 +1,17 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { useDispatch } from 'react-redux' 
+import ContactForm from '../../../components/templates/form/ContactForm'
+import { contactAdd } from '../../../store/actions/form/contact';
 
 const HeaderPopup = ({}) => {
 
   const formStatus = useRef();  
+  const dispatch = useDispatch();
   const [data, setData] = useState({ modalStatus: false  })  
+
+  const contactValues = (data) => {
+    dispatch(contactAdd(data));
+  }
   
   const showModal = () => {
     setData({modalStatus: true });    
@@ -38,7 +46,7 @@ const HeaderPopup = ({}) => {
     <div className="modal-table__cell">
     <div ref={formStatus} className="modal-block">
     <div className="close-modal" onClick={closeModal}>x</div>
-    <p>111</p>
+    <ContactForm addContact={contactValues}/>
     </div>
     </div>
     </div>

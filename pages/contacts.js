@@ -4,7 +4,10 @@ import React from 'react'
 import {MainLayout} from '../components/MainLayout'
 import {fetchContacts} from '../store/actions/contacts/contacts'
 import { fetchMenus } from '../store/actions/menus/menus';
+import { contactAdd } from '../store/actions/form/contact';
 import ContactsInfo from '../components/contacts/ContactsInfo'
+import ContactsMap from '../components/contacts/ContactsMap'
+import ContactForm from '../components/templates/form/ContactForm'
 import Error from '../components/templates/error'
 import Loader from '../components/templates/loader'
 
@@ -14,9 +17,14 @@ const Contacts = () => {
   const refInput = useRef();    
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts) 
+  const contact = useSelector(state => state.contact) 
   useEffect(async () => {
     dispatch(fetchContacts());    
   },[]);
+
+  const contactValues = (data) => {
+    dispatch(contactAdd(data));
+  }
 
   const successData = !(contacts.load || contacts.error)
   const errorBlock = contacts.error ? <Error/> : null
@@ -24,11 +32,15 @@ const Contacts = () => {
   const content = <ContactsInfo contacts={contacts.data} />
 
     return <MainLayout title={'List of articles'}>
-        <React.Fragment> 
+        <div className="contacts-block">
         {errorBlock}  
         {loader}
         {content} 
-        </React.Fragment>
+        <div className="contacts-block__right">
+        <ContactForm addContact={contactValues}/>
+        </div>
+        </div>
+        <ContactsMap contacts={contacts.data} />
         </MainLayout>
     }
 
