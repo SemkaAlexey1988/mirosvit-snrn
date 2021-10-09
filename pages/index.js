@@ -6,11 +6,15 @@ import Image from 'next/image'
 import { fetchMenus } from '../store/actions/menus/menus';
 import { fetchSpecials } from '../store/actions/main/specials';
 import Specials from '../containers/main/Specials';
+import MainInfo from '../components/main/MainInfo';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-const Index = () => {
+
+
+const Index = () => {   
+
 return <MainLayout title={'Main page'}>
 <React.Fragment>
 <Head>
@@ -19,20 +23,21 @@ return <MainLayout title={'Main page'}>
 </Head>          
     <Carousel>
         <div>
-            <Image src="/images/287.jpg" layout="fill" />
-            <p className="legend">Legend 1</p>
+            <img src="/images/287.jpg" />
+            <p className="legend">Beautiful sea</p>
         </div>
         <div>
-            <Image src="/images/335.jpg" layout="fill" />
-            <p className="legend">Legend 2</p>
+            <img src="/images/335.jpg" />
+            <p className="legend">Beautiful city</p>
         </div>
         <div>
-            <Image src="/images/338.jpg" width="1200px" height="600px" />
-            <p className="legend">Legend 3</p>
+            <img src="/images/338.jpg" />
+            <p className="legend">Beautiful Kyiv</p>
         </div>
     </Carousel>
     <h2>Specials products</h2>
     <Specials/>
+    <MainInfo/>
 </React.Fragment> 
 </MainLayout>  
 }

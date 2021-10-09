@@ -6,6 +6,7 @@
 @import 'templates/filter/filter';
 @import 'categories/categories';
 @import 'product/product';
+@import 'contacts/contacts';
 
 /* Basic */
 body {
@@ -61,6 +62,13 @@ body {
         width: 100%;  
         display: flex;
         flex-wrap: wrap;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 36px;
+        line-height: 40px;
+        text-transform: uppercase;
     }
     /* END Basic */
 
@@ -170,6 +178,9 @@ body .carousel .control-dots .dot {
     width: 16px;
     height: 16px;
     }
+body .carousel .thumbs.animated {
+    display: none !important;
+}    
     
    
 
