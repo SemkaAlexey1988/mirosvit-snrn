@@ -225,7 +225,7 @@ endEventMin = (event) => {
 
 let normal = this.normalization()
 
-let priceValueNumberMin
+let priceValueNumberMin = 0
 if(this.state.clickerMinMove){
   priceValueNumberMin = Math.round(((newLeft+thumbCoordsWidth) / sliderRefs.sliderSizeNormal)*normal.normalization + normal.minVal); 
 
@@ -235,7 +235,12 @@ if(priceValueNumberMin < 0){
 }else{
   priceValueNumberMin = this.state.valueMin
 }
-  let priceValueMin = priceValueNumberMin.toString();
+  let priceValueMin = 0
+  if(priceValueNumberMin){
+    priceValueMin = priceValueNumberMin.toString();
+  }else{
+    priceValueMin = 0; 
+  }
  // this.setState({valueMin: priceValueMin}) 
 
  if(this.state.changeMin){
@@ -282,7 +287,7 @@ endEventMax = (event) => {
   if (newRight < 0) {
     newRight = 0;
   }
-  let priceValueNumberMax
+  let priceValueNumberMax = 0
   if(this.state.clickerMaxMove){
   let rightEdgeMax = sliderRefs.sliderElement.offsetWidth - sliderRefs.thumbMax.offsetWidth;
   if (newRight > rightEdgeMax) {
@@ -294,7 +299,12 @@ endEventMax = (event) => {
   priceValueNumberMax = this.state.valueMax
 }
 
-  let priceValueMax = priceValueNumberMax.toString();
+  let priceValueMax = 0
+  if(priceValueNumberMax){
+      priceValueMax = priceValueNumberMax.toString();
+  }else{
+      priceValueMax = 0;
+  }
  // this.setState({valueMax: priceValueMax}) 
  if(this.state.changeMax){
   let values = {
