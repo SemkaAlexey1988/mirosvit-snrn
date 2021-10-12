@@ -30,6 +30,9 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Router from 'next/router'
 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
 const Product = () => {
    
 const router = useRouter() 
@@ -167,20 +170,38 @@ return <MainLayout>
       </div>
       </div>
       <div className="product__second">
-      <div className="product__name">
+
+      <Tabs>
+    <TabList>
+      <Tab>Description</Tab>
+      <Tab>Attributes</Tab>
+      <Tab>Comments</Tab>
+    </TabList>
+
+    <TabPanel>
+    <div className="product__name">
       {productContent}
       </div>
-      <div className="product__attributes">
+    </TabPanel>
+    <TabPanel>
+    <div className="product__attributes">
       <ProductAttributes attributes={attributes.data} /> 
       </div>
-      <div className="product__comments">
+    </TabPanel>
+    <TabPanel>
+    <div className="product__comments">
       <CommentsInfo comments={comments.data} />
       <RatingInfo rating={rating.data} /> 
       <RatingAdd star={valueRating} /> 
       <CommentsForm addComment={commentValues} />
       </div>
+    </TabPanel>
+  </Tabs>  
+     
       </div>
   </div>
+
+
 </MainLayout>
 
 }

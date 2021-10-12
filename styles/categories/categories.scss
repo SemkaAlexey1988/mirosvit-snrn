@@ -44,4 +44,96 @@
     } 
     .pagination__ul li.active a {
       text-decoration: none;
-      }     
+      }    
+      
+      
+      .left-block {
+        flex-basis: 20%;
+        }
+        .content-block {
+        flex-basis: 80%;
+        }
+        
+        .products {
+           
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        
+        .products .column_1-4 {
+            flex-basis: 25%;
+            padding: 10px 30px;
+            box-sizing: border-box;
+             -webkit-transition: all 0.5s ease-out;
+             -moz-transition: all 0.5s ease-out;
+             -o-transition: all 0.5s ease-out;
+             transition: all 0.5s ease-out;
+        }
+        
+        .products .column_1-4:hover {
+        -webkit-box-shadow: 1px 3px 3px 3px #D6D6D6;
+        box-shadow: 1px 3px 3px 3px #D6D6D6;
+        transform: scale(1.1);
+        }
+        .products .column_1-4 a {
+        text-decoration: none;
+        display: block;
+        margin-bottom: 15px;
+        }
+        
+        .products .column_1-4 products__price {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+        }
+        .products .column_1-4 products__name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #2e2e2e;
+        text-decoration: none;
+        text-transform: uppercase;
+        }
+        .products .column_1-4 products__description {
+        font-size: 14px;
+        margin-top: 10px;
+        }
+        
+        .products .container {
+            max-width: 100%;
+        }   
+        
+        .pagination {
+        margin: 10px auto;
+        text-align: center;
+        }
+        .pagination .page {
+        width: 40px;
+        height: 40px;
+        display: block;
+        line-height: 40px;
+        color: #918f8f;
+        text-decoration: none;
+         -webkit-transition: all 0.5s ease-out;
+         -moz-transition: all 0.5s ease-out;
+         -o-transition: all 0.5s ease-out;
+         transition: all 0.5s ease-out;
+        }
+        
+        .pagination .page:hover {
+        color: #333;
+        border-color: #333;
+        font-weight: 600;
+        border: 1px solid #333;
+        }
+        .pagination .page.active {
+        color: #333;
+        border-color: #333;
+        font-weight: 600;
+        border: 1px solid #333;
+        }
+        
+        .description__text {
+        
+        }

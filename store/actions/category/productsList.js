@@ -5,7 +5,6 @@ import settings from '../../../settings';
 
 
 export const fetchProductsList = (id, page, filter) => async dispatch =>  {
-   
    let filterValue
 
    if(!page){
