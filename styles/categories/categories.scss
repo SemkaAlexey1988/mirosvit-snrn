@@ -1,139 +1,158 @@
 .categoriesMenu {
     list-style-type: none;
-    }
-    .categoriesMenu li {
+}
+.categoriesMenu li {
     position: relative;
-    }  
-    .categoriesMenu ul {
-      list-style-type: none;
-      padding-left: 15px;
-      }
-    .toggleButton{
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }   
-    .toggleButton::after{
-      display: inline-block;
-      vertical-align: top;
-      content: '+';
-      font-size: 20px;
-      cursor: pointer;
-    }  
-    .toggleButton.show::after{
-      content: '';
-    }  
-    .subMenu {
-      display: none;
-    }
-    .subMenu.show {
-      display: block;
-    }
-    
-    .pagination__ul {
-      list-style-type: none;
-    }
-    .pagination__ul li {
-    display:inline-block;
+}  
+.categoriesMenu ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+.toggleButton{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}   
+.toggleButton::after{
+    display: inline-block;
     vertical-align: top;
-    padding-right: 10px;
-    }
-    .pagination__ul li a {
-    text-decoration: underline;
-    } 
-    .pagination__ul li.active a {
-      text-decoration: none;
-      }    
+    content: '+';
+    font-size: 20px;
+    cursor: pointer;
+}  
+.toggleButton.show::after{
+    content: '';
+}  
+.subMenu {
+    display: none;
+}
+.subMenu.show {
+    display: block;
+}     
       
-      
-      .left-block {
-        flex-basis: 20%;
-        }
-        .content-block {
-        flex-basis: 80%;
-        }
+.left-block {
+    flex-basis: 20%;
+}
+.content-block {
+    flex-basis: 80%;
+}
         
-        .products {
-           
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
-        
-        .products .column_1-4 {
-            flex-basis: 25%;
-            padding: 10px 30px;
-            box-sizing: border-box;
-             -webkit-transition: all 0.5s ease-out;
-             -moz-transition: all 0.5s ease-out;
-             -o-transition: all 0.5s ease-out;
-             transition: all 0.5s ease-out;
-        }
-        
-        .products .column_1-4:hover {
-        -webkit-box-shadow: 1px 3px 3px 3px #D6D6D6;
-        box-shadow: 1px 3px 3px 3px #D6D6D6;
-        transform: scale(1.1);
-        }
-        .products .column_1-4 a {
-        text-decoration: none;
-        display: block;
-        margin-bottom: 15px;
-        }
-        
-        .products .column_1-4 products__price {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        color: #000;
-        }
-        .products .column_1-4 products__name {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        color: #2e2e2e;
-        text-decoration: none;
-        text-transform: uppercase;
-        }
-        .products .column_1-4 products__description {
-        font-size: 14px;
-        margin-top: 10px;
-        }
-        
-        .products .container {
-            max-width: 100%;
-        }   
-        
-        .pagination {
-        margin: 10px auto;
-        text-align: center;
-        }
-        .pagination .page {
-        width: 40px;
-        height: 40px;
-        display: block;
-        line-height: 40px;
-        color: #918f8f;
-        text-decoration: none;
-         -webkit-transition: all 0.5s ease-out;
-         -moz-transition: all 0.5s ease-out;
-         -o-transition: all 0.5s ease-out;
-         transition: all 0.5s ease-out;
-        }
-        
-        .pagination .page:hover {
-        color: #333;
-        border-color: #333;
-        font-weight: 600;
-        border: 1px solid #333;
-        }
-        .pagination .page.active {
-        color: #333;
-        border-color: #333;
-        font-weight: 600;
-        border: 1px solid #333;
-        }
-        
-        .description__text {
-        
-        }
+.products {           
+    margin: 0 auto;
+    margin-bottom: 20px;
+}       
+.products .column_1-3 {
+    flex-basis: 33%;
+    box-sizing: border-box;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    position: relative;
+}
+
+.products .column_1-3 .product-wrap {
+    padding: 10px 30px;
+    background: #FFF;
+}
+
+.products .column_1-3:hover .product-wrap {
+    position: absolute;
+    -webkit-box-shadow: 1px 3px 3px 3px #D6D6D6;
+    box-shadow: 1px 3px 3px 3px #D6D6D6;
+    z-index: 9;
+}
+.products .column_1-3 a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+.products__box {
+    display: flex;
+}
+.products .column_1-3 .products__price {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    flex-basis: 50%;
+    margin-bottom: 0;
+}
+.products .column_1-3 .products__sku {
+    flex-basis: 50%;
+    margin-bottom: 0;
+    text-align: right;
+}
+.products .column_1-3 .products__name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2e2e2e;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+}
+.products .column_1-3 .products__description {
+    font-size: 14px;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+}
+.products .column_1-3:hover .products__description {
+    height: auto;
+    margin-top: 10px;
+    visibility: visible;
+}
+.products .container {
+    max-width: 100%;
+}   
+.pagination {
+    margin: 10px auto;
+    text-align: center;
+}
+.pagination__ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.pagination .page a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    color: #918f8f;
+    text-decoration: none;
+    color: #918f8f;
+    margin: 0 5px;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.pagination .page a:hover {
+    color: #333;
+    border-color: #333;
+    font-weight: 600;
+    border: 1px solid #333;
+}
+.pagination .page.active a {
+    color: #333;
+    border-color: #333;
+    font-weight: 600;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+.category__content h1 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+    color: #333;
+}
+.description__text {
+
+}
