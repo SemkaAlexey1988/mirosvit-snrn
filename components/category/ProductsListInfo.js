@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const ProductsListInfo = ({productsList}) => {
     return  <React.Fragment> 
-    <div className="container">
+    <div className="container products">
     {productsList.map(products => {
     return <div key={products.product_id} className="column_1-3"><div className="product-wrap">   
     <Link href={`/product/${products.url}`} as={`/product/${products.url}`}><a><img src={products.image} alt={products.name} className="products__img" /></a></Link> 

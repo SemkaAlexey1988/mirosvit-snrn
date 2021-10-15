@@ -9,6 +9,7 @@ import { fetchProductsList } from '../../store/actions/category/productsList';
 import { fetchManufacturerFilter, fetchAttributesFilter, fetchMinMax } from '../../store/actions/common/filter';
 import Error from '../../components/templates/error'
 import Loader from '../../components/templates/loader'
+import CategoryTitle from '../../components/category/CategoryTitle'
 import CategoryInfo from '../../components/category/CategoryInfo'
 import CategoriesList from '../../containers/categories/CategoriesList'
 import ProductsList from '../../containers/categories/ProductsList'
@@ -35,10 +36,13 @@ let categoryInfo = category.categoryInfo[0]
 const successData = !(category.load || category.error)
 const errorBlock = category.error ? <Error/> : null
 const loader = category.load ? <Loader/> : null
+let contentTitle
 let content
 if(categoryInfo){
+contentTitle = <CategoryTitle category={categoryInfo} />  
 content = <CategoryInfo category={categoryInfo} />
 }else{
+contentTitle = ''  
 content = ''  
 }
 return <MainLayout>
@@ -51,6 +55,7 @@ return <MainLayout>
       </div>
       </div>
       <div className="content-block"> 
+      {contentTitle} 
       <ProductsList id={router.query.id}/>
     {errorBlock}  
     {loader}

@@ -110,6 +110,7 @@
 .pagination {
     margin: 10px auto;
     text-align: center;
+    margin-top: 50px;
 }
 .pagination__ul {
     display: flex;
@@ -147,12 +148,35 @@
     border: 1px solid #333;
     box-sizing: border-box;
 }
-.category__content h1 {
+.title-block h1 {
     font-weight: 600;
     font-size: 26px;
     line-height: 32px;
     color: #333;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 0 50px;
 }
-.description__text {
+.category__content-info {
+    padding: 10px 40px;
+}
+.category__description-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    color: #2e2e2e;
+}
 
+.left-block {
+    margin-top: 30px;
+}
+.categoriesMenu li a {
+    color: #000;
+    line-height: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    word-wrap: break-word;
+    font-size: 16px;
+    text-decoration: none;
 }

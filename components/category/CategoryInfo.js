@@ -3,8 +3,9 @@ import Link from 'next/link'
 
 const CategoryInfo = ({category}) => {
     return  <div className="category__content">
-    <h1>{category.title}</h1>
-    <p>{category.description}</p>
+        <div className="category__content-info">
+    <div className="category__description-text">{category.description}</div>
+    </div>
     </div>
     }
     
