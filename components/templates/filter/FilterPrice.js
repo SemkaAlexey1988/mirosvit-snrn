@@ -751,6 +751,12 @@ rightDefault = rightDefault + thumbSize/2
       <div className="filter-price">
 
 <div className="slide_block">
+  <h2>Price filter</h2>
+  <div className="filter-price__inputs">
+    <p className="filter-price__inputs_min"><input ref={this.inputMin} type="text" onChange={this.handleChangeMin} value={this.state.valueMin} /></p>
+    <p className="filter-price__inputs_max"><input ref={this.inputMax} type="text" onChange={this.handleChangeMax} value={this.state.valueMax} /></p>
+  </div>
+  <div class="slider_wrap">
  <div id="slider" className="slider" ref={this.slider}>
     <div ref={this.thumbMin} 
     style={{left: clickerMinMove && !stateInputMin ? `` : `${leftDefault}px`}}
@@ -767,10 +773,10 @@ rightDefault = rightDefault + thumbSize/2
     onTouchStart={this.startEventMax.bind(this)} onMouseDown={this.startEventMax.bind(this)} onDragStart={this.startDrag.bind(this)} className="thumbMax" value={this.state.thumbMax}></div>
   </div>
   <form>
-  <p> <input ref={this.inputMin} type="text" onChange={this.handleChangeMin} value={this.state.valueMin} /></p>
-  <p> <input ref={this.inputMin} type="text" onChange={this.handleChangeMax} value={this.state.valueMax} /></p>
-  <button onClick={this.applyFilterPrice}>OK</button>
+   <button onClick={this.applyFilterPrice}>OK</button>
 </form>
+<div className="clear"></div>
+</div>
 </div>
         </div>	
     )    

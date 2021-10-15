@@ -107,6 +107,10 @@ body ul {
     transform: rotate(90deg);
 }
 
+.clear {
+    clear: both;
+}
+
 /* Bootstrap emulation */
 .error {
     color: $redCalor;	

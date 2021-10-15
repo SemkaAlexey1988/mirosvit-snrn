@@ -1,42 +1,61 @@
 
 
 .left-block .slider {
-    border-radius: 5px;
-    background: #E0E0E0;
-    background: -moz-linear-gradient(left top, #E0E0E0, #EEEEEE) repeat scroll 0 0 transparent;
-    background: -webkit-gradient(linear, left top, right bottom, from(#E0E0E0), to(#EEEEEE));
-    background: linear-gradient(left top, #E0E0E0, #EEEEEE);
-    width: 320px;
-    height: 15px;
-    margin: 15px;
+    border-radius: 2px;
+    background: #333;
+    background: -moz-linear-gradient(left top, #333, #4b4a4a) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, right bottom, from(#333), to(#4b4a4a));
+    background: linear-gradient(left top, #333, #4b4a4a);
+    width: 280px;
+    height: 10px;
+    margin: 15px 0;
     position: relative;
-  
   }
+
+  .slider_wrap .slider {
+    display: inline-block; 
+    vertical-align: top;
+  }
+
+  .slider_wrap form {
+    display: inline-block;
+    float: right;
+    vertical-align: top; 
+  }
+  .slider_wrap form button {
+    background: #FFF;
+    border: 1px solid #333;
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  } 
   
   #sliderValue {
   margin-left: 15px;
   }
   
   .thumbMin {
-    width: 20px;
+    width: 25px;
     height: 25px;
-    border-radius: 3px;
+    border-radius: 50%;
     position: absolute;
     left: 0px;
-    top: -5px;
-    background: blue;
+    top: -7.5px;
+    background: rgb(237, 237, 240);
+    border: 3px solid #fff;
     cursor: pointer;
     scroll-behavior: smooth;
   }
   
   .thumbMax {
-    width: 20px;
+    width: 25px;
     height: 25px;
-    border-radius: 3px;
+    border-radius: 50%;
     position: absolute;
-    right: 0px;
-    top: -5px;
-    background: blue;
+    top: -7.5px;
+    background: rgb(237, 237, 240);
+    border: 3px solid #fff;
     cursor: pointer;
     scroll-behavior: smooth;
   }
@@ -57,7 +76,40 @@
   }
   .filter-attributes label span {
     padding: 0 5px;
-    }  
+    }
+  .filter-price {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }     
+  .filter-price__inputs {
+    display: flex;
+  }  
+  .filter-price__inputs p {
+    flex-basis: 50%;
+  } 
+  .filter-price__inputs_max input {
+    float: right;
+  } 
+  .filter-price__inputs p input {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    padding: 0 5px;
+  } 
+  .left-block h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2e2e2e;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  }
   
   @media screen and (min-width:300px) and (max-width:768px){
     .flex-block {

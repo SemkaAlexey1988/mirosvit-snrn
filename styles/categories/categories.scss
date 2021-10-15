@@ -18,8 +18,15 @@
     display: inline-block;
     vertical-align: top;
     content: '+';
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
+    padding-right: 5px;
+    color: #000;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: 100;
+    cursor: pointer;
+    word-wrap: break-word;
 }  
 .toggleButton.show::after{
     content: '';
@@ -154,7 +161,7 @@
     line-height: 32px;
     color: #333;
     display: block;
-    margin-top: 25px;
+    margin-top: 40px;
     margin-bottom: 25px;
     padding: 0 50px;
 }
@@ -169,7 +176,17 @@
 }
 
 .left-block {
-    margin-top: 30px;
+    margin-top: 40px;
+}
+.categoriesMenu {
+    padding-left: 0;
+}
+.categoriesMenu li {
+    box-sizing: border-box;
+    padding: 5px 15px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(201,197,201,1);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(201,197,201,1);
+    box-shadow: 1px 1px 2px 0px rgba(201,197,201,1);
 }
 .categoriesMenu li a {
     color: #000;
@@ -180,3 +197,8 @@
     font-size: 16px;
     text-decoration: none;
 }
+.categoriesMenu li .subMenu li {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}    
