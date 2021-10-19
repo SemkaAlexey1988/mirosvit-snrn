@@ -90,6 +90,7 @@ newManufacturers = manufacturers
 
   return(
     <div className="filter-manufacturers">
+      <h2>Manufacturers filter</h2>
     {manufacturers.map((manufacturer, index) => {
     return <label key={index}><span>{manufacturer.name}</span><input type="checkbox"  
     checked={manufacturer.checkedElement ? 'checked' : ''}

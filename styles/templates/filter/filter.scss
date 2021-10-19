@@ -6,7 +6,7 @@
     background: -moz-linear-gradient(left top, #333, #4b4a4a) repeat scroll 0 0 transparent;
     background: -webkit-gradient(linear, left top, right bottom, from(#333), to(#4b4a4a));
     background: linear-gradient(left top, #333, #4b4a4a);
-    width: 280px;
+    width: 250px;
     height: 10px;
     margin: 15px 0;
     position: relative;
@@ -29,6 +29,7 @@
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    margin-top: 5px;
   } 
   
   #sliderValue {
@@ -36,9 +37,9 @@
   }
   
   .thumbMin {
-    width: 25px;
+    width: 20px;
     height: 25px;
-    border-radius: 50%;
+    border-radius: 5px;
     position: absolute;
     left: 0px;
     top: -7.5px;
@@ -49,9 +50,9 @@
   }
   
   .thumbMax {
-    width: 25px;
+    width: 20px;
     height: 25px;
-    border-radius: 50%;
+    border-radius: 5px;
     position: absolute;
     top: -7.5px;
     background: rgb(237, 237, 240);
@@ -102,13 +103,45 @@
     padding: 0 5px;
   } 
   .left-block h2 {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  color: #2e2e2e;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2e2e2e;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .filter-attributes {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  .filter-manufacturers {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  .filter-attributes__name {
+    margin-top: 20px;
+  }
+  .filter-attributes__name label span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .filter-attributes__name label input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: 5px;
   }
   
   @media screen and (min-width:300px) and (max-width:768px){
