@@ -101,13 +101,13 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
             <td className="product-comment__quantity">
              <div className="product-manager__quantity">
             <div ref={quantityEl} id={element.quantity}>  
-             <button className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}>-</button>  
-            <span>{element.quantity}</span>
-             <button className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}>+</button> 
+             <div className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}>-</div>  
+            <span className="product__quantity_current">{element.quantity}</span>
+             <div className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}>+</div> 
             </div>
             </div>  
             </td>
-            <td>{priceTotal}</td>
+            <td>{priceTotal} USD</td>
             <td> <button className="product__delete" onClick={deleteProduct} value={element.product_id}>Delete</button> </td>
             </tr>
             })  
@@ -115,7 +115,7 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
            
             </tbody> 
             </table>
-            {Parser(String(totalPriceContent))}
+            <p>{Parser(String(totalPriceContent))}</p>
             <button onClick={closeModal}>Continue shopping</button>
              <Link href="/order" as="/order"><a>Make order</a></Link> 
             </div>

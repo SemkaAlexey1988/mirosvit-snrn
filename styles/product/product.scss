@@ -184,11 +184,38 @@ display: none;
 .cart-table p {
   margin-bottom: 0px;
 }
-.product-manager__quantity button {
-  display: block;
+.cart-item {
+  border-bottom: 1px dashed #333;
 }
-.product-manager__quantity span {
+.product-manager__quantity .product__menus {
   display: block;
+  width: 20px;
+  height: 20px;
+  color: #333;
+  background: #FFF;
+  border: 1px solid #333;
+  padding: 0;
+  border-radius: 3px;
+  margin: 0;
+  text-align: center;
+}
+.product-manager__quantity .product__plus {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #333;
+  background: #FFF;
+  border: 1px solid #333;
+  padding: 0;
+  border-radius: 3px;
+  margin: 0;
+  text-align: center;
+}
+.product-manager__quantity .product__quantity_current {
+  display: block;
+  margin: 5px 0;
+  text-align: center;
+  max-width: 20px;
 }
 
 .product-comment__image {
