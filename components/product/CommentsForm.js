@@ -115,29 +115,26 @@ export default class CommentsForm extends Component {
         let comment = "Comment";
         let { nameError, emailError, commentError, ...values } = this.state
         return (
-<React.Fragment>
-            <h1>Write a Review</h1>
+<div className="comments-form">
+            <h2>Write a Review</h2>
           <div className="form-group">
-    <label>{name}</label>
     <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 
     onKeyUp={this.stateValueName.bind(this, name)} onBlur={this.blurValueName.bind(this, name)} type="text" value={this.state.name} />
     <p className="error">{nameError}</p>
     { this.validator.message('name', this.state.name, 'required') }
     </div>
     <div className="form-group">
-    <label>{email}</label>
     <input ref={(email) => this.email = email }  className="form-control" placeholder="e-mail" onChange={this.changeValue.bind(this, email)} 
     onKeyUp={this.stateValueEmail.bind(this, email)} onBlur={this.blurValueEmail.bind(this, email)}  type="text" value={this.state.email} />
     <p className="error">{emailError}</p>
     </div>
     <div className="form-group">
-    <label>{comment}</label>
     <textarea ref={(comment) => this.comment = comment }  className="form-control" placeholder="comment" onChange={this.changeValue.bind(this, comment)} 
     onBlur={this.blurValueComment.bind(this, comment)} type="text" value={this.state.comment}/>
     <p className="error">{commentError}</p>
     </div>
-      <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Order</button>
-        </React.Fragment>
+      <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Send</button>
+        </div>
         );
       } 
 }

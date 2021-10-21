@@ -2,17 +2,17 @@
 
 const CommentsInfo = ({comments}) => {
     return(
-        <div>
+        <React.Fragment>
         {comments.map((comment, index)=>{
-        return <div key={index}>
-        <h2>{comment.author}</h2>
-        <p>{comment.email}</p>
-        <p>{comment.message}</p>
+        return <div key={index} className="comments">
+        <p className="comments__title">{comment.author}</p>
+       {/* <p className="comments__email">{comment.email}</p> */}
+        <p className="comments__message">{comment.message}</p>
         </div>    
         })
       
         } 
-        </div>        
+        </React.Fragment>       
         )
     }
     

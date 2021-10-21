@@ -191,8 +191,10 @@ return <MainLayout>
     <TabPanel>
     <div className="product__comments">
       <CommentsInfo comments={comments.data} />
+    <div className="rating">
       <RatingInfo rating={rating.data} /> 
       <RatingAdd star={valueRating} /> 
+    </div>
       <CommentsForm addComment={commentValues} />
       </div>
     </TabPanel>
