@@ -108,7 +108,7 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
             </div>  
             </td>
             <td>{priceTotal} USD</td>
-            <td> <button className="product__delete" onClick={deleteProduct} value={element.product_id}>Delete</button> </td>
+            <td> <button className="product__delete" onClick={deleteProduct} value={element.product_id}>X</button> </td>
             </tr>
             })  
         } 
@@ -116,8 +116,13 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
             </tbody> 
             </table>
             <p>{Parser(String(totalPriceContent))}</p>
-            <button onClick={closeModal}>Continue shopping</button>
-             <Link href="/order" as="/order"><a>Make order</a></Link> 
+            <div className="product__cartManager">
+              <button className="product__continue" onClick={closeModal}>Continue shopping</button>
+              <div className="product__toorder">
+                <Link href="/order" as="/order"><a>Make order</a></Link> 
+              </div>
+              <div className="clear"></div>
+            </div>
             </div>
         
             <p className="cart__empty" style={{display: item.itemsEmpty && !itemsStatus ? 'block' : 'none'}}>Cart is empty</p>
