@@ -128,28 +128,24 @@ class OrderForm extends Component {
     let { nameError, emailError, phoneError, ...values } = this.state
     return (
       <div className="order-form">
-      <h1>Write a Review</h1>
+        <h2>Order form</h2>
       <div className="form-group">
-<label>{name}</label>
 <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 
 onKeyUp={this.stateValueName.bind(this, name)} onBlur={this.blurValueName.bind(this, name)} type="text" value={this.state.name} />
 <p className="error">{nameError}</p>
 {/* this.validator.message('name', this.state.name, 'required') */}
 </div>
 <div className="form-group">
-<label>{email}</label>
 <input ref={(email) => this.email = email }  className="form-control" placeholder="e-mail" onChange={this.changeValue.bind(this, email)} 
 onKeyUp={this.stateValueEmail.bind(this, email)} onBlur={this.blurValueEmail.bind(this, email)}  type="text" value={this.state.email} />
 <p className="error">{emailError}</p>
 </div>
 <div className="form-group">
-<label>{phone}</label>
 <InputMask mask="+3\8 099 999 99 99" maskChar="-" ref={(phone) => this.phone = phone }  className="form-control" placeholder="phone" onChange={this.changeValue.bind(this, phone)} 
 onKeyUp={this.stateValuePhone.bind(this, phone)} onBlur={this.blurValuePhone.bind(this, phone)} type="text" value={this.state.phone} />
 <p className="error">{phoneError}</p>
 </div>
 <div className="form-group">
-<label>{comment}</label>
 <textarea ref={(comment) => this.comment = comment }  className="form-control" placeholder="comment" onChange={this.changeValue.bind(this, comment)} 
 type="text" value={this.state.comment}/>
 </div>

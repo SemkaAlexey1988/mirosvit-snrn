@@ -1,0 +1,54 @@
+.order .cart {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 15px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.order-form {
+  max-width: 700px;
+  width: 100%;
+  margin: 30px auto;
+}  
+.order-form h2 {
+  text-align: center;
+}
+.order-form .form-group input {
+  max-width: 700px;
+  border: 0;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+}  
+.order-form .form-group textarea {
+  max-width: 700px;
+  border: 0;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+}  
+.order-form .form-group input::placeholder {
+  color: #656363;
+  text-align: center;
+}
+.order-form .form-group textarea::placeholder {
+  color: #656363;
+  text-align: center;
+}
+.order-form button {
+  background: #333;
+  outline: 0;
+  border: 0;
+  max-width: 200px;
+  width: 100%;
+  border-radius: 0;
+  margin: 30px auto;
+  display: block;
+  padding: 0;
+  line-height: 34px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 15px;
+}
+.order-form .error {
+  margin-bottom: 10px;
+  font-size: 13px;
+}

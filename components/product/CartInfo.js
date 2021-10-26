@@ -61,7 +61,7 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
 
     let totalPriceContent
     if(totalPrice > 0){
-    totalPriceContent = `<div class="product__total-price"><strong>Total:</strong> ${totalPrice}</div>`
+    totalPriceContent = `<div class="product__total-price"><strong>Total:</strong> ${totalPrice} USD</div>`
     }else{
     totalPriceContent = `` 
     }
@@ -101,13 +101,13 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
             <td className="product-comment__quantity">
              <div className="product-manager__quantity">
             <div ref={quantityEl} id={element.quantity}>  
-             <div className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}>-</div>  
-            <span className="product__quantity_current">{element.quantity}</span>
-             <div className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}>+</div> 
+              <button className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}>-</button>  
+              <span className="product__quantity_current">{element.quantity}</span>
+              <button className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}>+</button> 
             </div>
             </div>  
             </td>
-            <td>{priceTotal} USD</td>
+            <td className="product__priceTotal">{priceTotal} USD</td>
             <td> <button className="product__delete" onClick={deleteProduct} value={element.product_id}>X</button> </td>
             </tr>
             })  

@@ -78,7 +78,8 @@ if(cartItems){
 }
 
 return <MainLayout>
-   <div className="order">
+   <div className="order containerFixed">
+   <h1>Make order</h1>  
    {cartItems}
    <OrderForm addOrderValues={orderValues} /> 
    </div>
