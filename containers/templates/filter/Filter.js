@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import { useRouter } from 'next/router'
 
 import pathTransformer from '../../../utils/pathTransformer';
@@ -10,6 +10,16 @@ import FilterManufacturers from './../../../components/templates/filter/FilterMa
 const Filter = ({price, id, filter, manufacturers, attributes}) => {
 
   const router = useRouter()
+
+  const [data, setData] = useState({ filterStatus: false  }) 
+
+  const showFilter = () => {
+    if(data.filterStatus){
+      setData({filterStatus: false }); 
+    }else{
+      setData({filterStatus: true }); 
+    }   
+  }
 
     const usedPath = () => {
     let curentPath = window.location.pathname;
@@ -234,7 +244,10 @@ filterMaximumPrice = 0
 
         return(
         <div>
-          
+       <p className="mobile-menu_categories" >
+      <i className="fa fa-bars" aria-hidden="true" onClick={showFilter}></i> Filter
+      </p> 
+  <div className="filtersBlock" style={{display: data.filterStatus ? 'block' : 'none'}}>
 <FilterPrice 
 newValue={changePath}
 filterMin = {filterMinimumPrice} 
@@ -242,6 +255,7 @@ filterMax = {filterMaximumPrice}
 priceMin={price.min_price} priceMax={price.max_price} id={id} /> 
    <FilterAttributes filters={filter} attributes={attributes} attributesOptions={aOptions} />
    <FilterManufacturers filters={filter} manufacturers={manufacturers} manufacturersOptions={mOptions} />
+    </div>
    </div> 
             );
 

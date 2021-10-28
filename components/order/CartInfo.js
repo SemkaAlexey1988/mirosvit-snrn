@@ -69,9 +69,9 @@ const CartInfo = ({cart, totalPrice, newQuantity, delProduct}) => {
             <td className="product-comment__quantity">
              <div className="product-manager__quantity">
             <div ref={quantityEl} id={element.quantity}>  
-             <button className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}>-</button>  
+             <button className="product__menus" onClick={quantityMinus} value={`${element.quantity},${element.product_id}`}></button>  
              <span className="product__quantity_current">{element.quantity}</span>
-             <button className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}>+</button> 
+             <button className="product__plus" onClick={quantityPlus} value={`${element.quantity},${element.product_id}`}></button> 
             </div>
             </div>  
             </td>

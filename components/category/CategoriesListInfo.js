@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Link from 'next/link'
 
 
@@ -7,13 +8,27 @@ const CategoriesListInfo = ({categoriesList}) => {
 
     const [data, setData] = useState(0) 
 
+    const dispatch = useDispatch();
+    const [menu, setMenu] = useState({ menuStatus: false  }) 
+
+    const showMenu = () => {
+      if(menu.menuStatus){
+        setMenu({menuStatus: false }); 
+      }else{
+        setMenu({menuStatus: true }); 
+      }   
+    }
+
     const toggleClick = (id) => { 
       setData(id);
     }
    
     let partUrl = '/category/'; 
     return  <React.Fragment> 
-    <ul className="categoriesMenu">
+      <p className="mobile-menu_categories" >
+      <i className="fa fa-bars" aria-hidden="true" onClick={showMenu}></i> Categories List
+      </p>
+    <ul className="categoriesMenu" style={{display: menu.menuStatus ? 'block' : 'none'}}>
     {categoriesList.map((category) => {
     if(category.child[0]){
    

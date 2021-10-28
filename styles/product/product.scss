@@ -198,6 +198,8 @@ display: none;
   border-radius: 3px;
   margin: 0;
   text-align: center;
+  background: url(/assets/images/minus.png) no-repeat;
+  background-position: center center;
 }
 .product-manager__quantity .product__plus {
   display: block;
@@ -210,6 +212,8 @@ display: none;
   border-radius: 3px;
   margin: 0;
   text-align: center;
+  background: url(/assets/images/plus.png) no-repeat;
+  background-position: center center;
 }
 .product-manager__quantity .product__quantity_current {
   display: block;

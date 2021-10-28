@@ -31,6 +31,10 @@ body {
     header, nav, section, main, article, aside, footer {
     display: block;
     }
+
+    #__next {
+        height: 100%;
+    }
     
     body {
     height: 100%;
