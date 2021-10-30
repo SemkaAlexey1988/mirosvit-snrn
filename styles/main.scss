@@ -207,6 +207,23 @@ body .carousel .thumbs.animated {
     display: none !important;
 }    
     
-   
+  
+@media screen and (min-width:300px) and (max-width:999px) {
+  .flex-block{
+    flex-wrap: wrap;
+  }
+  .full-width {
+    padding: 0;
+  }
+  body .products .column_1-3 {
+    flex-basis: 50%;
+  }
+} 
+
+@media screen and (min-width:300px) and (max-width:550px) {
+    body .products .column_1-3 {
+        flex-basis: 100%;
+    }
+}
 
     /* End main */ 

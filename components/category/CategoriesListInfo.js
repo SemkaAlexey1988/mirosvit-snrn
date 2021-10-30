@@ -24,7 +24,7 @@ const CategoriesListInfo = ({categoriesList}) => {
     }
    
     let partUrl = '/category/'; 
-    return  <React.Fragment> 
+    return  <div className="categories-menu"> 
       <p className="mobile-menu_categories" >
       <i className="fa fa-bars" aria-hidden="true" onClick={showMenu}></i> Categories List
       </p>
@@ -56,7 +56,7 @@ const CategoriesListInfo = ({categoriesList}) => {
     })
     }
     </ul>
-    </React.Fragment>
+    </div>
     }
     
     export default CategoriesListInfo

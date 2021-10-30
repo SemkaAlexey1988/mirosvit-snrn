@@ -243,7 +243,7 @@ filterMaximumPrice = 0
 }
 
         return(
-        <div>
+        <div className="filter">
        <p className="mobile-menu_categories" >
       <i className="fa fa-bars" aria-hidden="true" onClick={showFilter}></i> Filter
       </p> 
