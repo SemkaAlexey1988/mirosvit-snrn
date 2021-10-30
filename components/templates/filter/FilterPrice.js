@@ -713,6 +713,7 @@ leftDefault = ''
 }
 if(!clickerMaxMove && !clickerMinMove){
 let y = (valueMax - minPrice)/(maxPrice - minPrice)*100
+slideParameters == 0 ? slideParameters = 250 : slideParameters = slideParameters
 rightDefault = slideParameters/100 * y
 }else{
 if(stateInputMax){
@@ -746,7 +747,6 @@ rightDefault = rightDefault + thumbSize/2
 
 
 
-
     return(
       <div className="filter-price">
 
@@ -756,7 +756,7 @@ rightDefault = rightDefault + thumbSize/2
     <p className="filter-price__inputs_min"><input ref={this.inputMin} type="text" onChange={this.handleChangeMin} value={this.state.valueMin} /></p>
     <p className="filter-price__inputs_max"><input ref={this.inputMax} type="text" onChange={this.handleChangeMax} value={this.state.valueMax} /></p>
   </div>
-  <div class="slider_wrap">
+  <div className="slider_wrap">
  <div id="slider" className="slider" ref={this.slider}>
     <div ref={this.thumbMin} 
     style={{left: clickerMinMove && !stateInputMin ? `` : `${leftDefault}px`}}
