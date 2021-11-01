@@ -6,7 +6,7 @@ const HeaderLogo = ({}) => {
 
   return(
 <React.Fragment>    
-<Link href={'/'}><a className="logo"><Image src="/images/logo.png" width="255px" height="80px" /></a></Link>
+<Link href={'/'}><a className="logo"><Image src="/assets/images/logo.png" width="255px" height="80px" /></a></Link>
 </React.Fragment>  
   )  
 

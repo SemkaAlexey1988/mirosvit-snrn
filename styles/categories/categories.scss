@@ -299,16 +299,55 @@
         max-width: 100%;
         padding: 0 10px;
     }
-}
-
-@media screen and (min-width:300px) and (max-width:400px) {
+    body .site h2 {
+        text-align: left;
+        padding: 0;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .filter-price__inputs_min {
+        padding-right: 5px;
+    }
+    .filter-price__inputs_max {
+        padding-left: 5px;
+    }
     .filter-price {
+        margin-top: 10px;
+        margin-bottom: 10px;
         border: 0px solid #333;
         border-bottom: 1px dashed #333;
         border-radius: 0;
+        padding: 10px 0;
     }
+    .filter-attributes {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0px solid #333;
+        border-radius: 0px;
+        border-bottom: 1px dashed #333;
+        padding: 10px 0;
+    }
+    .filter-manufacturers {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 0px solid #333;
+        border-radius: 0px;
+        border-bottom: 1px dashed #333;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:400px) {
     .slider_wrap form {
-    display: block;
-    float: none;
+        display: block;
+        float: none;
+    }
+    .filter-price__inputs {
+        max-width: 270px;
+    }
+    .slider_wrap form button {
+        margin: 5px auto;
+        display: block;
+        width: 100px;
     }
 }

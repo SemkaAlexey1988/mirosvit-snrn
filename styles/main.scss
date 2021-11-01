@@ -205,7 +205,13 @@ body .carousel .control-dots .dot {
     }
 body .carousel .thumbs.animated {
     display: none !important;
-}    
+}  
+
+@media screen and (min-width:1000px){
+  .mobile {
+    display: none;
+  }
+}
     
   
 @media screen and (min-width:300px) and (max-width:999px) {
@@ -217,6 +223,10 @@ body .carousel .thumbs.animated {
   }
   body .products .column_1-3 {
     flex-basis: 50%;
+  }
+  body .container {
+    max-width: 100%;
+    padding: 0 10px;
   }
 } 
 
