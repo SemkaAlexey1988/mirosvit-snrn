@@ -94,14 +94,18 @@
       
       if(item.child){
       
-            return <li key={item.id} onMouseOut={this.toggleOut.bind(this, item.id)} onMouseOver={this.toggleOver.bind(this, item.id)}>
-            <Link href={`${item.link}`} as={`${item.link}`} ><a>{item.name} <i className="fas fa-caret-down"></i></a></Link>
+            return <li key={item.id}>
+            <Link href={`${item.link}`} as={`${item.link}`} ><a>{item.name}</a></Link>
+            <i className={currentId === item.id  ? 'fas fa-caret-down hide' : 'fas fa-caret-down'} onClick={this.toggleOver.bind(this, item.id)} ></i>
+            <i className={currentId === item.id  ? 'fas fa-caret-up' : 'fas fa-caret-up hide' } onClick={this.toggleOut.bind(this, item.id)}></i>
             <ul className={currentId === item.id  ? `sub-menu show` : `sub-menu` }>
             {item.child.map(itemChild => {
               if(itemChild.child){
-                return  <li key={itemChild.id} id={item.id} onMouseOut={this.toggleChildOut.bind(this, itemChild.id)} onMouseOver={this.toggleChildOver.bind(this, itemChild.id)}>
+                return  <li key={itemChild.id} id={itemChild.id}>
                 <Link href={`${itemChild.link}`} as={`${itemChild.link}`}><a>{itemChild.name}</a></Link>
-                <ul className={currentChildId === itemChild.id  ? `sub-menu show` : `sub-menu` }>
+                <i className={currentChildId === itemChild.id  ? 'fas fa-caret-down hide' : 'fas fa-caret-down'} onClick={this.toggleChildOver.bind(this, itemChild.id)} ></i>
+                <i className={currentChildId === itemChild.id  ? 'fas fa-caret-up' : 'fas fa-caret-up hide' } onClick={this.toggleChildOut.bind(this, itemChild.id)}></i>
+                 <ul className={currentChildId === itemChild.id  ? `sub-menu show` : `sub-menu` }>
                 {itemChild.child.map(itemChildSecond => {
                  return <li key={itemChildSecond.id} id={itemChildSecond.id}>
                 <Link href={`${itemChildSecond.link}`} as={`${itemChildSecond.link}`}><a>{itemChildSecond.name}</a></Link>
