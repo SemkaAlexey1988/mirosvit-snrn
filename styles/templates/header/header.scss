@@ -354,7 +354,16 @@ header.site-header {
         padding: 0 10px;
         padding-left: 25px;
         font-size: 14px;
-    }      
+    }    
+    .main-menu .sub-menu li {
+        height: 100%;
+    }  
+    .main-menu .sub-menu {
+        padding-bottom: 0px;
+    }
+    .header__contacts.mobile {
+        padding-bottom: 10px;
+    }
 }
 
 @media screen and (min-width:300px) and (max-width:550px) {
