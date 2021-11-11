@@ -60,3 +60,21 @@
   font-size: 24px;
   text-transform: uppercase;
 }
+
+@media screen and (min-width:300px) and (max-width:1250px) {
+  .order.containerFixed {
+    padding: 10px 20px;
+  }
+  body .site .order.containerFixed h1 {
+    padding: 0;
+  }
+  .order .cart {
+  padding: 15px 10px;
+  }
+}
+@media screen and (min-width:300px) and (max-width:480px) {
+  .cart-block {
+    overflow-x: auto;
+    padding: 15px 0;
+  }
+}

@@ -32,11 +32,11 @@ const Contacts = () => {
   const content = <ContactsInfo contacts={contacts.data} />
 
     return <MainLayout title={'List of articles'}>
-        <div className="contacts-block">
+        <div className="contacts-page">
         {errorBlock}  
         {loader}
         {content} 
-        <div className="contacts-block__right">
+        <div className="contacts-page__right">
         <ContactForm addContact={contactValues}/>
         </div>
         </div>

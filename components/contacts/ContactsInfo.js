@@ -5,7 +5,7 @@ const ContactsInfo = ({contacts}) => {
 
     return <React.Fragment>
         {contacts.map(contact => {
-    return <div key={contact.id} className="contacts-block__left">
+    return <div key={contact.id} className="contacts-page__left">
         <h2>{contact.title}</h2>
     <p>{contact.description}</p>
     <p><Link href={"mailto:" + contact.email} as={"mailto:" + contact.email}><a><i aria-hidden="true" className="fa fa-envelope"></i>{contact.email}</a></Link></p>
