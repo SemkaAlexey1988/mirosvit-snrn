@@ -234,6 +234,12 @@ body .carousel .thumbs.animated {
     body .products .column_1-3 {
         flex-basis: 100%;
     }
+    .main-page__content {
+        padding: 10px;
+    }
+    body .specials_productsSpecialsWrap > div {
+        flex-basis: 100% !important;
+    }    
 }
 
     /* End main */ 

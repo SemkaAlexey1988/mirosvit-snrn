@@ -505,6 +505,11 @@ p.product-comment__name {
     padding-bottom: 0px;
   }
 }  
+@media screen and (min-width:300px) and (max-width:480px) {
+  .cart-block {
+    padding: 15px 10px;
+  }
+}
 
 @media screen and (min-width:300px) and (max-width:350px) {
   .react-tabs__tab-list {

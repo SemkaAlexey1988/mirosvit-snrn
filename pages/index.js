@@ -17,6 +17,7 @@ const Index = () => {
 
 return <MainLayout title={'Main page'}>
 <React.Fragment>
+    <div className="main-page">
 <Head>
 <title>Main page</title>
 <meta name="description" content="This is a main page of next application." />
@@ -35,9 +36,12 @@ return <MainLayout title={'Main page'}>
             <p className="legend">Beautiful Kyiv</p>
         </div>
     </Carousel>
+    <div className="main-page__content">
     <h2>Specials products</h2>
     <Specials/>
     <MainInfo/>
+    </div> 
+  </div>  
 </React.Fragment> 
 </MainLayout>  
 }
