@@ -1,6 +1,6 @@
 .productsSpecialsWrap {
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: nowrap;  
     width: 90%;
     margin: 30px auto;
 }
@@ -8,10 +8,10 @@
     flex-basis: 25%;
     padding: 10px 30px;
     box-sizing: border-box;
-     -webkit-transition: all 0.5s ease-out;
-     -moz-transition: all 0.5s ease-out;
-     -o-transition: all 0.5s ease-out;
-     transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .productsSpecials:hover {
@@ -20,9 +20,9 @@
     transform: scale(1.1);
     }
 .productsSpecials a {
-text-decoration: none;
-display: block;
-margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
 }
 .productsSpecials__img {
     cursor: pointer;
@@ -30,22 +30,49 @@ margin-bottom: 15px;
 .productsSpecials__name{
     cursor: pointer;
 }
-
 .productsSpecials__price {
-font-weight: 600;
-font-size: 18px;
-line-height: 22px;
-color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000;
 }
 .productsSpecials__name {
-font-weight: 600;
-font-size: 16px;
-line-height: 20px;
-color: #2e2e2e;
-text-decoration: none;
-text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2e2e2e;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 .productsSpecials__description {
-font-size: 14px;
-margin-top: 10px;
+    font-size: 14px;
+    margin-top: 10px;
 }
+
+@media screen and (min-width:1000px) and (max-width:1200px) { 
+    .productsSpecials {
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1000px) { 
+    .productsSpecialsWrap {
+        flex-wrap: wrap;  
+        width: 100%;
+    }   
+    .productsSpecials {
+        flex-basis: 50%;
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:767px) { 
+    .productsSpecialsWrap {
+        flex-wrap: wrap;  
+        width: 100%;
+    }  
+    .productsSpecials {
+        flex-basis: 100%;
+        padding-bottom: 30px;
+    } 
+}    
