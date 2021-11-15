@@ -206,13 +206,21 @@ body .carousel .control-dots .dot {
 body .carousel .thumbs.animated {
     display: none !important;
 }  
+.site .main-page h2 {
+    padding: 0px 0px;
+}
+
+@media screen and (min-width:1200px){
+    .site .main-page h2 {
+        padding: 0px 30px;
+    }
+}
 
 @media screen and (min-width:1000px){
   .mobile {
     display: none;
   }
 }
-    
   
 @media screen and (min-width:300px) and (max-width:999px) {
   .flex-block{
@@ -228,14 +236,14 @@ body .carousel .thumbs.animated {
     max-width: 100%;
     padding: 0 10px;
   }
+  .main-page__content {
+    padding: 10px;
+  }
 } 
 
 @media screen and (min-width:300px) and (max-width:550px) {
     body .products .column_1-3 {
         flex-basis: 100%;
-    }
-    .main-page__content {
-        padding: 10px;
     }
     body .specials_productsSpecialsWrap > div {
         flex-basis: 100% !important;

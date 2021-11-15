@@ -37,7 +37,6 @@ return <MainLayout title={'Main page'}>
         </div>
     </Carousel>
     <div className="main-page__content">
-    <h2>Specials products</h2>
     <Specials/>
     <MainInfo/>
     </div> 

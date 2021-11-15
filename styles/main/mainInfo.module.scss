@@ -1,13 +1,44 @@
 .mainInfoBlock  {
-    width: 100%;
+    width: 90%;
     margin:30px auto;
-    max-width: 1200px;
 }
-
 .mainInfoBlock p {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
     color: #918f8f;
+    padding: 10px 25px;
+}
+.site .mainInfoBlock h2 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    color: #333;
+    display: block;
+    padding: 0 30px;
+}
+.mainInfoBlock p {
+    padding: 10px 0px;
+}
+
+@media screen and (min-width:1200px){
+    .mainInfoBlock {
+        padding: 10px 0px;
+    }
+    .mainInfoBlock p {
+        padding: 0px 30px;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:1199px) {
+    .site .main-page h2 {
+        padding: 0px 0px;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:999px) { 
+    .mainInfoBlock {
+        width: 100%;
+    }
 }
