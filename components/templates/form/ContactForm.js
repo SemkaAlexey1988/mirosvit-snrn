@@ -3,6 +3,7 @@ import SimpleReactValidator from 'simple-react-validator';
 import InputMask from 'react-input-mask';
 import 'bootstrap/dist/css/bootstrap.css'
 import dateFormat from '../../../utils/dateFormat';
+import classes from '../../../styles/contacts/contacts.module.scss'
 
 class ContactForm extends Component {
   constructor(props) {
@@ -129,7 +130,7 @@ class ContactForm extends Component {
     let message = "Message";
     let { nameError, emailError, phoneError, ...values } = this.state
     return (
-      <div className="contact-form">
+      <div className="contactForm">
       <h2>Contact form</h2>
       <div className="form-group">
 <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 

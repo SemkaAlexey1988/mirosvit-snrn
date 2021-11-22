@@ -1,0 +1,44 @@
+.contactsPage {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+.contactsPageLeft {
+    flex-basis: 50%;
+}
+.contactsPageRight {
+    flex-basis: 50%;
+} 
+.contactsPageLeft p {
+    font-size: 15px;
+}  
+.contactsPageLeft p a {
+    color: #333;
+}
+.site .contactsPageLeft h2 {
+    padding: 0;
+}
+.contactsPageLeft a i {
+    padding-right: 7px;
+}
+
+@media screen and (min-width:300px) and (max-width:1250px) {
+    .contactsPage {
+        padding: 0 20px;
+    }
+}
+@media screen and (min-width:300px) and (max-width:768px) {
+    .contactsPage {
+        flex-wrap: wrap;
+    }
+    .contactsPageLeft {
+        flex-basis: 100%;
+    }
+    .contactsPageRight {
+        flex-basis: 100%;    
+    }
+    .contactForm {
+        margin: 10px auto;
+    }
+}

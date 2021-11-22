@@ -7,7 +7,6 @@
 @import 'categories/categories';
 @import 'product/product';
 @import 'order/order';
-@import 'contacts/contacts';
 
 /* Basic */
 body {
@@ -210,6 +209,59 @@ body .carousel .thumbs.animated {
     padding: 0px 0px;
 }
 
+.contactForm {
+    max-width: 400px;
+    width: 100%;
+} 
+.contactForm input {
+    max-width: 400px;
+    border: 0;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+}
+.contactForm textarea {
+    max-width: 400px;
+    border: 0;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+}
+.contactForm input::placeholder {
+    color: #656363;
+    text-align: center;
+}
+.contactForm .form-group textarea::placeholder {
+    color: #656363;
+    text-align: center;
+} 
+.contactForm button {
+    background: #333;
+    outline: 0;
+    border: 0;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 0;
+    margin: 30px auto;
+    display: block;
+    padding: 0;
+    line-height: 34px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 15px;
+}
+.contactForm .error {
+    margin-bottom: 10px;
+    font-size: 13px;
+}  
+.contactForm h2 {
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #000;
+}
+
 @media screen and (min-width:1200px){
     .site .main-page h2 {
         padding: 0px 30px;
@@ -241,13 +293,22 @@ body .carousel .thumbs.animated {
   }
 } 
 
+@media screen and (min-width:300px) and (max-width:768px) {
+    .contactForm {
+        margin: 10px auto;
+    }
+}
+
 @media screen and (min-width:300px) and (max-width:550px) {
     body .products .column_1-3 {
         flex-basis: 100%;
     }
     body .specials_productsSpecialsWrap > div {
         flex-basis: 100% !important;
-    }    
+    } 
+    body .site .contactForm h2 {
+        text-align: center;
+    }   
 }
 
     /* End main */ 

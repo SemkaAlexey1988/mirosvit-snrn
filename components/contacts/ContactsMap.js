@@ -1,6 +1,8 @@
  import React from 'react'
 import Link from 'next/link'
 
+import classes from '../../styles/contacts/contacts.module.scss'
+
 const ContactsMap = ({contacts}) => {
 
     return <React.Fragment>

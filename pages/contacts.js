@@ -10,6 +10,7 @@ import ContactsMap from '../components/contacts/ContactsMap'
 import ContactForm from '../components/templates/form/ContactForm'
 import Error from '../components/templates/error'
 import Loader from '../components/templates/loader'
+import classes from '../styles/contacts/contacts.module.scss'
 
 
 const Contacts = () => {
@@ -32,11 +33,11 @@ const Contacts = () => {
   const content = <ContactsInfo contacts={contacts.data} />
 
     return <MainLayout title={'List of articles'}>
-        <div className="contacts-page">
+        <div className={classes.contactsPage}>
         {errorBlock}  
         {loader}
         {content} 
-        <div className="contacts-page__right">
+        <div className={classes.contactsPageRight}>
         <ContactForm addContact={contactValues}/>
         </div>
         </div>
