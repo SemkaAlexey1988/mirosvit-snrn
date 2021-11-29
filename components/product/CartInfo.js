@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Parser from 'html-react-parser';
 import Link from 'next/link'
+import classes from '../../styles/product/product.module.scss'
 
 const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
 
@@ -76,8 +77,8 @@ const CartInfo = ({addCart, cart, totalPrice, newQuantity, delProduct}) => {
     }
 
     return(
-        <div className="cart"> 
-        <button id="popup-1" className="popup" onClick={addToCart}>Add to cart</button>
+        <div className={classes.cart}> 
+        <button id="popup-1" className={classes.popup} onClick={addToCart}>Add to cart</button>
       <div className="cart-modal-wrapper popup-1" style={{display: data.modalStatus ? 'block' : 'none'}}> 
             <div className="cart-modal-table">
             <div className="cart-modal-table__cell">

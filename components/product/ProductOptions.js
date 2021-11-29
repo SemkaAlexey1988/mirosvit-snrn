@@ -1,12 +1,11 @@
  import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import classes from '../../styles/product/product.module.scss'
 
 const ProductOptions = ({options}) => {
-  console.log(options)
-  console.log('yes')
     return  <React.Fragment> 
-  <ul className="product-options">
+  <ul className={classes.productOptions}>
   {options.map((option, index)=>{
   return <li key={index}>
   <Link href={`/product/${option.url}`} as={`/product/${option.url}`}><a>

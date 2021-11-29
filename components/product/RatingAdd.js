@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import classes from '../../styles/product/product.module.scss'
 
 const RatingAdd = ({star}) => {
 
@@ -25,17 +26,17 @@ const RatingAdd = ({star}) => {
     }
 
     return(
-        <div className="rating-block rating-cart__stars">
+        <div className={classes.ratingBlock}>
         <input ref={starFive}  name="rating" value="5" id="rating-5" type="radio" />
-        <label onClick={clickFive} htmlFor="rating-5" className="rating-block__label"><i className="fa fa-star-o" aria-hidden="true"></i></label> 
+        <label onClick={clickFive} htmlFor="rating-5" className={classes.ratingBlockLabel}><i className="fa fa-star-o" aria-hidden="true"></i></label> 
         <input ref={starFour} name="rating" value="4" id="rating-4" type="radio" />
-        <label onClick={clickFour} htmlFor="rating-4" className="rating-block__label"><i className="fa fa-star-o" aria-hidden="true"></i></label> 
+        <label onClick={clickFour} htmlFor="rating-4" className={classes.ratingBlockLabel}><i className="fa fa-star-o" aria-hidden="true"></i></label> 
         <input ref={starThree} name="rating" value="3" id="rating-3" type="radio" />
-        <label onClick={clickThree} htmlFor="rating-3" className="rating-block__label"><i className="fa fa-star-o" aria-hidden="true"></i></label>
+        <label onClick={clickThree} htmlFor="rating-3" className={classes.ratingBlockLabel}><i className="fa fa-star-o" aria-hidden="true"></i></label>
         <input ref={starTwo} name="rating" value="2" id="rating-2" type="radio" />
-        <label onClick={clickTwo} htmlFor="rating-2" className="rating-block__label"><i className="fa fa-star-o" aria-hidden="true"></i></label>
+        <label onClick={clickTwo} htmlFor="rating-2" className={classes.ratingBlockLabel}><i className="fa fa-star-o" aria-hidden="true"></i></label>
         <input ref={starOne} name="rating" value="1" id="rating-1" type="radio" />
-        <label onClick={clickOne} htmlFor="rating-1" className="rating-block__label"><i className="fa fa-star-o" aria-hidden="true"></i></label>
+        <label onClick={clickOne} htmlFor="rating-1" className={classes.ratingBlockLabel}><i className="fa fa-star-o" aria-hidden="true"></i></label>
         </div>         
         )
     }

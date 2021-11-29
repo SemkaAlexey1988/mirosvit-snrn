@@ -30,6 +30,8 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Router from 'next/router'
 
+import classes from '../../styles/product/product.module.scss'
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -153,13 +155,13 @@ if(productInfo){
 
 let totalPrice = reduceProducts(product.cartItems)
 return <MainLayout>
-  <div className="product full-width">
-  <div className="product__first flex-block"> 
-  <div className="product-cart container">
-  <div className="product-cart__left column_1-2"> 
+  <div className={classes.product}>
+  <div className={classes.productFirst}> 
+  <div className={classes.productCart}>
+  <div className={classes.productCartLeft}>
   {productImage}
   </div>
-  <div className="product-cart__right column_1-2"> 
+  <div className={classes.productCartRight}> 
       {errorBlock}
       {loader}
       {productInformation}
@@ -169,7 +171,7 @@ return <MainLayout>
   </div>
       </div>
       </div>
-      <div className="product__second">
+      <div className={classes.productSecond}>
 
       <Tabs>
     <TabList>
@@ -179,19 +181,19 @@ return <MainLayout>
     </TabList>
 
     <TabPanel>
-    <div className="product__name">
+    <div className={classes.productName}>
       {productContent}
       </div>
     </TabPanel>
     <TabPanel>
-    <div className="product__attributes">
+    <div className={classes.productAttributes}>
       <ProductAttributes attributes={attributes.data} /> 
       </div>
     </TabPanel>
     <TabPanel>
-    <div className="product__comments">
+    <div className={classes.productComments}>
       <CommentsInfo comments={comments.data} />
-    <div className="rating">
+    <div className={classes.Rating}>
       <RatingInfo rating={rating.data} /> 
       <RatingAdd star={valueRating} /> 
     </div>

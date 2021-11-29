@@ -1,4 +1,5 @@
  import React from 'react'
+ import classes from '../../styles/product/product.module.scss'
 
 const RatingInfo = ({rating}) => {
     let ratingAverage = rating.average
@@ -7,9 +8,9 @@ const RatingInfo = ({rating}) => {
         averageRating = `${parseFloat(ratingAverage.toFixed(1))} / 5`;  
     } 
     return(
-        <div className="rating__info">
-        <p className="rating-cart__average">{averageRating}</p>
-        <p className="rating-cart__counter">({rating.counter} votes)</p>
+        <div className={classes.ratingInfo}>
+        <p className={classes.ratingCartAverage}>{averageRating}</p>
+        <p className={classes.ratingCartCounter}>({rating.counter} votes)</p>
          </div>        
         )
     }
