@@ -8,7 +8,7 @@ const RatingInfo = ({rating}) => {
         averageRating = `${parseFloat(ratingAverage.toFixed(1))} / 5`;  
     } 
     return(
-        <div className={classes.ratingInfo}>
+        <div className={classes.ratingInfo} id="rating-value">
         <p className={classes.ratingCartAverage}>{averageRating}</p>
         <p className={classes.ratingCartCounter}>({rating.counter} votes)</p>
          </div>        

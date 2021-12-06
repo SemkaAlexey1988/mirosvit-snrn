@@ -127,7 +127,7 @@ class OrderForm extends Component {
     let comment = "Comment";
     let { nameError, emailError, phoneError, ...values } = this.state
     return (
-      <div className="order-form">
+      <div className="order-form form">
         <h2>Order form</h2>
       <div className="form-group">
 <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 
@@ -149,8 +149,9 @@ onKeyUp={this.stateValuePhone.bind(this, phone)} onBlur={this.blurValuePhone.bin
 <textarea ref={(comment) => this.comment = comment }  className="form-control" placeholder="comment" onChange={this.changeValue.bind(this, comment)} 
 type="text" value={this.state.comment}/>
 </div>
-
+<div className="form-group">
       <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Order</button>
+      </div>
     </div>
     );
   } 

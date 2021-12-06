@@ -15,6 +15,8 @@ import Router from 'next/router'
 import CartInfo from '../components/order/CartInfo'
 import OrderForm from '../components/order/OrderForm';
 
+import classes from '../styles/order/order.module.scss'
+
 const Order = () => {
 
 const [data, setData] = useState({ 

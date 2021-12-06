@@ -5,7 +5,6 @@
 @import 'templates/loader/loader';
 @import 'templates/filter/filter';
 @import 'categories/categories';
-@import 'order/order';
 
 /* Basic */
 body {
@@ -65,6 +64,14 @@ body {
         width: 100%;  
         display: flex;
         flex-wrap: wrap;
+    }
+    .container.success-block {
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto;
+      justify-content: center;
+      font-size: 24px;
+      text-transform: uppercase;
     }
     .containerFixed {
         max-width: 1200px;
@@ -208,31 +215,36 @@ body .carousel .thumbs.animated {
     padding: 0px 0px;
 }
 
-.contactForm {
-    max-width: 400px;
+.form {
+    max-width: 700px;
     width: 100%;
+    margin: 30px auto;
 } 
-.contactForm input {
-    max-width: 400px;
+.form h2 {
+    text-align: center;    
+} 
+.form-group input {
+    max-width: 700px;
     border: 0;
     border-bottom: 1px solid #333;
     border-radius: 0;
 }
-.contactForm textarea {
-    max-width: 400px;
+.form-group textarea {
+    max-width: 700px;
     border: 0;
     border-bottom: 1px solid #333;
     border-radius: 0;
+    text-align: center;
 }
-.contactForm input::placeholder {
+.form-group input::placeholder {
     color: #656363;
     text-align: center;
 }
-.contactForm .form-group textarea::placeholder {
+.form-group .form-group textarea::placeholder {
     color: #656363;
     text-align: center;
 } 
-.contactForm button {
+.form-group button {
     background: #333;
     outline: 0;
     border: 0;
@@ -247,7 +259,7 @@ body .carousel .thumbs.animated {
     letter-spacing: 0.1em;
     font-size: 15px;
 }
-.contactForm .error {
+.form-group .error {
     margin-bottom: 10px;
     font-size: 13px;
 }  
@@ -259,6 +271,13 @@ body .carousel .thumbs.animated {
     line-height: 30px;
     text-transform: uppercase;
     color: #000;
+}
+.cart {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 15px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Cart block */
@@ -357,9 +376,7 @@ body .carousel .thumbs.animated {
     border: 0;
     outline: 0;
   }
-  .cart-modal-block .ajax-loader {
-    display: none !important;	
-  }
+
   .cart-block {
     overflow-x: auto; 
     padding: 15px 10px; 
@@ -527,6 +544,9 @@ body .carousel .thumbs.animated {
     margin-bottom: 10px;
     font-size: 13px;
   }
+  #rating-value {
+    display: flex;
+}
 
 @media screen and (min-width:1200px){
     .site .main-page h2 {
@@ -537,6 +557,19 @@ body .carousel .thumbs.animated {
 @media screen and (min-width:1000px){
   .mobile {
     display: none;
+  }
+}
+
+
+@media screen and (min-width:300px) and (max-width:1250px) {
+  .order.containerFixed {
+    padding: 10px 20px;
+  }
+  body .site .order.containerFixed h1 {
+    padding: 0;
+  }
+  .order .cart {
+  padding: 15px 10px;
   }
 }
   
@@ -565,7 +598,7 @@ body .carousel .thumbs.animated {
     }
     .cart-modal-block {
         padding: 30px 10px;
-      }
+    }
 }
 
 @media screen and (min-width:300px) and (max-width:550px) {
@@ -581,7 +614,10 @@ body .carousel .thumbs.animated {
     .cart-modal-block h3 {	 
         font-size: 20px;
         line-height: 25px;
-      }  
+      } 
+    h2#product-h {
+        text-align: center;
+    }   
 }
 
 @media screen and (min-width:300px) and (max-width:480px) {
@@ -607,6 +643,9 @@ body .carousel .thumbs.animated {
   @media screen and (min-width:300px) and (max-width:480px) {
     .cart-block {
       padding: 15px 10px;
+    }
+    body .react-tabs__tab {
+      padding: 6px 10px;
     }
   }  
 

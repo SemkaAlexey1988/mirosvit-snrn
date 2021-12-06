@@ -115,7 +115,7 @@ export default class CommentsForm extends Component {
         let comment = "Comment";
         let { nameError, emailError, commentError, ...values } = this.state
         return (
-<div className="comments-form">
+<div className="comments-form form">
             <h2>Write a Review</h2>
           <div className="form-group">
     <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 

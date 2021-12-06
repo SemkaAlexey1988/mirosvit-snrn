@@ -130,7 +130,7 @@ class ContactForm extends Component {
     let message = "Message";
     let { nameError, emailError, phoneError, ...values } = this.state
     return (
-      <div className="contactForm">
+      <div className="contactForm form">
       <h2>Contact form</h2>
       <div className="form-group">
 <input ref={(name) => this.name = name }  className="form-control" placeholder="name" id="o-name" onChange={this.changeValue.bind(this, name)} 
@@ -152,8 +152,9 @@ onKeyUp={this.stateValuePhone.bind(this, phone)} onBlur={this.blurValuePhone.bin
 <textarea ref={(message) => this.message = message }  className="form-control" placeholder="message" onChange={this.changeValue.bind(this, message)} 
 type="text" value={this.state.message}/>
 </div>
-
+<div className="form-group">
       <button className="btn btn-primary" onClick={this.submitForm.bind(this)}>Send</button>
+      </div>   
     </div>
     );
   } 

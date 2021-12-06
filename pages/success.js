@@ -7,6 +7,7 @@ import { fetchMenus } from '../store/actions/menus/menus';
 import SuccessInfo from '../components/order/SuccessInfo'
 import Error from '../components/templates/error'
 import Loader from '../components/templates/loader'
+import classes from '../styles/order/order.module.scss'
 
 
 const Success = () => {

@@ -57,6 +57,13 @@ header.site-header {
     }
     }  
     }
+
+    .header__contacts a {
+        text-decoration: none;
+    }
+    .header__contacts a span {
+        text-decoration: underline;
+    }
     
     /* Header modal */
     .modal-wrapper
@@ -93,7 +100,7 @@ header.site-header {
     display: inline-block;
     padding: 30px;
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     height: auto;
     background: #ffffff;
     -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
@@ -134,33 +141,7 @@ header.site-header {
     margin: 10px 0;
     }
     
-    .modal-block input {
-    width: 100%;
-    margin-bottom: 20px;
-    height: 40px;
-    padding: 10px;	
-    }
-    .modal-block textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    height: 80px;
-    padding: 10px;	
-    }
-    .modal-block input[type="submit"] {
-    width: 100%;
-    max-width: 200px;
-    margin: 10px auto;
-    display: block;
-    padding: 0;
-    background: #f36341;
-    color: #FFF;
-    font-size: 16px;
-    border: 0;
-    outline: 0;
-    }
-    .modal-block .ajax-loader {
-    display: none !important;	
-    }
+    
     
      @media screen and (min-width:300px) and (max-width:550px) {
     .modal-block h3 {	 
