@@ -1,10 +1,11 @@
  import React from 'react'
 import Link from 'next/link'
+import classes from '../../styles/categories/categories.module.scss'
 
 const CategoryInfo = ({category}) => {
-    return  <div className="category__content">
-        <div className="category__content-info">
-    <div className="category__description-text">{category.description}</div>
+    return  <div className={classes.categoryContent}>
+        <div className={classes.categoryContentInfo}>
+    <div className={classes.categoryDescriptionText}>{category.description}</div>
     </div>
     </div>
     }

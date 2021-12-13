@@ -4,7 +4,6 @@
 @import 'templates/error/error';
 @import 'templates/loader/loader';
 @import 'templates/filter/filter';
-@import 'categories/categories';
 
 /* Basic */
 body {
@@ -95,6 +94,12 @@ body {
         display: block;
         padding: 0 50px;
     }
+    .left-block, .right-block {
+      flex-basis: 25%;
+  }
+  .content-block {
+    flex-basis: 75%;
+}
     /* END Basic */
 
 .column_1-2 {
@@ -546,6 +551,68 @@ body .carousel .thumbs.animated {
   }
   #rating-value {
     display: flex;
+}
+
+/* toggle elements */
+.toggleButton{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}   
+.toggleButton::after{
+  display: inline-block;
+  vertical-align: top;
+  content: '+';
+  font-size: 22px;
+  cursor: pointer;
+  padding-right: 5px;
+  color: #000;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 100;
+  cursor: pointer;
+  word-wrap: break-word;
+}  
+.toggleButton.show::after{
+  content: '';
+} 
+.subMenu {
+  display: none;
+}
+.subMenu.show {
+  display: block;
+} 
+
+/* pagination */
+.pagination .page a {
+  width: 40px;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  color: #918f8f;
+  text-decoration: none;
+  color: #918f8f;
+  margin: 0 5px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.pagination .page a:hover {
+  color: #333;
+  border-color: #333;
+  font-weight: 600;
+  border: 1px solid #333;
+}
+.pagination .page.active a {
+  color: #333;
+  border-color: #333;
+  font-weight: 600;
+  border: 1px solid #333;
+  box-sizing: border-box;
 }
 
 @media screen and (min-width:1200px){

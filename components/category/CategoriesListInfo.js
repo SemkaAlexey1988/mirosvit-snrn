@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Link from 'next/link'
+import classes from '../../styles/categories/categories.module.scss'
 
 
 
@@ -24,11 +25,11 @@ const CategoriesListInfo = ({categoriesList}) => {
     }
    
     let partUrl = '/category/'; 
-    return  <div className="categories-menu"> 
-      <p className="mobile-menu_categories" >
+    return  <div className={classes.categoriesMenu}> 
+      <p className={classes.mobileMenuCategories} >
       <i className="fa fa-bars" aria-hidden="true" onClick={showMenu}></i> Categories List
       </p>
-    <ul className="categoriesMenu" style={{display: menu.menuStatus ? 'block' : 'none'}}>
+    <ul className={classes.categoriesMenu} style={{display: menu.menuStatus ? 'block' : 'none'}}>
     {categoriesList.map((category) => {
     if(category.child[0]){
    

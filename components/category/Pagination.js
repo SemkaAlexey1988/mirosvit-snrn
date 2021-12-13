@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
+import classes from '../../styles/categories/categories.module.scss'
 
 const Pagination = ({limit, page, path, count, filter}) => {
 
@@ -11,8 +12,8 @@ const Pagination = ({limit, page, path, count, filter}) => {
     items.push(<li key={i} className={pageVal == link ? `page active` : `page`}><Link href={`/category/${path}/page=${link}${filter}`} as={`/category/${path}/page=${link}${filter}`}><a>{link}</a></Link></li>)
 }
     return  <React.Fragment> 
-      <div className="pagination">
-        <ul className="pagination__ul">
+      <div className={classes.pagination}>
+        <ul className={classes.paginationUl}>
           {items} 
         </ul>  
       </div>

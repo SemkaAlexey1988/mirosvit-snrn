@@ -14,6 +14,7 @@ import CategoryInfo from '../../components/category/CategoryInfo'
 import CategoriesList from '../../containers/categories/CategoriesList'
 import ProductsList from '../../containers/categories/ProductsList'
 import Filter from '../../containers/templates/filter/Filter';
+import classes from '../../styles/categories/categories.module.scss'
 
 import {useRouter} from 'next/router'
 import Router from 'next/router'
@@ -46,21 +47,21 @@ contentTitle = ''
 content = ''  
 }
 return <MainLayout>
-  <div className="category full-width flex-block">
-    <div className="left-block">             
-      <div className="categories-list"> 
-      <CategoriesList/>
-      <Filter price={filter.minmax} id={router.query.id} filter={router.query.filter} 
-    manufacturers={filter.manufacturers} attributes={filter.attributes} />
+  <div className={`${classes.category} full-width flex-block`}>
+      <div className="left-block">             
+        <div className={classes.categoriesList}> 
+        <CategoriesList/>
+        <Filter price={filter.minmax} id={router.query.id} filter={router.query.filter} 
+      manufacturers={filter.manufacturers} attributes={filter.attributes} />
+        </div>
+        </div>
+        <div className="content-block"> 
+        {contentTitle} 
+        <ProductsList id={router.query.id}/>
+      {errorBlock}  
+      {loader}
+      {content} 
       </div>
-      </div>
-      <div className="content-block"> 
-      {contentTitle} 
-      <ProductsList id={router.query.id}/>
-    {errorBlock}  
-    {loader}
-    {content} 
-    </div>
   </div>
 </MainLayout>
 

@@ -5,6 +5,7 @@ import { fetchProductsList, fetchProductsCount } from '../../store/actions/categ
 import ProductsListInfo from '../../components/category/ProductsListInfo';
 import Pagination from '../../components/category/Pagination';
 import settings from '../../settings';
+import classes from '../../styles/categories/categories.module.scss'
 
 
 const ProductsList = ({id, page, filter}) => {
@@ -26,7 +27,7 @@ const ProductsList = ({id, page, filter}) => {
   const successData = !(productsList.load || productsList.error)
   const errorBlock = productsList.error ? <div className="error"></div> : null
   const loader = productsList.load ? <div className="load"></div> : null
-  const content = <div className="products-wrap pb">
+  const content = <div className={`${classes.productsWrap} pb`}>
     <ProductsListInfo productsList={productsList.data} />
     <Pagination limit={settings.limit} page={page} path={id} filter={filterValue} count={productsList.productCount.count} />
     </div>
