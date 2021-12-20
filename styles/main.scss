@@ -104,12 +104,15 @@ body {
 
 .column_1-2 {
     flex-basis: 50%;
+    position: relative;
 }
 .column_1-3 {
     flex-basis: 33%; 
+    position: relative;
 }
 .column_1-4 {
-    flex-basis: 25%;  
+    flex-basis: 25%; 
+    position: relative; 
 }
 
 .button {
@@ -188,12 +191,14 @@ footer.site-footer {
 }
 .left-block {
     flex-basis: 25%;
+    margin-top: 40px;
 }
 .right-block {
-flex-basis: 25%;
+    flex-basis: 25%;
+    margin-top: 40px;
 }
 .content-block {
-flex-basis: 75%;
+    flex-basis: 75%;
 }
 
 /* End bootstrap emulation */   
@@ -415,6 +420,18 @@ body .carousel .thumbs.animated {
   .cart-item {
     border-bottom: 1px dashed #333;
   }
+
+  .column_1-3:hover > div {
+    position: absolute;
+    -webkit-box-shadow: 1px 3px 3px 3px #D6D6D6;
+    box-shadow: 1px 3px 3px 3px #D6D6D6;
+    z-index: 9;
+  }
+  .column_1-3:hover p[data-value="description"] {
+  height: auto;
+  margin-top: 10px;
+  visibility: visible;
+  }
   .product-manager__quantity .product__menus {
     display: block;
     width: 20px;
@@ -585,6 +602,22 @@ body .carousel .thumbs.animated {
 } 
 
 /* pagination */
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+  margin: 50px auto 10px;
+}
+.pagination__ul {
+  display: -moz-box;
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}    
 .pagination .page a {
   width: 40px;
   height: 40px;
@@ -627,6 +660,23 @@ body .carousel .thumbs.animated {
   }
 }
 
+@media screen and (min-width:999px) and (max-width:1250px) {
+  .content-block .column_1-3 { 
+      flex-basis: 50%;
+  }
+  .slider_wrap form {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  .slider_wrap form button {
+    width: 200px;
+  }
+  .filter-price__inputs p input {
+    max-width: 130px;
+}
+}
+
 
 @media screen and (min-width:300px) and (max-width:1250px) {
   .order.containerFixed {
@@ -656,6 +706,14 @@ body .carousel .thumbs.animated {
   }
   .main-page__content {
     padding: 10px;
+  }
+  .products .column_1-3:hover .productWrap {
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+  }
+  .products .column_1-3:hover .productsDescription {
+    visibility: hidden;
+    height: 0;
   }
 } 
 

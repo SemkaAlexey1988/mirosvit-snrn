@@ -6,6 +6,7 @@ import pathTransformer from '../../../utils/pathTransformer';
 import FilterPrice from './../../../components/templates/filter/FilterPrice';
 import FilterAttributes from './../../../components/templates/filter/FilterAttributes';
 import FilterManufacturers from './../../../components/templates/filter/FilterManufacturers';
+import classes from './../../../styles/categories/categories.module.scss'
 
 const Filter = ({price, id, filter, manufacturers, attributes}) => {
 
@@ -243,11 +244,11 @@ filterMaximumPrice = 0
 }
 
         return(
-        <div className="filter">
-       <p className="mobile-menu_categories" >
+        <div className={classes.filter}>
+       <p className={classes.mobileMenuCategories} >
       <i className="fa fa-bars" aria-hidden="true" onClick={showFilter}></i> Filter
       </p> 
-  <div className="filtersBlock" style={{display: data.filterStatus ? 'block' : 'none'}}>
+  <div className={classes.filtersBlock} style={{display: data.filterStatus ? 'block' : 'none'}}>
 <FilterPrice 
 newValue={changePath}
 filterMin = {filterMinimumPrice} 
