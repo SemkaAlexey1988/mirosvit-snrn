@@ -64,6 +64,9 @@ header.site-header {
     .header__contacts a span {
         text-decoration: underline;
     }
+    .header__contacts a span:hover {
+        text-decoration: none;
+    }
     
     /* Header modal */
     .modal-wrapper
@@ -217,7 +220,7 @@ header.site-header {
     }
 }      
 
-@media screen and (min-width:300px) and (max-width:1000px) { 
+@media screen and (min-width:300px) and (max-width:999px) { 
 
     body header.site-header {
         height: auto;

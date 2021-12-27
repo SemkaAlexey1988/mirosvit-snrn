@@ -122,7 +122,7 @@
 .mobileMenuCategories {
     display: none;
 }
-@media screen and (min-width:1000px) {
+@media screen and (min-width:999px) {
     .categoriesMenu {
         display: block !important;
     }
@@ -141,7 +141,7 @@
     }
 }
 
-@media screen and (min-width:300px) and (max-width:1000px) {
+@media screen and (min-width:300px) and (max-width:999px) {
     .mobileMenuCategories {
         display: block;
     }
@@ -206,6 +206,13 @@
     }
     .slideBlock {
         max-width: 360px;
+    }
+    .productsBox {
+        padding: 0 10px;
+    }
+    .productsDescription {
+        background: #FFF;
+        padding: 10px;
     }
 }
 @media screen and (min-width:300px) and (max-width:550px) {
