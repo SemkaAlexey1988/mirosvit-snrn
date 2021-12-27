@@ -158,3 +158,20 @@
     flex-basis: 50%;
   }
   }
+
+  @media screen and (min-width:300px) and (max-width:390px){
+    .slider_wrap{
+      transform: scale(0.9);
+    }
+    .slider_wrap form {
+      display: block;
+      float: none;
+      text-align: center;
+    }
+    .slider_wrap form button {
+      width: 100px;
+    }
+    .filter-price__inputs p input {
+      max-width: 120px;
+    }
+  }
