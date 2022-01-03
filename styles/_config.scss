@@ -12,11 +12,41 @@ $greenCalor: green;
 $container: 1200px;
 $medium-container: 900px;
 
+
+// H
+
+@mixin hOne {
+    font: {
+    size: 26px;
+    weight: bold;
+    }
+    line-height: 32px;
+    color: $black;
+}
+
+@mixin hTwo {
+    font: {
+    size: 22px;
+    weight: bold;
+    }
+    line-height: 26px;
+    color: $black;
+}
+
 // Buttons 
 @mixin buttonSize {
 width: 100%;
 max-width: 200px;
 height: 40px;
     }
+//Media
+$mediaDesktop: 1250px;  
+$mediaMaxTablet: 1200px; 
+$mediaTablet: 999px;  
+$mediaMobileHorizontal: 768px;
+$mediaMobileMiddle: 550px;
+$mediaMobileVertical: 480px; 
+$mediaMobileMin: 400px;  
+$mediaMin: 300px; 
 
 /* END Variables */

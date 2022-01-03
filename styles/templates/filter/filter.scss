@@ -144,7 +144,7 @@
     margin-top: 5px;
   }
   
-  @media screen and (min-width:300px) and (max-width:768px){
+  @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileHorizontal){
     .flex-block {
     flex-wrap: wrap;
     }
@@ -159,7 +159,7 @@
   }
   }
 
-  @media screen and (min-width:300px) and (max-width:390px){
+  @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMin){
     .slider_wrap{
       transform: scale(0.9);
     }

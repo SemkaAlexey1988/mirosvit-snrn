@@ -146,7 +146,7 @@ header.site-header {
     
     
     
-     @media screen and (min-width:300px) and (max-width:550px) {
+     @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
     .modal-block h3 {	 
     font-size: 20px;
     line-height: 25px;
@@ -214,13 +214,13 @@ header.site-header {
     }
       /* End top menu */
 
-@media screen and (min-width:1000px) { 
+@media screen and (min-width:$mediaTablet) { 
     .main-menu_wrapper {
         display: block !important;
     }
 }      
 
-@media screen and (min-width:300px) and (max-width:999px) { 
+@media screen and (min-width:$mediaMin) and (max-width:$mediaTablet) { 
 
     body header.site-header {
         height: auto;
@@ -350,7 +350,7 @@ header.site-header {
     }
 }
 
-@media screen and (min-width:300px) and (max-width:550px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
     .popup.button {
         max-width: 160px;
         height: 36px;
@@ -361,7 +361,7 @@ header.site-header {
     }
 }
 
-@media screen and (min-width:300px) and (max-width:480px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileVertical) {
     .popup.button {
         max-width: 120px;
         height: 30px;

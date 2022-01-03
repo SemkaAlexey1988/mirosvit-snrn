@@ -13,94 +13,84 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    }
-    
-    * {
+    }   
+* {
     margin: 0;
     padding: 0;
-    }
-    
-    html {
+} 
+html {
     height: 100%;
-    }
-    
-    header, nav, section, main, article, aside, footer {
+}
+header, nav, section, main, article, aside, footer {
     display: block;
-    }
+}
 
-    #__next {
-        height: 100%;
-    }
-    
-    body {
+#__next {
+    height: 100%;
+}
+body {
     height: 100%;
     width: 100%;
     font-size: 16px;
     //color: $blackColor;
     margin: 0;
     padding: 0;
-    }
-    #root {
+}
+#root {
     height: 100%;
-    }
-    img{
+}
+img{
     max-width:100%;
     height:auto;
-    }
-    ol, ul {
-        padding-left: 0;
-    }
-    .main-menu .sub-menu {
-        padding-left: 0;
-    }
-    code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-    }
-    .container {
-        margin: 0 auto; 
-        max-width: $container; 
-        width: 100%;  
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .container.success-block {
-      width: 100%;
-      max-width: 1200px;
-      margin: 30px auto;
-      justify-content: center;
-      font-size: 24px;
-      text-transform: uppercase;
-    }
-    .containerFixed {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .site h1 {
-        font-weight: 600;
-        font-size: 26px;
-        line-height: 32px;
-        color: #333;
-        display: block;
-        margin-top: 40px;
-        margin-bottom: 25px;
-        padding: 0 50px;
-    }
-    .site h2 {
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 26px;
-        color: #333;
-        display: block;
-        padding: 0 50px;
-    }
-    .left-block, .right-block {
-      flex-basis: 25%;
-  }
-  .content-block {
+}
+ol, ul {
+    padding-left: 0;
+}
+.main-menu .sub-menu {
+    padding-left: 0;
+}
+code {
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.container {
+    margin: 0 auto; 
+    max-width: $container; 
+    width: 100%;  
+    display: flex;
+    flex-wrap: wrap;
+}
+.container.success-block {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    justify-content: center;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.containerFixed {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.site h1 {
+    @include hOne;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    padding: 0 50px;
+}
+.site h2 {
+    @include hTwo;
+    display: block;
+    padding: 0 50px;
+}
+.left-block, .right-block {
+    flex-basis: 25%;
+}
+.content-block {
     flex-basis: 75%;
 }
-    /* END Basic */
+/* END Basic */
 
 .column_1-2 {
     flex-basis: 50%;
@@ -154,16 +144,15 @@ body ul {
     }
     
 .input-error {
-        border: 1px solid $redCalor;
-    }
-    .site {
-position: relative;
-min-height: 100%;
+    border: 1px solid $redCalor;
+}
+.site {
+    position: relative;
+    min-height: 100%;
     }
 .content {
-padding-bottom: 90px;
-    }
-    
+    padding-bottom: 90px;
+}  
 footer.site-footer {
     position: absolute;
     left: 0;
@@ -654,19 +643,19 @@ body .carousel .thumbs.animated {
   box-sizing: border-box;
 }
 
-@media screen and (min-width:1200px){
+@media screen and (min-width:$mediaMaxTablet){
     .site .main-page h2 {
         padding: 0px 30px;
     }
 }
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:$mediaTablet){
   .mobile {
     display: none;
   }
 }
 
-@media screen and (min-width:999px) and (max-width:1250px) {
+@media screen and (min-width:$mediaTablet) and (max-width:$mediaDesktop) {
   .content-block .column_1-3 { 
       flex-basis: 50%;
   }
@@ -684,7 +673,7 @@ body .carousel .thumbs.animated {
 }
 
 
-@media screen and (min-width:300px) and (max-width:1250px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaDesktop) {
   .order.containerFixed {
     padding: 10px 20px;
   }
@@ -696,7 +685,7 @@ body .carousel .thumbs.animated {
   }
 }
   
-@media screen and (min-width:300px) and (max-width:999px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaTablet) {
   .flex-block{
     flex-wrap: wrap;
   }
@@ -742,7 +731,7 @@ body .carousel .thumbs.animated {
   }
 } 
 
-@media screen and (min-width:300px) and (max-width:768px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileHorizontal) {
     .contactForm {
         margin: 10px auto;
     }
@@ -751,7 +740,7 @@ body .carousel .thumbs.animated {
     }
 }
 
-@media screen and (min-width:300px) and (max-width:550px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
     body .products .column_1-3 {
         flex-basis: 100%;
     }
@@ -773,13 +762,13 @@ body .carousel .thumbs.animated {
     } 
 }
 
-@media screen and (min-width:300px) and (max-width:480px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileVertical) {
     .cart-modal-block {
       padding: 30px 0px;
     }
   }
 
-  @media screen and (min-width:300px) and (max-width:400px) {
+  @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMin) {
     .product__continue {
       float: none;
       margin: 20px auto;
@@ -793,7 +782,7 @@ body .carousel .thumbs.animated {
       padding-bottom: 0px;
     }
   }  
-  @media screen and (min-width:300px) and (max-width:480px) {
+  @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileVertical) {
     .cart-block {
       padding: 15px 10px;
     }
