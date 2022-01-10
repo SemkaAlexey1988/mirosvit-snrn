@@ -1,11 +1,9 @@
-
-
 .left-block .slider {
     border-radius: 2px;
-    background: #333;
-    background: -moz-linear-gradient(left top, #333, #4b4a4a) repeat scroll 0 0 transparent;
-    background: -webkit-gradient(linear, left top, right bottom, from(#333), to(#4b4a4a));
-    background: linear-gradient(left top, #333, #4b4a4a);
+    background: $black;
+    background: -moz-linear-gradient(left top, $black, $lightBlack) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, right bottom, from($black), to($lightBlack));
+    background: linear-gradient(left top, $black, $lightBlack);
     width: 250px;
     height: 10px;
     margin: 15px 0;
@@ -23,9 +21,9 @@
     vertical-align: top; 
   }
   .slider_wrap form button {
-    background: #FFF;
-    border: 1px solid #333;
-    color: #333;
+    background: $white;
+    border: 1px solid $black;
+    color: $black;
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -44,7 +42,7 @@
     left: 0px;
     top: -7.5px;
     background: rgb(237, 237, 240);
-    border: 3px solid #fff;
+    border: 3px solid $white;
     cursor: pointer;
     scroll-behavior: smooth;
   }
@@ -56,7 +54,7 @@
     position: absolute;
     top: -7.5px;
     background: rgb(237, 237, 240);
-    border: 3px solid #fff;
+    border: 3px solid $white;
     cursor: pointer;
     scroll-behavior: smooth;
   }
@@ -83,7 +81,7 @@
     margin-bottom: 30px;
     padding: 15px;
     box-sizing: border-box;
-    border: 1px solid #333;
+    border: 1px solid $black;
     border-radius: 5px;
   }     
   .filter-price__inputs {
@@ -103,12 +101,8 @@
     padding: 0 5px;
   } 
   .left-block h2 {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #2e2e2e;
+    @include hTwo;
     text-decoration: none;
-    text-transform: uppercase;
     text-align: left;
     margin-bottom: 15px;
   }
@@ -118,7 +112,7 @@
     padding: 15px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid #333;
+    border: 1px solid $black;
     border-radius: 5px;
   }
   .filter-manufacturers {
@@ -127,7 +121,7 @@
     padding: 15px;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid #333;
+    border: 1px solid $black;
     border-radius: 5px;
   }
   .filter-attributes__name {

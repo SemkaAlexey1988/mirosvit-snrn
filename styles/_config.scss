@@ -2,10 +2,11 @@
 
 // Colors
 $black: #333;
+$lightBlack: #4b4a4a;
 $gray: #656363;
-$lightGray: #efecec;
+$lightGray: #D6D6D6;
 $white: #FFF;
-$redCalor: red;
+$redCalor: #f26341;
 $greenCalor: green;
 
 // Containers
@@ -22,6 +23,7 @@ $medium-container: 900px;
     }
     line-height: 32px;
     color: $black;
+    text-transform: uppercase;
 }
 
 @mixin hTwo {
@@ -46,7 +48,8 @@ $mediaTablet: 999px;
 $mediaMobileHorizontal: 768px;
 $mediaMobileMiddle: 550px;
 $mediaMobileVertical: 480px; 
-$mediaMobileMin: 400px;  
+$mediaMobileMin: 400px; 
+$mediaMinPlus: 350px;  
 $mediaMin: 300px; 
 
 /* END Variables */

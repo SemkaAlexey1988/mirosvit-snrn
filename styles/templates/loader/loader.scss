@@ -8,7 +8,7 @@
     height: 100px;
     margin: 50px auto;
     position: relative;
-    border-top: 4px solid red;
+    border-top: 4px solid $redCalor;
     animation-name: loader;
     animation-duration: 1s;
     animation-iteration-count: infinite;
@@ -43,7 +43,7 @@
     bottom: 24px;
     left: 24px;
     right: 24px;
-    border-top: 4px solid #333333;
+    border-top: 4px solid $black;
     animation-name: loader;
     animation-duration: 3s;
     animation-iteration-count: infinite;

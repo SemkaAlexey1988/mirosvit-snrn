@@ -1,3 +1,5 @@
+@import '../_config';
+
 .productCart {
     display: flex;
 }
@@ -81,10 +83,7 @@ p.productCommentName {
 }
 .productInfo h1 {
     text-align: center;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    text-transform: uppercase;
+    @include hOne;
 }
 .productInfo .productSku {
     padding-top: 7px;
@@ -117,16 +116,16 @@ p.productCommentName {
 .productCartRight .popup {
     width: 200px;
     height: 34px;
-    background: #FFF;
-    color: #333;
+    background: $white;
+    color: $black;
     outline: 0;
-    border: 1px solid #333;
+    border: 1px solid $black;
 }
 .productCartRight .cart {
     text-align: center;
 }
 .productOptions li div {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
 }
 .productSecond {
     width: 100%;
@@ -183,7 +182,7 @@ p.productCommentName {
 
 /* END Cart modal */
 
-@media screen and (min-width:300px) and (max-width:768px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileHorizontal) {
   .productCart {
       flex-wrap: wrap;
   }
@@ -211,19 +210,19 @@ p.productCommentName {
   }
 }  
 
-@media screen and (min-width:300px) and (max-width:550px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
   .productCommentImage {
       min-width: auto;
   }
 }
 
-@media screen and (min-width:300px) and (max-width:480px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMobileVertical) {
   .productCommentImage {
       display: none;
   }
 }
 
-@media screen and (min-width:300px) and (max-width:350px) {
+@media screen and (min-width:$mediaMin) and (max-width:$mediaMinPlus) {
   .reactTabsTabList {
       font-size: 14px;
   }

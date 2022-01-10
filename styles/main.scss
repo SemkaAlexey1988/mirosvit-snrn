@@ -197,7 +197,7 @@ body .carousel .slide .legend {
     position: absolute;
     top: calc(50% - 33px);
     background: none;
-    color: #fff;
+    color: $white;
     font-size: 34px;
     text-align: center;
     opacity: 1;
@@ -225,13 +225,13 @@ body .carousel .thumbs.animated {
 .form-group input {
     max-width: 700px;
     border: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     border-radius: 0;
 }
 .form-group textarea {
     max-width: 700px;
     border: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     border-radius: 0;
     text-align: center;
 }
@@ -244,7 +244,7 @@ body .carousel .thumbs.animated {
     text-align: center;
 } 
 .form-group button {
-    background: #333;
+    background: $black;
     outline: 0;
     border: 0;
     max-width: 200px;
@@ -272,7 +272,7 @@ body .carousel .thumbs.animated {
     color: #000;
 }
 .cart {
-  border: 1px solid #333;
+  border: 1px solid $black;
   border-radius: 5px;
   padding: 15px;
   -moz-box-sizing: border-box;
@@ -315,7 +315,7 @@ body .carousel .thumbs.animated {
     width: 100%;
     max-width: 700px;
     height: auto;
-    background: #ffffff;
+    background: $white;
     -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
@@ -340,7 +340,7 @@ body .carousel .thumbs.animated {
     top: 5px;
     background-color: #f26341;
     border-radius: 50%;
-    color: #FFF;
+    color: $white;
     line-height: 25px;
   }
   .cart-modal-block h3 {
@@ -370,7 +370,7 @@ body .carousel .thumbs.animated {
     display: block;
     padding: 0;
     background: #f36341;
-    color: #FFF;
+    color: $white;
     font-size: 16px;
     border: 0;
     outline: 0;
@@ -407,13 +407,13 @@ body .carousel .thumbs.animated {
     margin-bottom: 0px;
   }
   .cart-item {
-    border-bottom: 1px dashed #333;
+    border-bottom: 1px dashed $black;
   }
 
   .column_1-3:hover > div {
     position: absolute;
-    -webkit-box-shadow: 1px 3px 3px 3px #D6D6D6;
-    box-shadow: 1px 3px 3px 3px #D6D6D6;
+    -webkit-box-shadow: 1px 3px 3px 3px $lightGray;
+    box-shadow: 1px 3px 3px 3px $lightGray;
     z-index: 9;
   }
   .column_1-3:hover p[data-value="description"] {
@@ -431,9 +431,9 @@ body .carousel .thumbs.animated {
     display: block;
     width: 20px;
     height: 20px;
-    color: #333;
-    background: #FFF;
-    border: 1px solid #333;
+    color: $black;
+    background: $white;
+    border: 1px solid $black;
     padding: 0;
     border-radius: 3px;
     margin: 0;
@@ -445,9 +445,9 @@ body .carousel .thumbs.animated {
     display: block;
     width: 20px;
     height: 20px;
-    color: #333;
-    background: #FFF;
-    border: 1px solid #333;
+    color: $black;
+    background: $white;
+    border: 1px solid $black;
     padding: 0;
     border-radius: 3px;
     margin: 0;
@@ -482,11 +482,11 @@ body .carousel .thumbs.animated {
     width: 100%;
     max-width: 150px;
     height: 30px;
-    color: #333;
-    border: 2px solid #333;
+    color: $black;
+    border: 2px solid $black;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: #FFF;
+    background: $white;
     text-transform: uppercase;
     float: left;
   }
@@ -495,11 +495,11 @@ body .carousel .thumbs.animated {
     width: 100%;
     max-width: 150px;
     height: 30px;
-    color: #fff;
-    border: 2px solid #333;
+    color: $white;
+    border: 2px solid $black;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: #333;
+    background: $black;
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
@@ -507,7 +507,7 @@ body .carousel .thumbs.animated {
     float: right;
   }
   .product__toorder a:hover {
-    color: #fff; 
+    color: $white; 
   }
 
 
@@ -526,12 +526,12 @@ body .carousel .thumbs.animated {
   }  
   .comments-form .form-group input {
     border: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     border-radius: 0;
   }  
   .comments-form .form-group textarea {
     border: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     border-radius: 0;
   }  
   .comments-form .form-group input::placeholder {
@@ -543,7 +543,7 @@ body .carousel .thumbs.animated {
     text-align: center;
   }
   .comments-form button {
-    background: #333;
+    background: $black;
     outline: 0;
     border: 0;
     max-width: 200px;
@@ -630,16 +630,16 @@ body .carousel .thumbs.animated {
 }
 
 .pagination .page a:hover {
-  color: #333;
-  border-color: #333;
+  color: $black;
+  border-color: $black;
   font-weight: 600;
-  border: 1px solid #333;
+  border: 1px solid $black;
 }
 .pagination .page.active a {
-  color: #333;
-  border-color: #333;
+  color: $black;
+  border-color: $black;
   font-weight: 600;
-  border: 1px solid #333;
+  border: 1px solid $black;
   box-sizing: border-box;
 }
 
@@ -686,6 +686,17 @@ body .carousel .thumbs.animated {
 }
   
 @media screen and (min-width:$mediaMin) and (max-width:$mediaTablet) {
+  .categories_categoriesMenu__AzP4H {
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  } 
+  .content-block {
+    padding: 20px 10px !important;
+  }
+  .site h1 {
+    margin-bottom: 0 !important;
+  }
   .flex-block{
     flex-wrap: wrap;
   }
@@ -713,7 +724,7 @@ body .carousel .thumbs.animated {
   .left-block {
     flex-basis: 100%;
     padding: 0 10px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     margin-top: 15px;
   }
   .content-block {

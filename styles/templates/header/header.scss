@@ -1,7 +1,7 @@
 header.site-header {
     height: 160px;
     width: 100%;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     box-sizing: border-box;
 }
 .header-wrapper {
@@ -105,11 +105,11 @@ header.site-header {
     width: 100%;
     max-width: 700px;
     height: auto;
-    background: #ffffff;
+    background: $white;
     -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
-    color: #0C0B0B;
+    color: $black;
     text-align: left;
     font-size: 13px;
     z-index: 9999;
@@ -129,15 +129,15 @@ header.site-header {
     position: absolute;
     right: 5px;
     top: 5px;
-    background-color: #f26341;
+    background-color: $redCalor;
     border-radius: 50%;
-    color: #FFF;
+    color: $white;
     line-height: 25px;
     }
     
     .modal-block h3 {
     text-align: center;
-    color: #296976;
+    color: $black;
     font-size: 30px;
     font-family: Open Sans Bold;
     line-height: 40px;
@@ -174,7 +174,7 @@ header.site-header {
         top: 50px;
         z-index: 9;
         margin-top: 0 !important;
-        background: #FFF;
+        background: $white;
         -webkit-box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
         -moz-box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
         box-shadow: 0px 2px 5px 0px rgba(46, 45, 45, 0.38);
@@ -189,7 +189,7 @@ header.site-header {
     top: 0;
     z-index: 9;
     margin-top: 0 !important;
-    background: #FFF;
+    background: $white;
     padding-bottom: 10px;
     }  
     .main-menu .sub-menu li {
@@ -269,7 +269,7 @@ header.site-header {
         max-width: 300px;
         right: 0;
         text-align: left;
-        background: #FFF;
+        background: $white;
         padding-left: 0;
         padding: 10px 0;
         box-shadow: 1px 3px 3px 3px #D6D6D6;
