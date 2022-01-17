@@ -37,10 +37,23 @@ $medium-container: 900px;
 
 // Buttons 
 @mixin buttonSize {
-width: 100%;
-max-width: 200px;
-height: 40px;
-    }
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+}
+@mixin buttonSizeSmall {
+    width: 100%;
+    max-width: 150px;
+    height: 30px;
+}
+@mixin buttonSizeMobile {
+    max-width: 160px;
+    height: 36px;
+}
+@mixin buttonSizeMin {
+    max-width: 120px;
+    height: 30px;
+}
 //Media
 $mediaDesktop: 1250px;  
 $mediaMaxTablet: 1200px; 

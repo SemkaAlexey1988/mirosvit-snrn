@@ -1,5 +1,5 @@
 header.site-header {
-    height: 160px;
+    height: 150px;
     width: 100%;
     border-bottom: 1px solid $black;
     box-sizing: border-box;
@@ -161,11 +161,11 @@ header.site-header {
     line-height: 50px;
     height: 50px;
     padding-right: 10px;
-    }
-    .main-menu li a {
-    margin-top: 10px;
-    }
-    
+    margin-top: 10px; 
+    &:hover > a{
+        text-decoration: none;
+      }
+    }   
     .main-menu .sub-menu {
         display: none;
         position: absolute;
@@ -184,17 +184,18 @@ header.site-header {
         display: block;
       }
     .sub-menu .sub-menu {
-    position: absolute;
-    left: 200px;
-    top: 0;
-    z-index: 9;
-    margin-top: 0 !important;
-    background: $white;
-    padding-bottom: 10px;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        z-index: 9;
+        margin-top: 0 !important;
+        background: $white;
+        padding-bottom: 10px;
     }  
     .main-menu .sub-menu li {
         display: block;
         padding-left: 25px;
+        margin-top: 0px;
     }
     .main-menu .sub-menu li {
         line-height: 30px;
@@ -352,8 +353,7 @@ header.site-header {
 
 @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
     .popup.button {
-        max-width: 160px;
-        height: 36px;
+       @include buttonSizeMobile;
     }
     .logo-block .logo {
         max-width: 200px;
@@ -363,8 +363,7 @@ header.site-header {
 
 @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileVertical) {
     .popup.button {
-        max-width: 120px;
-        height: 30px;
+        @include buttonSizeMobile;
     }
     .logo-block .logo {
         max-width: 160px;
