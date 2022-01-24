@@ -17,7 +17,11 @@
 }  
 .contactsPageLeft p a {
     color: $black;
+    &:hover {
+        text-decoration: none;
+    }
 }
+
 .site .contactsPageLeft h2 {
     padding: 0;
 }
