@@ -112,6 +112,17 @@ p.productCommentName {
 }
 .productImages {
     padding: 0 50px;
+    text-align: center;
+}
+.productThumbList {
+    display: block;
+    width: 100%;
+}
+.productThumb {
+    cursor: pointer;
+    max-width: 100px;
+    display: inline-block;
+    vertical-align: top;
 }
 .productCartRight .popup {
     @include buttonSize;

@@ -699,6 +699,9 @@ body .carousel .thumbs.animated {
   border: 1px solid $black;
   box-sizing: border-box;
 }
+.alice-carousel__wrapper {
+  max-width: 500px !important;
+}
 
 @media screen and (min-width:$mediaMaxTablet){
     .site .main-page h2 {
