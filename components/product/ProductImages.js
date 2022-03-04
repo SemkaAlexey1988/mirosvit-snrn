@@ -5,6 +5,9 @@ import classes from '../../styles/product/product.module.scss'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
 const Modal = ({ modal, items, handleModalFalse, currentIndex, featured }) => {
   return (
     <div className={classes.productImages} onClick={handleModalFalse}>
@@ -85,6 +88,8 @@ class ProductImages extends React.Component {
 
 const RenderGallery = ({ currentIndex, items, onSlideChanged, responsive }) => {
   return (
+    <React.Fragment>
+     
     <AliceCarousel
       dotsDisabled={false}
       buttonsDisabled={true}
@@ -98,19 +103,33 @@ const RenderGallery = ({ currentIndex, items, onSlideChanged, responsive }) => {
         </div>
       ))}
     </AliceCarousel>
+
+</React.Fragment>
     
   );
 };
 
 // Thumbnails
 const RenderThumbs = ({ items, slideNext, slidePrev, slideTo }) => (
+  <div>
   <ul className={classes.productThumbList}>
     {items.map((item, i) => (
       <li className={classes.productThumb} key={i} onClick={() => slideTo(i)}>
-        <img src={item} />
+        <Zoom>
+          <img src={item} />
+        </Zoom> 
       </li>
     ))}
   </ul>
+
+      <Zoom>
+      <img
+        alt="that wanaka tree"
+        src="/assets/images/samsung_tab_2.jpg"
+        width="500"
+      />
+      </Zoom>
+      </div>
 );
 
 export default ProductImages;

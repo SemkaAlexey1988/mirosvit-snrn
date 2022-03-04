@@ -115,14 +115,13 @@ p.productCommentName {
     text-align: center;
 }
 .productThumbList {
-    display: block;
+    display: flex;
     width: 100%;
+    justify-content: center;
 }
 .productThumb {
     cursor: pointer;
     max-width: 100px;
-    display: inline-block;
-    vertical-align: top;
 }
 .productCartRight .popup {
     @include buttonSize;
