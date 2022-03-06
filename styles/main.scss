@@ -703,6 +703,12 @@ body .carousel .thumbs.animated {
   max-width: 500px !important;
 }
 
+.js-image-zoom__zoomed-image {
+  position: fixed;
+  left: 0;
+  top: 100px;
+}
+
 @media screen and (min-width:$mediaMaxTablet){
     .site .main-page h2 {
         padding: 0px 30px;

@@ -4,9 +4,9 @@ import Image from 'next/image'
 import classes from '../../styles/product/product.module.scss'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import ReactImageZoom from 'react-image-zoom';
 
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+//const props = {width: 400, height: 250, zoomWidth: 500, img: "http://malaman.github.io/react-image-zoom/example/1.jpg"};
 
 const Modal = ({ modal, items, handleModalFalse, currentIndex, featured }) => {
   return (
@@ -29,7 +29,9 @@ class ProductImages extends React.Component {
       currentIndex: 0,
       items: [],
       modal: false,
-      featured: undefined
+      featured: '',
+      isLoaded: true,
+      error: false
     };
 
   }
@@ -45,6 +47,8 @@ class ProductImages extends React.Component {
       ]
     this.setState({ items: imgList });  
     this.setState({ featured: this.state.items[0] });
+    this.setState({ items: imgList }); 
+    this.setState({ isLoaded: false }); 
   }
 
   responsive = {
@@ -62,9 +66,19 @@ class ProductImages extends React.Component {
   };
 
   render() {
+    let { currentIndex, items, modal, featured, isLoaded, error } = this.state;
+    const successData = !(isLoaded || error);
+    const loader = isLoaded ? <div className="load"></div> : null 
+    let st = "http://malaman.github.io/react-image-zoom/example/1.jpg"
+    let content = ''
+    if(this.state.items[0]){
+      const content = successData  ? <ReactImageZoom width="400" height="200" zoomWidth="500" img={featured}></ReactImageZoom> : ''
+    }
     return (
       <>
-
+      {loader}
+      {content}
+      
         <Modal
           modal={this.state.modal}
           items={this.state.items}
@@ -72,8 +86,8 @@ class ProductImages extends React.Component {
           currentIndex={this.state.currentIndex}
           featured={this.state.featured}
         />
+
      
- 
         <RenderThumbs
           items={this.state.items}
           slideNext={this.slideNext}
@@ -81,6 +95,7 @@ class ProductImages extends React.Component {
           slideTo={this.slideTo}
           responsive={this.responsive}
         />
+       <p>{this.state.items[0]}</p>  
       </>
     );
   }
@@ -115,20 +130,11 @@ const RenderThumbs = ({ items, slideNext, slidePrev, slideTo }) => (
   <ul className={classes.productThumbList}>
     {items.map((item, i) => (
       <li className={classes.productThumb} key={i} onClick={() => slideTo(i)}>
-        <Zoom>
           <img src={item} />
-        </Zoom> 
       </li>
     ))}
   </ul>
 
-      <Zoom>
-      <img
-        alt="that wanaka tree"
-        src="/assets/images/samsung_tab_2.jpg"
-        width="500"
-      />
-      </Zoom>
       </div>
 );
 
