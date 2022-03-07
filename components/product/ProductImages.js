@@ -61,6 +61,10 @@ class ProductImages extends React.Component {
   // Do I need this method at all?
   onSlideChanged = e => this.setState({ currentIndex: e.item });
 
+  toggleElement = e => {
+    alert('11')
+  }
+
   handleModalFalse = () => {
     this.setState({ modal: false });
   };
@@ -70,15 +74,20 @@ class ProductImages extends React.Component {
     const successData = !(isLoaded || error);
     const loader = isLoaded ? <div className="load"></div> : null 
     let st = "http://malaman.github.io/react-image-zoom/example/1.jpg"
+  
+    let offsetImg = {
+      vertical: 0, 
+      horizontal: 0
+    }
     let content = ''
     if(this.state.items[0]){
-      const content = successData  ? <ReactImageZoom width="400" height="200" zoomWidth="500" img={featured}></ReactImageZoom> : ''
+      content = successData  ? <div onMouseEnter={this.toggleElement}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
     }
     return (
       <>
       {loader}
       {content}
-      
+      <div onMouseEnter={this.toggleElement}>
         <Modal
           modal={this.state.modal}
           items={this.state.items}
@@ -87,6 +96,8 @@ class ProductImages extends React.Component {
           featured={this.state.featured}
         />
 
+      </div>
+
      
         <RenderThumbs
           items={this.state.items}
@@ -94,8 +105,7 @@ class ProductImages extends React.Component {
           slidePrev={this.slidePrev}
           slideTo={this.slideTo}
           responsive={this.responsive}
-        />
-       <p>{this.state.items[0]}</p>  
+        /> 
       </>
     );
   }
