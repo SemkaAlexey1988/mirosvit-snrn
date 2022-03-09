@@ -252,7 +252,13 @@ p.productCommentName {
   .productImages {
       padding: 0 10px;
   }
-}  
+} 
+.productImgZoom {
+    position: relative;
+} 
+.productImgSlider {
+    position: relative;
+} 
 
 @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
   .productCommentImage {

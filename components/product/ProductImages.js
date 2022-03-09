@@ -90,13 +90,13 @@ class ProductImages extends React.Component {
     }
     let content = ''
     if(this.state.items[0]){
-      content = successData  ? <div className="" onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
+      content = successData  ? <div className={classes.productImgZoom} onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
     }
     return (
       <>
       {loader}
       {content}
-      <div onMouseEnter={this.toggleElementSlider} style={showSlider ? {display:'none'} : {display:'block'}}>
+      <div onMouseEnter={this.toggleElementSlider} className={classes.productImgSlider} style={showSlider ? {display:'none'} : {display:'block'}}>
         <Modal
           modal={this.state.modal}
           items={this.state.items}
