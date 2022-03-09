@@ -5,6 +5,7 @@
 @import 'templates/loader/loader';
 @import 'templates/filter/filter';
 
+
 /* Basic */
 body {
     margin: 0;
@@ -705,7 +706,7 @@ body .carousel .thumbs.animated {
 
 .js-image-zoom__zoomed-image {
   position: fixed;
-  left: 0;
+  left: 100px;
   top: 100px;
 }
 
