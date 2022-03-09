@@ -253,9 +253,15 @@ p.productCommentName {
       padding: 0 10px;
   }
 } 
+.productImages > div {
+    padding: 0 !important;
+}
+.productImages  img {
+    max-width: 500px;
+}
 .productImgZoom > div {
     position: relative;
-    margin: 0 50px;
+    padding: 0 50px;
     text-align: center;
 } 
 .productImgSlider {

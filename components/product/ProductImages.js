@@ -83,6 +83,10 @@ class ProductImages extends React.Component {
     const successData = !(isLoaded || error);
     const loader = isLoaded ? <div className="load"></div> : null 
     let zoom = "Zoom";
+
+    console.log('A')
+    console.log(currentIndex)
+    console.log('Z')
   
     let offsetImg = {
       vertical: 0, 
@@ -90,7 +94,7 @@ class ProductImages extends React.Component {
     }
     let content = ''
     if(this.state.items[0]){
-      content = successData  ? <div className={classes.productImgZoom} onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
+      content = successData  ? <div className={classes.productImgZoom} onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[currentIndex]}></ReactImageZoom></div> : ''
     }
     return (
       <>
@@ -137,8 +141,6 @@ const RenderGallery = ({ currentIndex, items, onSlideChanged, responsive }) => {
         </div>
       ))}
     </AliceCarousel>
-
-    <ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom>
 
 </React.Fragment>
     

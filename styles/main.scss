@@ -708,6 +708,7 @@ body .carousel .thumbs.animated {
   position: fixed;
   left: 100px;
   top: 100px;
+  z-index: 999;
 }
 
 @media screen and (min-width:$mediaMaxTablet){
