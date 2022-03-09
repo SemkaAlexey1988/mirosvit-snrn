@@ -31,7 +31,9 @@ class ProductImages extends React.Component {
       modal: false,
       featured: '',
       isLoaded: true,
-      error: false
+      error: false,
+      showZoom: false,
+      showSlider: true
     };
 
   }
@@ -61,8 +63,15 @@ class ProductImages extends React.Component {
   // Do I need this method at all?
   onSlideChanged = e => this.setState({ currentIndex: e.item });
 
-  toggleElement = e => {
-    alert('11')
+  toggleElementZoom = e => {
+    this.setState({ showZoom: true });
+    this.setState({ showSlider: false });
+    console.log('show Zoom')
+  }
+  toggleElementSlider = e => {
+    this.setState({ showZoom: false });
+    this.setState({ showSlider: true });
+    console.log('show Slider')
   }
 
   handleModalFalse = () => {
@@ -70,24 +79,24 @@ class ProductImages extends React.Component {
   };
 
   render() {
-    let { currentIndex, items, modal, featured, isLoaded, error } = this.state;
+    let { currentIndex, items, modal, featured, isLoaded, error, showZoom, showSlider } = this.state;
     const successData = !(isLoaded || error);
     const loader = isLoaded ? <div className="load"></div> : null 
-    let st = "http://malaman.github.io/react-image-zoom/example/1.jpg"
+    let zoom = "Zoom";
   
     let offsetImg = {
       vertical: 0, 
-      horizontal: 0
+      horizontal: 100
     }
     let content = ''
     if(this.state.items[0]){
-      content = successData  ? <div onMouseEnter={this.toggleElement}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
+      content = successData  ? <div className="" onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom></div> : ''
     }
     return (
       <>
       {loader}
       {content}
-      <div onMouseEnter={this.toggleElement}>
+      <div onMouseEnter={this.toggleElementSlider} style={showSlider ? {display:'none'} : {display:'block'}}>
         <Modal
           modal={this.state.modal}
           items={this.state.items}
