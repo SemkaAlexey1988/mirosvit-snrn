@@ -138,6 +138,8 @@ const RenderGallery = ({ currentIndex, items, onSlideChanged, responsive }) => {
       ))}
     </AliceCarousel>
 
+    <ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[0]}></ReactImageZoom>
+
 </React.Fragment>
     
   );
