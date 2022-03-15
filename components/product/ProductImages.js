@@ -66,12 +66,10 @@ class ProductImages extends React.Component {
   toggleElementZoom = e => {
     this.setState({ showZoom: true });
     this.setState({ showSlider: false });
-    console.log('show Zoom')
   }
   toggleElementSlider = e => {
     this.setState({ showZoom: false });
     this.setState({ showSlider: true });
-    console.log('show Slider')
   }
 
   handleModalFalse = () => {
@@ -83,10 +81,6 @@ class ProductImages extends React.Component {
     const successData = !(isLoaded || error);
     const loader = isLoaded ? <div className="load"></div> : null 
     let zoom = "Zoom";
-
-    console.log('A')
-    console.log(currentIndex)
-    console.log('Z')
   
     let offsetImg = {
       vertical: 0, 
