@@ -148,7 +148,7 @@ let productInformation
 let productImage
 let productContent
 if(productInfo){
-  productImage = <ProductImages product={productInfo}/>
+  productImage = <ProductImages product={productInfo} gallery={gallery.data} />
   productInformation = <ProductInfo product={productInfo} /> 
   productContent = <ProductContent product={productInfo} />
 }else{

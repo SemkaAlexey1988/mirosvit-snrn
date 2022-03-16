@@ -8,6 +8,7 @@ import {filterReducer} from './common/filterReducer';
 import {productsListReducer} from './category/productsListReducer';
 import {productReducer} from './product/productReducer';
 import {optionsReducer} from './product/optionsReducer';
+import {galleryReducer} from './product/galleryReducer';
 import {attributesReducer} from './product/attributesReducer';
 import {ratingReducer} from './product/ratingReducer';
 import {commentsReducer} from './product/commentsReducer';
@@ -24,6 +25,7 @@ filter: filterReducer,
 productsList: productsListReducer,
 product: productReducer,
 options: optionsReducer, 
+gallery: galleryReducer, 
 attributes: attributesReducer, 
 rating: ratingReducer, 
 comments: commentsReducer,

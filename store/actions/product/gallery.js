@@ -4,7 +4,6 @@ import routes from '../../../api/routes.json'
 
 export const fetchGallery = (id) => async dispatch =>  {
    await axios(`${config.api}${routes.productGallery}/${id}`).then(result =>{
-      console.log(result.data)
       dispatch({
          type: 'FETCH_PRODUCT_GALLERY_SUCCESS',
          payload: result.data  

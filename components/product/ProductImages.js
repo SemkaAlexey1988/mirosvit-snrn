@@ -6,14 +6,9 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ReactImageZoom from 'react-image-zoom';
 
-//const props = {width: 400, height: 250, zoomWidth: 500, img: "http://malaman.github.io/react-image-zoom/example/1.jpg"};
-
 const Modal = ({ modal, items, handleModalFalse, currentIndex, featured }) => {
   return (
     <div className={classes.productImages} onClick={handleModalFalse}>
-      {/* this only features the first image */}
-      {/* <img src={featured} /> */}
-      {/* shows every image on modal*/}
       <div className={classes.productImages}>
         <img src={items[currentIndex]} />
       </div>
@@ -40,27 +35,33 @@ class ProductImages extends React.Component {
 
   componentDidMount() {
     let mainImg = this.props.product
-    console.log(mainImg.image)
+    let galleryImg = this.props.gallery
+    let galleryArray = []
+
+    if(galleryImg.length > 0){
+      galleryImg.map((item) => {
+        galleryArray.push(item.image)
+        return galleryArray
+      })
+    }
+ 
     let imgList = [
-      mainImg.image,
-      "/assets/images/htc_touch_hd_2.jpg",
-      "/assets/images/samsung_tab_2.jpg",
-      "/assets/images/sony_vaio_4.jpg"  
-      ]
+      mainImg.image  
+    ]
+    let allItems = imgList.concat(galleryArray) 
     this.setState({ items: imgList });  
     this.setState({ featured: this.state.items[0] });
-    this.setState({ items: imgList }); 
+    this.setState({ items: allItems }); 
     this.setState({ isLoaded: false }); 
   }
 
   responsive = {
     0: { items: 1 },
     1024: { items: 1 }
-  };
+  }
 
   slideTo = i => console.log("clicked") || this.setState({ currentIndex: i });
 
-  // Do I need this method at all?
   onSlideChanged = e => this.setState({ currentIndex: e.item });
 
   toggleElementZoom = e => {
@@ -81,6 +82,9 @@ class ProductImages extends React.Component {
     const successData = !(isLoaded || error);
     const loader = isLoaded ? <div className="load"></div> : null 
     let zoom = "Zoom";
+    let widthValue = 500
+    let heightValue = 500
+    let zoomWidthValue = 500
   
     let offsetImg = {
       vertical: 0, 
@@ -88,7 +92,7 @@ class ProductImages extends React.Component {
     }
     let content = ''
     if(this.state.items[0]){
-      content = successData  ? <div className={classes.productImgZoom} onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width="500" height="500" offset={offsetImg} zoomWidth="500" img={this.state.items[currentIndex]}></ReactImageZoom></div> : ''
+      content = successData  ? <div className={classes.productImgZoom} onMouseLeave={this.toggleElementZoom} ref={(zoom) => this.zoom = zoom } style={showZoom ? {display:'none'} : {display:'block'}}><ReactImageZoom width={widthValue} height={heightValue} offset={offsetImg} zoomWidth={zoomWidthValue} img={this.state.items[currentIndex]}></ReactImageZoom></div> : ''
     }
     return (
       <>
@@ -102,10 +106,7 @@ class ProductImages extends React.Component {
           currentIndex={this.state.currentIndex}
           featured={this.state.featured}
         />
-
-      </div>
-
-     
+        </div>
         <RenderThumbs
           items={this.state.items}
           slideNext={this.slideNext}
