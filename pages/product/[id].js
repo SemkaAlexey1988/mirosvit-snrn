@@ -145,15 +145,15 @@ const successData = !(product.load || product.error)
 const errorBlock = product.error ? <Error/> : null
 const loader = product.load ? <Loader/> : null
 let productInformation
-let productImage
+//let productImage
 let productContent
 if(productInfo){
-  productImage = <ProductImages product={productInfo} gallery={gallery.data} />
+  //productImage = <ProductImages product={productInfo} gallery={gallery.data} />
   productInformation = <ProductInfo product={productInfo} /> 
   productContent = <ProductContent product={productInfo} />
 }else{
   productInformation = ''
-  productImage = ''
+  //productImage = ''
   productContent = ''
 }
 
@@ -163,7 +163,7 @@ return <MainLayout>
   <div className={classes.productFirst}> 
   <div className={classes.productCart}>
   <div className={classes.productCartLeft}>
-  {productImage}
+  {/* productImage */}
   </div>
   <div className={classes.productCartRight}> 
       {errorBlock}
