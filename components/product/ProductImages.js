@@ -37,7 +37,7 @@ class ProductImages extends React.Component {
     let mainImg = this.props.product
     let galleryImg = this.props.gallery
     let galleryArray = []
-
+    console.log(galleryImg)
     if(galleryImg.length > 0){
       galleryImg.map((item) => {
         galleryArray.push(item.image)
