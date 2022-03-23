@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Footer from './templates/footer'
 import Header from './templates/header'
 
+
 export function MainLayout({children, title}) {
 return <div className="site">
 <div className="content">

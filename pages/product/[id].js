@@ -5,6 +5,7 @@ import {MainLayout} from '../../components/MainLayout'
 import { fetchProduct } from '../../store/actions/product/product';
 import { fetchOptions } from '../../store/actions/product/options';
 import { fetchAttributes } from '../../store/actions/product/attributes';
+import { fetchGallery } from '../../store/actions/product/gallery';
 import { fetchComments, commentAdd } from '../../store/actions/product/comments';
 import { fetchRating, ratingAdd } from '../../store/actions/product/rating';
 import { fetchCartAll, fetchCartMax, addToCart, updateCartQuantity, deleteCartProduct } from '../../store/actions/product/cart';
@@ -42,13 +43,16 @@ const dispatch = useDispatch();
 const product = useSelector(state => state.product) 
 const options = useSelector(state => state.options) 
 const attributes = useSelector(state => state.attributes) 
+const gallery = useSelector(state => state.gallery) 
 const comments = useSelector(state => state.comments) 
 const rating = useSelector(state => state.rating) 
 
 useEffect(async () => {
+  console.log(router.query.id)
   dispatch(fetchProduct(router.query.id));
   dispatch(fetchOptions(router.query.id));
   dispatch(fetchAttributes(router.query.id));
+  dispatch(fetchGallery(router.query.id));
   dispatch(fetchComments(router.query.id));
   dispatch(fetchRating(router.query.id));
   dispatch(fetchCartMax());
@@ -144,7 +148,7 @@ let productInformation
 let productImage
 let productContent
 if(productInfo){
-  productImage = <ProductImages product={productInfo}/>
+  productImage = <ProductImages product={productInfo} gallery={gallery.data} />
   productInformation = <ProductInfo product={productInfo} /> 
   productContent = <ProductContent product={productInfo} />
 }else{
@@ -215,6 +219,7 @@ Product.getInitialProps = async ({store, query}) => {
   await store.dispatch(fetchProduct(query.id))
   await store.dispatch(fetchOptions(query.id))
   await store.dispatch(fetchAttributes(query.id))
+  await store.dispatch(fetchGallery(query.id))
   await store.dispatch(fetchComments(query.id))
   await store.dispatch(fetchRating(query.id))
       }

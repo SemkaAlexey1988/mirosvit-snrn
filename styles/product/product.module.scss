@@ -112,6 +112,16 @@ p.productCommentName {
 }
 .productImages {
     padding: 0 50px;
+    text-align: center;
+}
+.productThumbList {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.productThumb {
+    cursor: pointer;
+    max-width: 100px;
 }
 .productCartRight .popup {
     @include buttonSize;
@@ -150,6 +160,10 @@ p.productCommentName {
             width: 100%;
       }
     }  
+}
+.productCart {
+    padding: 0 50px;
+    text-align: center;
 }
 .productCartRight .cart {
     text-align: center;
@@ -238,7 +252,21 @@ p.productCommentName {
   .productImages {
       padding: 0 10px;
   }
-}  
+} 
+.productImages > div {
+    padding: 0 !important;
+}
+.productImages  img {
+    max-width: 500px;
+}
+.productImgZoom > div {
+    position: relative;
+    padding: 0 50px;
+    text-align: center;
+} 
+.productImgSlider {
+    position: relative;
+} 
 
 @media screen and (min-width:$mediaMin) and (max-width:$mediaMobileMiddle) {
   .productCommentImage {
